@@ -1,0 +1,11 @@
+- = don't worry about it until it's needed.
+* = application breaking bug, fix now before adding things.
+^ = below a breaking bug but something that needs to get done.
++ adding a new feature
+
+^not have every mesh create a shader program
+
+-sound error handling
+
+change some docking window flags.
+fix viewport uv coords

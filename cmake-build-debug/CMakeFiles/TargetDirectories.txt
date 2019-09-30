@@ -1,0 +1,3 @@
+/home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles/primitive.dir
+/home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles/edit_cache.dir

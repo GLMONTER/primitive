@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/primitive.dir/main.cpp.o  -o primitive 
