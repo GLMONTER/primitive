@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/85/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/88/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/85/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/88/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/monter/Downloads/primitive
+CMAKE_SOURCE_DIR = /home/monter/Documents/primitive
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/monter/Downloads/primitive/cmake-build-debug
+CMAKE_BINARY_DIR = /home/monter/Documents/primitive/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/monter/Downloads/primitive/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/85/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/88/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/85/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/88/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles /home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/monter/Documents/primitive/cmake-build-debug/CMakeFiles /home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/monter/Downloads/primitive/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/monter/Documents/primitive/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,383 @@ primitive/fast:
 	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/build
 .PHONY : primitive/fast
 
-main.o: main.cpp.o
+include/imgui/imgui.o: include/imgui/imgui.cpp.o
 
-.PHONY : main.o
+.PHONY : include/imgui/imgui.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/main.cpp.o
-.PHONY : main.cpp.o
+include/imgui/imgui.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui.cpp.o
+.PHONY : include/imgui/imgui.cpp.o
 
-main.i: main.cpp.i
+include/imgui/imgui.i: include/imgui/imgui.cpp.i
 
-.PHONY : main.i
+.PHONY : include/imgui/imgui.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/main.cpp.i
-.PHONY : main.cpp.i
+include/imgui/imgui.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui.cpp.i
+.PHONY : include/imgui/imgui.cpp.i
 
-main.s: main.cpp.s
+include/imgui/imgui.s: include/imgui/imgui.cpp.s
 
-.PHONY : main.s
+.PHONY : include/imgui/imgui.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/main.cpp.s
-.PHONY : main.cpp.s
+include/imgui/imgui.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui.cpp.s
+.PHONY : include/imgui/imgui.cpp.s
+
+include/imgui/imgui_demo.o: include/imgui/imgui_demo.cpp.o
+
+.PHONY : include/imgui/imgui_demo.o
+
+# target to build an object file
+include/imgui/imgui_demo.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.o
+.PHONY : include/imgui/imgui_demo.cpp.o
+
+include/imgui/imgui_demo.i: include/imgui/imgui_demo.cpp.i
+
+.PHONY : include/imgui/imgui_demo.i
+
+# target to preprocess a source file
+include/imgui/imgui_demo.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.i
+.PHONY : include/imgui/imgui_demo.cpp.i
+
+include/imgui/imgui_demo.s: include/imgui/imgui_demo.cpp.s
+
+.PHONY : include/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+include/imgui/imgui_demo.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.s
+.PHONY : include/imgui/imgui_demo.cpp.s
+
+include/imgui/imgui_draw.o: include/imgui/imgui_draw.cpp.o
+
+.PHONY : include/imgui/imgui_draw.o
+
+# target to build an object file
+include/imgui/imgui_draw.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.o
+.PHONY : include/imgui/imgui_draw.cpp.o
+
+include/imgui/imgui_draw.i: include/imgui/imgui_draw.cpp.i
+
+.PHONY : include/imgui/imgui_draw.i
+
+# target to preprocess a source file
+include/imgui/imgui_draw.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.i
+.PHONY : include/imgui/imgui_draw.cpp.i
+
+include/imgui/imgui_draw.s: include/imgui/imgui_draw.cpp.s
+
+.PHONY : include/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+include/imgui/imgui_draw.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.s
+.PHONY : include/imgui/imgui_draw.cpp.s
+
+include/imgui/imgui_widgets.o: include/imgui/imgui_widgets.cpp.o
+
+.PHONY : include/imgui/imgui_widgets.o
+
+# target to build an object file
+include/imgui/imgui_widgets.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.o
+.PHONY : include/imgui/imgui_widgets.cpp.o
+
+include/imgui/imgui_widgets.i: include/imgui/imgui_widgets.cpp.i
+
+.PHONY : include/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+include/imgui/imgui_widgets.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.i
+.PHONY : include/imgui/imgui_widgets.cpp.i
+
+include/imgui/imgui_widgets.s: include/imgui/imgui_widgets.cpp.s
+
+.PHONY : include/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+include/imgui/imgui_widgets.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.s
+.PHONY : include/imgui/imgui_widgets.cpp.s
+
+src/Camera.o: src/Camera.cpp.o
+
+.PHONY : src/Camera.o
+
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
+src/Core.o: src/Core.cpp.o
+
+.PHONY : src/Core.o
+
+# target to build an object file
+src/Core.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Core.cpp.o
+.PHONY : src/Core.cpp.o
+
+src/Core.i: src/Core.cpp.i
+
+.PHONY : src/Core.i
+
+# target to preprocess a source file
+src/Core.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Core.cpp.i
+.PHONY : src/Core.cpp.i
+
+src/Core.s: src/Core.cpp.s
+
+.PHONY : src/Core.s
+
+# target to generate assembly for a file
+src/Core.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Core.cpp.s
+.PHONY : src/Core.cpp.s
+
+src/Input.o: src/Input.cpp.o
+
+.PHONY : src/Input.o
+
+# target to build an object file
+src/Input.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Input.cpp.o
+.PHONY : src/Input.cpp.o
+
+src/Input.i: src/Input.cpp.i
+
+.PHONY : src/Input.i
+
+# target to preprocess a source file
+src/Input.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Input.cpp.i
+.PHONY : src/Input.cpp.i
+
+src/Input.s: src/Input.cpp.s
+
+.PHONY : src/Input.s
+
+# target to generate assembly for a file
+src/Input.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Input.cpp.s
+.PHONY : src/Input.cpp.s
+
+src/Mesh.o: src/Mesh.cpp.o
+
+.PHONY : src/Mesh.o
+
+# target to build an object file
+src/Mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Mesh.cpp.o
+.PHONY : src/Mesh.cpp.o
+
+src/Mesh.i: src/Mesh.cpp.i
+
+.PHONY : src/Mesh.i
+
+# target to preprocess a source file
+src/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Mesh.cpp.i
+.PHONY : src/Mesh.cpp.i
+
+src/Mesh.s: src/Mesh.cpp.s
+
+.PHONY : src/Mesh.s
+
+# target to generate assembly for a file
+src/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Mesh.cpp.s
+.PHONY : src/Mesh.cpp.s
+
+src/Model.o: src/Model.cpp.o
+
+.PHONY : src/Model.o
+
+# target to build an object file
+src/Model.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Model.cpp.o
+.PHONY : src/Model.cpp.o
+
+src/Model.i: src/Model.cpp.i
+
+.PHONY : src/Model.i
+
+# target to preprocess a source file
+src/Model.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Model.cpp.i
+.PHONY : src/Model.cpp.i
+
+src/Model.s: src/Model.cpp.s
+
+.PHONY : src/Model.s
+
+# target to generate assembly for a file
+src/Model.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Model.cpp.s
+.PHONY : src/Model.cpp.s
+
+src/Shader.o: src/Shader.cpp.o
+
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
+src/Sound.o: src/Sound.cpp.o
+
+.PHONY : src/Sound.o
+
+# target to build an object file
+src/Sound.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Sound.cpp.o
+.PHONY : src/Sound.cpp.o
+
+src/Sound.i: src/Sound.cpp.i
+
+.PHONY : src/Sound.i
+
+# target to preprocess a source file
+src/Sound.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Sound.cpp.i
+.PHONY : src/Sound.cpp.i
+
+src/Sound.s: src/Sound.cpp.s
+
+.PHONY : src/Sound.s
+
+# target to generate assembly for a file
+src/Sound.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Sound.cpp.s
+.PHONY : src/Sound.cpp.s
+
+src/Texture.o: src/Texture.cpp.o
+
+.PHONY : src/Texture.o
+
+# target to build an object file
+src/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Texture.cpp.o
+.PHONY : src/Texture.cpp.o
+
+src/Texture.i: src/Texture.cpp.i
+
+.PHONY : src/Texture.i
+
+# target to preprocess a source file
+src/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Texture.cpp.i
+.PHONY : src/Texture.cpp.i
+
+src/Texture.s: src/Texture.cpp.s
+
+.PHONY : src/Texture.s
+
+# target to generate assembly for a file
+src/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Texture.cpp.s
+.PHONY : src/Texture.cpp.s
+
+src/Window.o: src/Window.cpp.o
+
+.PHONY : src/Window.o
+
+# target to build an object file
+src/Window.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Window.cpp.o
+.PHONY : src/Window.cpp.o
+
+src/Window.i: src/Window.cpp.i
+
+.PHONY : src/Window.i
+
+# target to preprocess a source file
+src/Window.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Window.cpp.i
+.PHONY : src/Window.cpp.i
+
+src/Window.s: src/Window.cpp.s
+
+.PHONY : src/Window.s
+
+# target to generate assembly for a file
+src/Window.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/Window.cpp.s
+.PHONY : src/Window.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/primitive.dir/build.make CMakeFiles/primitive.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +510,48 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... primitive"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... include/imgui/imgui.o"
+	@echo "... include/imgui/imgui.i"
+	@echo "... include/imgui/imgui.s"
+	@echo "... include/imgui/imgui_demo.o"
+	@echo "... include/imgui/imgui_demo.i"
+	@echo "... include/imgui/imgui_demo.s"
+	@echo "... include/imgui/imgui_draw.o"
+	@echo "... include/imgui/imgui_draw.i"
+	@echo "... include/imgui/imgui_draw.s"
+	@echo "... include/imgui/imgui_widgets.o"
+	@echo "... include/imgui/imgui_widgets.i"
+	@echo "... include/imgui/imgui_widgets.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
+	@echo "... src/Core.o"
+	@echo "... src/Core.i"
+	@echo "... src/Core.s"
+	@echo "... src/Input.o"
+	@echo "... src/Input.i"
+	@echo "... src/Input.s"
+	@echo "... src/Mesh.o"
+	@echo "... src/Mesh.i"
+	@echo "... src/Mesh.s"
+	@echo "... src/Model.o"
+	@echo "... src/Model.i"
+	@echo "... src/Model.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
+	@echo "... src/Sound.o"
+	@echo "... src/Sound.i"
+	@echo "... src/Sound.s"
+	@echo "... src/Texture.o"
+	@echo "... src/Texture.i"
+	@echo "... src/Texture.s"
+	@echo "... src/Window.o"
+	@echo "... src/Window.i"
+	@echo "... src/Window.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

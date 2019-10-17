@@ -1,4 +1,4 @@
-# Install script for directory: /home/monter/Downloads/primitive
+# Install script for directory: /home/monter/Documents/primitive
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/monter/Downloads/primitive/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/monter/Documents/primitive/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
