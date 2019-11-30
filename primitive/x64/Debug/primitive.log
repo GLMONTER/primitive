@@ -1,26 +1,8 @@
-﻿  imgui_impl_glfw.cpp
-  imgui_impl_opengl3.cpp
-  imgui.cpp
-  imgui_draw.cpp
-  imgui_widgets.cpp
-  Camera.cpp
-  Core.cpp
+﻿  Core.cpp
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(48,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(49,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(451,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(451,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(463,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-  Input.cpp
-  main.cpp
-  Mesh.cpp
-  Model.cpp
-  Shader.cpp
-  Sound.cpp
-  Texture.cpp
-  Window.cpp
-  Generating Code...
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(537,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\MONTER\Documents\primitive\x64\Debug\vc120.pdb'; linking object as if no debug info
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(523,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(523,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(535,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(609,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe

@@ -305,6 +305,79 @@ void Core::drawMenu()
 		ImGui::Text("Model failed to load.");
 	}
 
+	static char scenePath[1024] = "test.txt";
+
+	if (ImGui::Button("Save Scene"))
+	{
+		std::ofstream ofs;
+		//open the scene file and clear any data in it to prepare for writing.
+		ofs.open(scenePath, std::ofstream::out | std::ofstream::trunc);
+
+		for (Model m : models)
+		{
+			//write all model information to scene file
+			ofs << m.path << ' ' << m.modelName << ' ' << std::to_string(m.position.x) << ' ' << std::to_string(m.position.y) << ' ' << std::to_string(m.position.z);
+			ofs << std::endl;
+		}
+		ofs.close();
+	}
+
+	ImGui::SameLine();
+	if (ImGui::Button("Load Scene"))
+	{
+		std::ifstream ifs;
+		ifs.open(scenePath);
+
+		std::string line;
+		while (std::getline(ifs, line))
+		{
+			//vector of strings to represent all loaded data
+			std::vector<std::string> strings;
+
+			//the string to push to the vector representing a piece of the parsed data(model name, position ect.)
+			static std::string push;
+			push.clear();
+
+			//load a part of the strings
+			static bool flag = false;
+			for (std::string::iterator i = line.begin(); i != line.end(); i++)
+			{
+				//get resource path
+				if (*i != ' ')
+				{
+					push += *i;
+				}
+				else
+				{
+					strings.push_back(push);
+					push.clear();
+					continue;
+				}
+			}
+			//load a model with the loaded data
+			Model mod;
+			//if model loading was successful then process the model further
+			if (mod.loadModel(strings[0], defaultVert, defaultFrag))
+			{
+				idCounter++;
+				mod.position.x = std::stof(strings[2]);
+				mod.position.y = std::stof(strings[3]);
+				mod.position.z = std::stof(strings[4]);
+				mod.id = idCounter;
+				mod.modelName = strings[1];
+				models.push_back(mod);
+				modelNames.push_back(mod.modelName);
+				modelError = false;
+			}
+			else
+				modelError = true;
+
+			strings.clear();
+		}
+	}
+
+	ImGui::InputText("Scene Path", scenePath, IM_ARRAYSIZE(scenePath));
+
     //if no models are loaded, don't worry about anything related to modifying models or else... segfault.
     if(models.size() == 0)
         return;
@@ -352,7 +425,6 @@ void Core::drawMenu()
         loadClear(curModelName);
         //update the input float positions to the current model positions
         loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
-
     }
 
     //if the selected item hasen't changed then check for changes in position and check for

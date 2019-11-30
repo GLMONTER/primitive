@@ -1,0 +1,2 @@
+rec/hatka_local_.obj fence 0.000000 0.000000 0.000000
+rec/hatka_local_.obj fence2 0.000000 0.000000 0.000000

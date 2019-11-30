@@ -4,7 +4,7 @@
 
 #include "Model.hpp"
 
-//delete all of the meshes allocated on the stack
+//delete all of the meshes allocated on the heap
 void Model::cleanup()
 {
     for(Mesh* m : mm)
@@ -68,6 +68,8 @@ bool Model::loadModel(const std::string file, Shader &vShader, Shader &fShader)
         //to display the name of the model in a menu
 
         modelName = mesh->nameH;
+
+		path = file;
     }
     return true;
 }

@@ -19,6 +19,7 @@ public:
     glm::quat Quatern;
     glm::vec3 EulerAngle = glm::vec3(0, 0, 0);
     std::string modelName = "Model";
+	std::string path = "path";
     unsigned int id;
 private:
     std::vector<aiMesh*> meshes;
