@@ -4,11 +4,9 @@
 
 
 #include "Core.hpp"
-#include<Windows.h>
+//for file dialog
 #include <shobjidl.h> 
-#include<locale>
-#include<codecvt>
-#include <stdlib.h>     /* wcstombs, wchar_t(C) */
+#include <locale>
 
 //camera variables
 glm::vec3 direction = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -576,16 +574,26 @@ void Core::renderLoop()
 			ImGui::SetNextWindowPos(ImVec2(0, 0));
 			hasSet = true;
 		}
-		
-		
-		ImGui::Begin("view", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus |
-		ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_::ImGuiWindowFlags_NoMove);
+		//Master dock window
+		ImGui::Begin("Master");
 		{
-		    //draw the image on the screen
+			//draw the image on the screen
+			static ImGuiID dockspaceID = 0;
+			// Declare Central dockspace
+			dockspaceID = ImGui::GetID("HUB_DockSpace");
+			ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode/*|ImGuiDockNodeFlags_NoResize*/);
+
+			ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
+		}
+		ImGui::End();
+		//draw the viewport as an imgui image
+		ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus*/ |
+		ImGuiWindowFlags_::ImGuiWindowFlags_NoResize /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoMove*/);
+		{
 			ImGui::Image((void*)FBTexture, ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
 		}
 		ImGui::End();
-
+		
         ImGui::Begin("Control Panel");
         drawMenu();
 
