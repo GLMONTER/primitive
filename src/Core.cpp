@@ -4,6 +4,11 @@
 
 
 #include "Core.hpp"
+#include<Windows.h>
+#include <shobjidl.h> 
+#include<locale>
+#include<codecvt>
+#include <stdlib.h>     /* wcstombs, wchar_t(C) */
 
 //camera variables
 glm::vec3 direction = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -85,6 +90,7 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 
 void Core::Init()
 {
+	
     //init the sound system
     SoundSystem::init();
 
@@ -233,7 +239,6 @@ void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], f
     }
 }
 
-
 //draws the main menu with all of the model objects like position and name ect, also allows changing of position and name
 //and other variables of the model
 void Core::drawMenu()
@@ -255,10 +260,10 @@ void Core::drawMenu()
         first = true;
     }
 	
-    std::string temp = "Driver vendor : ";
+    std::string vendor = "Driver vendor : ";
     std::string glString = ((char*)glGetString(GL_VENDOR));
-    temp.append(glString);
-    ImGui::Text(temp.c_str());
+	vendor.append(glString);
+    ImGui::Text(vendor.c_str());
 
     static char curModelName[1024];
     ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
@@ -273,26 +278,66 @@ void Core::drawMenu()
     static float spawnPos[3];
     ImGui::InputFloat3("Spawn Position", spawnPos);
 
-	//model path input
-	static char buf[1024] = "rec/hatka_local_.obj";
+	//buffer to hold the model path
+	static char buffer[1024];
 
-    ImGui::InputText("Model Path", buf, IM_ARRAYSIZE(buf));
     if(ImGui::Button("Load Model"))
     {
+		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
+			COINIT_DISABLE_OLE1DDE);
+		if (SUCCEEDED(hr))
+		{
+			IFileOpenDialog* pFileOpen;
+
+			// Create the FileOpenDialog object.
+			hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
+				IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+
+			if (SUCCEEDED(hr))
+			{
+				// Show the Open dialog box.
+				hr = pFileOpen->Show(NULL);
+
+				// Get the file name from the dialog box.
+				if (SUCCEEDED(hr))
+				{
+					IShellItem* pItem;
+					hr = pFileOpen->GetResult(&pItem);
+					if (SUCCEEDED(hr))
+					{
+						wchar_t* pszFilePath;
+						hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+						//convert the wide string given by windows to a normal string
+						wcstombs(buffer, pszFilePath, sizeof(buffer));						// Display the file name to the user.
+						
+						if (SUCCEEDED(hr))
+						{
+							CoTaskMemFree(pszFilePath);
+						}
+						pItem->Release();
+					}
+				}
+				pFileOpen->Release();
+			}
+			CoUninitialize();
+		}
+		//std::cout << fileName.lpstrFile;
         if(currentItem == -1)
             currentItem = 0;
 
-        Model temp;
+        Model tempModel;
+		std::string conv = buffer;
+		std::cout << "conv" << buffer;
         //if model loading was successful then process the model further
-		if (temp.loadModel(buf, defaultVert, defaultFrag))
+		if (tempModel.loadModel(conv, defaultVert, defaultFrag))
 		{
 			idCounter++;
-			temp.position.x = spawnPos[0];
-			temp.position.y = spawnPos[1];
-			temp.position.z = spawnPos[2];
-			temp.id = idCounter;
-			models.push_back(temp);
-			modelNames.push_back(temp.modelName);
+			tempModel.position.x = spawnPos[0];
+			tempModel.position.y = spawnPos[1];
+			tempModel.position.z = spawnPos[2];
+			tempModel.id = idCounter;
+			models.push_back(tempModel);
+			modelNames.push_back(tempModel.modelName);
 			modelError = false;
 		}
 		else
@@ -325,9 +370,8 @@ void Core::drawMenu()
 	ImGui::SameLine();
 	if (ImGui::Button("Load Scene"))
 	{
-		std::ifstream ifs;
-		ifs.open(scenePath);
-
+		std::ifstream ifs(scenePath);
+		
 		std::string line;
 		while (std::getline(ifs, line))
 		{
@@ -335,23 +379,29 @@ void Core::drawMenu()
 			std::vector<std::string> strings;
 
 			//the string to push to the vector representing a piece of the parsed data(model name, position ect.)
-			static std::string push;
-			push.clear();
+			std::string push;
 
 			//load a part of the strings
 			static bool flag = false;
 			for (std::string::iterator i = line.begin(); i != line.end(); i++)
 			{
-				//get resource path
+				//until we hit a space keep loading data
 				if (*i != ' ')
 				{
 					push += *i;
 				}
+				//if a space is hit then load the element
 				else
 				{
 					strings.push_back(push);
 					push.clear();
 					continue;
+				}
+				//if the iterator is at the end of string then push back the last element and leave.
+				if (i == line.end() - 1)
+				{
+					strings.push_back(push);
+					break;
 				}
 			}
 			//load a model with the loaded data
@@ -545,20 +595,7 @@ void Core::renderLoop()
         ImGui::Checkbox("Vsync", &vsync);
 
         ImGui::End();
-
-
 		
-		ImGui::Begin("tester");
-		static ImGuiID id = ImGui::GetID("DOCK");
-		ImGui::DockSpace(id, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode);
-		ImGui::End();
-
-		ImGui::SetNextWindowDockID(id, ImGuiCond_::ImGuiCond_Once);
-		
-		if (ImGui::Begin("Dockable Window"))
-		{
-		}
-		ImGui::End();
         ImGui::Render();
 
         //iterate through all of models and draw with the main camera

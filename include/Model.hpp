@@ -10,7 +10,7 @@ class Model
 public:
     void cleanup();
     void draw(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c);
-    bool loadModel(const std::string file, Shader &vShader, Shader &fShader);
+    bool loadModel(std::string file, Shader &vShader, Shader &fShader);
     void processNodes(aiNode* node, const aiScene* scene);
 	void deleteBuffers();
     std::vector<unsigned int> indicesH;

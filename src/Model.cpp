@@ -39,7 +39,7 @@ void Model::processNodes(aiNode* node, const aiScene* scene)
 }
 
 //loads a model from a file and uses the specified shader for rendering them
-bool Model::loadModel(const std::string file, Shader &vShader, Shader &fShader)
+bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
 {
     Assimp::Importer importer;
     const aiScene* scene = importer.ReadFile(file, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_SortByPType | aiProcess_GenNormals);

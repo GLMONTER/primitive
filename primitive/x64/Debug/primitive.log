@@ -1,8 +1,10 @@
 ﻿  Core.cpp
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(48,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(49,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(523,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(523,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(535,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(609,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(53,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(54,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(575,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(575,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(587,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(661,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe
