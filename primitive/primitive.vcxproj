@@ -159,6 +159,13 @@
     <ClInclude Include="..\include\Texture.hpp" />
     <ClInclude Include="..\include\Window.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Release\rec\basic.frag" />
+    <None Include="..\x64\Release\rec\basic.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

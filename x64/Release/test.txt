@@ -1,1 +1,1 @@
-C:\Users\MONTER\Documents\primitive\primitive\rec\hatka_local_.obj fence 0.000000 0.000000 0.000000
+C:\Users\MONTER\Documents\primitive\x64\Release\rec\hatka_local_.obj fence 0.000000 1.000000 0.000000 0.000000 20.000000 0.000000 1.000000 5.000000 1.000000

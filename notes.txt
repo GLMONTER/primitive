@@ -7,5 +7,4 @@
 
 -sound error handling
 
-change some docking window flags.
-fix viewport uv coords
+*fix model loading bug with cube

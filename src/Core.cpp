@@ -88,7 +88,6 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 
 void Core::Init()
 {
-	
     //init the sound system
     SoundSystem::init();
 
@@ -113,7 +112,7 @@ void Core::Init()
     //init the input system.
     input.init(window.window);
 
-    glClearColor(0.75f, 0.75f, 0.75f, 1.0f);
+    glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
     //setup imgui Context
     ImGui::CreateContext();
 
@@ -325,7 +324,6 @@ void Core::drawMenu()
 
         Model tempModel;
 		std::string conv = buffer;
-		std::cout << "conv" << buffer;
         //if model loading was successful then process the model further
 		if (tempModel.loadModel(conv, defaultVert, defaultFrag))
 		{
@@ -340,6 +338,7 @@ void Core::drawMenu()
 		}
 		else
 			modelError = true;
+
     }
 
 	if (modelError)
@@ -359,7 +358,13 @@ void Core::drawMenu()
 		for (Model m : models)
 		{
 			//write all model information to scene file
-			ofs << m.path << ' ' << m.modelName << ' ' << std::to_string(m.position.x) << ' ' << std::to_string(m.position.y) << ' ' << std::to_string(m.position.z);
+			ofs << m.path << ' ' << m.modelName 
+				//write position
+				<< ' ' << std::to_string(m.position.x) << ' ' << std::to_string(m.position.y) << ' ' << std::to_string(m.position.z)
+				//write rotation
+				<< ' ' << std::to_string(m.EulerAngle.x) << ' ' << std::to_string(m.EulerAngle.y) << ' ' << std::to_string(m.EulerAngle.z)
+				//write scale
+				<< ' ' << std::to_string(m.scale.x) << ' ' << std::to_string(m.scale.y) << ' ' << std::to_string(m.scale.z);
 			ofs << std::endl;
 		}
 		ofs.close();
@@ -411,6 +416,14 @@ void Core::drawMenu()
 				mod.position.x = std::stof(strings[2]);
 				mod.position.y = std::stof(strings[3]);
 				mod.position.z = std::stof(strings[4]);
+
+				mod.EulerAngle.z = std::stof(strings[5]);
+				mod.EulerAngle.z = std::stof(strings[6]);
+				mod.EulerAngle.z = std::stof(strings[7]);
+				
+				mod.scale.z = std::stof(strings[8]);
+				mod.scale.z = std::stof(strings[9]);
+				mod.scale.z = std::stof(strings[10]);
 				mod.id = idCounter;
 				mod.modelName = strings[1];
 				models.push_back(mod);
@@ -506,7 +519,7 @@ void Core::drawMenu()
                 loadClear(curModelName);
                 return;
             }
-            if(static_cast<unsigned long>(currentItem+1) == models.size()) 
+            if(static_cast<unsigned long>(currentItem)+1 == models.size())
 			{
 				(models.begin() + currentItem)->deleteBuffers();
 				(models.begin() + currentItem)->cleanup();
@@ -568,6 +581,7 @@ void Core::renderLoop()
 		
 		static bool hasSet = false;
 		static bool temp;
+		
 		ImGui::SetNextWindowSize(ImVec2(window.width, window.height));
 		if (!hasSet)
 		{
@@ -665,6 +679,9 @@ void Core::renderLoop()
 		m.deleteBuffers();
         m.cleanup();
     }
+	//terminate GLFW
+	glfwTerminate();
+
 	//destroy the FMOD sound system.
     soundSystem.destroySS();
 }

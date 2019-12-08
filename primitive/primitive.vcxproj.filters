@@ -93,4 +93,17 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\notes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Release\rec\basic.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\x64\Release\rec\basic.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -54,7 +54,7 @@ void Mesh::loadVec(aiMesh* mesh, const aiScene* scene)
 			vertex.Normal = vector;
 		}
 		else
-			std::cout << "no norms" << std::endl;
+			std::cout << "no normals" << std::endl;
 
 		//set the texture coords for the vertex
 		if (mesh->mTextureCoords[0])
@@ -180,9 +180,9 @@ void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
    // glActiveTexture(GL_TEXTURE0);
 
     glm::mat4 rotationMatrix(1.0f);
-    rotationMatrix = glm::rotate(rotationMatrix,glm::radians(euler.x),glm::vec3(1,0,0));
-    rotationMatrix = glm::rotate(rotationMatrix,glm::radians(euler.y),glm::vec3(0,1,0));
-    rotationMatrix = glm::rotate(rotationMatrix,glm::radians(euler.z),glm::vec3(0,0,1));
+    rotationMatrix = glm::rotate(rotationMatrix, glm::radians(euler.x), glm::vec3(1,0,0));
+    rotationMatrix = glm::rotate(rotationMatrix, glm::radians(euler.y), glm::vec3(0,1,0));
+    rotationMatrix = glm::rotate(rotationMatrix, glm::radians(euler.z), glm::vec3(0,0,1));
 
     glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), pos);
 
@@ -194,7 +194,7 @@ void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
     glm::mat4 mvp = c.projection * c.view * model;
     glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(mvp));
 
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, indices.data());
+    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, indices.data());
 
 	glBindVertexArray(0);
 }
