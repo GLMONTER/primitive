@@ -145,11 +145,6 @@ Mesh* Mesh::init(aiMesh* m, Shader &vShader, Shader &fShader, const aiScene* s)
 		glDeleteShader(fShader.shaderID);
 		*/
 	}
-	glDetachShader(shaderProgram, vShader.shaderID);
-	glDetachShader(shaderProgram, fShader.shaderID);
-
-	glDeleteShader(vShader.shaderID);
-	glDeleteShader(fShader.shaderID);
 	
     matrixID = static_cast<GLuint>(glGetUniformLocation(shaderProgram, "MVP"));
     return this;
