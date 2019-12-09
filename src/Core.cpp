@@ -4,6 +4,7 @@
 
 
 #include "Core.hpp"
+#include<algorithm>
 //for file dialog
 #include <shobjidl.h> 
 #include <locale>
@@ -512,6 +513,7 @@ void Core::drawMenu()
             if(models.size() == 1)
             {
 				models.begin()->deleteBuffers();
+				modelNames.clear();
 				models.begin()->cleanup();
                 models.erase(models.begin());
 
@@ -519,11 +521,17 @@ void Core::drawMenu()
                 loadClear(curModelName);
                 return;
             }
+			std::vector<std::string>::iterator iter;
             if(static_cast<unsigned long>(currentItem)+1 == models.size())
 			{
 				(models.begin() + currentItem)->deleteBuffers();
 				(models.begin() + currentItem)->cleanup();
+				iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + currentItem)->modelName);
+				modelNames.erase(iter);
+
                 models.erase(models.begin() + currentItem);
+
+				
 				
                 currentItem--;
 			}
@@ -531,11 +539,15 @@ void Core::drawMenu()
 			{
 				(models.begin() + currentItem)->deleteBuffers();
 				(models.begin() + currentItem)->cleanup();
+				iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + currentItem)->modelName);
+				modelNames.erase(iter);
 				models.erase(models.begin() + currentItem);
 			}
 
             /*this is here to reload the model changing box when a model is deleted*/
             loadClear(curModelName);
+
+
         }
     }
 }

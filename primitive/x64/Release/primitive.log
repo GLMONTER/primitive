@@ -1,15 +1,19 @@
 ﻿  Core.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(51,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(52,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(586,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(586,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(608,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(669,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(52,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(53,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(597,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(597,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(619,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(680,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Mesh.cpp
+C:\Users\MONTER\Documents\primitive\src\Mesh.cpp(212,81): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Model.cpp
+  main.cpp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  1 of 2396 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  5 of 2415 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     31 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

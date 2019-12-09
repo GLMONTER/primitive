@@ -47,6 +47,7 @@ public:
 	std::vector<Vertex> vertices;
 	std::vector<Texture> textures;
     std::string nameH = "Mesh";
+    unsigned int faceCount = 0;
 private:
     std::vector<float> verts;
     std::vector<aiMesh*> meshes;

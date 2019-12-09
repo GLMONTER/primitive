@@ -33,6 +33,7 @@ std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, s
 }
 void Mesh::loadVec(aiMesh* mesh, const aiScene* scene)
 {
+	faceCount = mesh->mNumFaces;
     //get all of the vertices from the mesh
     for(unsigned int i = 0; i < mesh->mNumVertices; i++)
     {
@@ -144,6 +145,12 @@ Mesh* Mesh::init(aiMesh* m, Shader &vShader, Shader &fShader, const aiScene* s)
 		glDeleteShader(fShader.shaderID);
 		*/
 	}
+	glDetachShader(shaderProgram, vShader.shaderID);
+	glDetachShader(shaderProgram, fShader.shaderID);
+
+	glDeleteShader(vShader.shaderID);
+	glDeleteShader(fShader.shaderID);
+	
     matrixID = static_cast<GLuint>(glGetUniformLocation(shaderProgram, "MVP"));
     return this;
 }
@@ -155,6 +162,8 @@ void Mesh::cleanup()
 	glDeleteBuffers(1, &VBO);
 
 	glDeleteVertexArrays(1, &VAO);
+
+
 
 	//delete all of the texture objects associated with the mesh
 	for (Texture t : textures)
@@ -193,8 +202,10 @@ void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
 	
     glm::mat4 mvp = c.projection * c.view * model;
     glUniformMatrix4fv(matrixID, 1, GL_FALSE, glm::value_ptr(mvp));
-
+	
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, indices.data());
 
+	//unbind all opengl objects to prevent clashing with other meshes rendering
+	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindVertexArray(0);
 }

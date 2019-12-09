@@ -21,6 +21,7 @@ void Model::deleteBuffers()
 	{
 		m->cleanup();
 	}
+    
 }
 
 //iterate through all of the nodes and get the mesh objects from them
