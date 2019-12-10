@@ -29,6 +29,7 @@ public:
     void renderLoop();
     void updateCamera(unsigned int wid, unsigned int hei);
     void drawMenu();
+    void loadScene(std::string scenePath);
 
     unsigned int idCounter = 0;
 private:

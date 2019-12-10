@@ -5,10 +5,10 @@
 #include "Input.hpp"
 #include<iostream>
 
-bool Input::isKeyPressed(int keyCode)
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    auto state = glfwGetKey(win, keyCode);
-    return state == GLFW_PRESS || state == GLFW_REPEAT;
+    if (key == GLFW_KEY_E && action == GLFW_PRESS)
+        std::cout << "yes";
 }
 
 void Input::init(GLFWwindow *window)

@@ -28,6 +28,9 @@ static int currentItem;
 static int mouseState;
 static bool isMouse = true;
 
+extern void update();
+extern void start();
+
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	static double lastX = static_cast<float>(width), lastY = static_cast<float>(height);
@@ -86,7 +89,7 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
     width = static_cast<unsigned int>(w);
     height = static_cast<unsigned int>(h);
 }
-
+extern void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 void Core::Init()
 {
     //init the sound system
@@ -109,6 +112,7 @@ void Core::Init()
     //set the window resize callback to change things like the camera matrix
     glfwSetWindowSizeCallback(window.window, Core::glfwFramebufferSizeCallback);
 	glfwSetCursorPosCallback(window.window, GLFW_MouseCallback);
+	glfwSetKeyCallback(window.window, key_callback);
 
     //init the input system.
     input.init(window.window);
@@ -179,6 +183,7 @@ void Core::Init()
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		throw std::runtime_error("Framebuffer creation failed");
 	
+	start();
 	//start the renderloop after init is done.
 	renderLoop();
 }
@@ -236,7 +241,10 @@ void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], f
         models[static_cast<size_t>(currentItem)].scale.z = selectedScl[2];
     }
 }
-
+void Core::loadScene(std::string scenePath)
+{
+	loadScene(scenePath);
+}
 //draws the main menu with all of the model objects like position and name ect, also allows changing of position and name
 //and other variables of the model
 void Core::drawMenu()
@@ -281,6 +289,7 @@ void Core::drawMenu()
 
     if(ImGui::Button("Load Model"))
     {
+#ifdef WIN32
 		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
 			COINIT_DISABLE_OLE1DDE);
 		if (SUCCEEDED(hr))
@@ -319,6 +328,7 @@ void Core::drawMenu()
 			}
 			CoUninitialize();
 		}
+#endif
 		//std::cout << fileName.lpstrFile;
         if(currentItem == -1)
             currentItem = 0;
@@ -684,6 +694,8 @@ void Core::renderLoop()
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         glfwSwapBuffers(window.window);
+
+		update();
     }
     //delete all of the heap allocated models and clear all of the opengl objects associated with them.
     for (Model m : models)

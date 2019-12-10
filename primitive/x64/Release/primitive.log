@@ -1,10 +1,22 @@
-﻿  Mesh.cpp
-C:\Users\MONTER\Documents\primitive\src\Mesh.cpp(201,81): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Generating code
-  3 of 2415 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    31 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\MONTER\Documents\primitive\x64\Release\vc120.pdb'; linking object as if no debug info
-  primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Release\primitive.exe
+﻿  Core.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(55,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(56,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(607,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(607,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(629,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(661,6): error C2039: 'isKeyPressed': is not a member of 'Input'
+C:\Users\MONTER\Documents\primitive\include\Input.hpp(9): message : see declaration of 'Input'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(665,6): error C2039: 'isKeyPressed': is not a member of 'Input'
+C:\Users\MONTER\Documents\primitive\include\Input.hpp(9): message : see declaration of 'Input'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(670,6): error C2039: 'isKeyPressed': is not a member of 'Input'
+C:\Users\MONTER\Documents\primitive\include\Input.hpp(9): message : see declaration of 'Input'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(674,6): error C2039: 'isKeyPressed': is not a member of 'Input'
+C:\Users\MONTER\Documents\primitive\include\Input.hpp(9): message : see declaration of 'Input'
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(690,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Input.cpp
+  main.cpp
+  Game.cpp
+C:\Users\MONTER\Documents\primitive\primitive\Game.cpp(10,15): error C2660: 'key_callback': function does not take 0 arguments
+C:\Users\MONTER\Documents\primitive\include\Input.hpp(8,6): message : see declaration of 'key_callback'

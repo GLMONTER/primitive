@@ -147,6 +147,7 @@
     <ClCompile Include="..\src\Sound.cpp" />
     <ClCompile Include="..\src\Texture.cpp" />
     <ClCompile Include="..\src\Window.cpp" />
+    <ClCompile Include="Game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Camera.hpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="..\include\Sound.hpp" />
     <ClInclude Include="..\include\Texture.hpp" />
     <ClInclude Include="..\include\Window.hpp" />
+    <ClInclude Include="Game.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\notes.txt" />

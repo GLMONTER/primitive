@@ -5,11 +5,10 @@
 
 #include<GLFW/glfw3.h>
 #include<glm/glm.hpp>
-
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 class Input
 {
 public:
-    bool isKeyPressed(int keyCode);
     void init(GLFWwindow* window);
     void getMousePos();
 private:
