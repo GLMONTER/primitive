@@ -32,6 +32,10 @@ public:
     void loadScene(std::string scenePath);
 
     unsigned int idCounter = 0;
+    std::vector<Shader> shaders;
+    Camera mainCamera;
+    std::vector<Model> models;
+    std::vector<std::string> modelNames;
 private:
     void loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], float (&selectedScl)[3], bool load);
     void loadClear(char (&cur)[1024]);
@@ -52,8 +56,5 @@ private:
     Shader defaultVert;
     Shader defaultFrag;
 
-    std::vector<Shader> shaders;
-    Camera mainCamera;
-    std::vector<Model> models;
-    std::vector<std::string> modelNames;
+   
 };

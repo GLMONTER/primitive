@@ -28,8 +28,10 @@ static int currentItem;
 static int mouseState;
 static bool isMouse = true;
 
-extern void update();
-extern void start();
+extern void update(std::vector<Model>& modelArray);
+extern void start(GLFWwindow* window);
+
+extern bool inputFlag;
 
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
@@ -89,15 +91,17 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
     width = static_cast<unsigned int>(w);
     height = static_cast<unsigned int>(h);
 }
-extern void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 void Core::Init()
 {
     //init the sound system
     SoundSystem::init();
 
     //create the window and set the camera width and height to have the correct camera matrix without resizing.
-    window.createWindow(false);
-	
+	if(editorEnable)
+		window.createWindow(false);
+	else
+		window.createWindow(true);
+
     //change camera parameters for matrix calculations
     mainCamera.widthH = window.width;
     mainCamera.heightH = window.height;
@@ -112,7 +116,6 @@ void Core::Init()
     //set the window resize callback to change things like the camera matrix
     glfwSetWindowSizeCallback(window.window, Core::glfwFramebufferSizeCallback);
 	glfwSetCursorPosCallback(window.window, GLFW_MouseCallback);
-	glfwSetKeyCallback(window.window, key_callback);
 
     //init the input system.
     input.init(window.window);
@@ -183,7 +186,7 @@ void Core::Init()
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		throw std::runtime_error("Framebuffer creation failed");
 	
-	start();
+	start(window.window);
 	//start the renderloop after init is done.
 	renderLoop();
 }
@@ -241,10 +244,74 @@ void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], f
         models[static_cast<size_t>(currentItem)].scale.z = selectedScl[2];
     }
 }
+static bool modelError = false;
 void Core::loadScene(std::string scenePath)
 {
-	loadScene(scenePath);
+
+	std::ifstream ifs(scenePath);
+
+	std::string line;
+	while (std::getline(ifs, line))
+	{
+		//vector of strings to represent all loaded data
+		std::vector<std::string> strings;
+
+		//the string to push to the vector representing a piece of the parsed data(model name, position ect.)
+		std::string push;
+
+		//load a part of the strings
+		static bool flag = false;
+		for (std::string::iterator i = line.begin(); i != line.end(); i++)
+		{
+			//until we hit a space keep loading data
+			if (*i != ' ')
+			{
+				push += *i;
+			}
+			//if a space is hit then load the element
+			else
+			{
+				strings.push_back(push);
+				push.clear();
+				continue;
+			}
+			//if the iterator is at the end of string then push back the last element and leave.
+			if (i == line.end() - 1)
+			{
+				strings.push_back(push);
+				break;
+			}
+		}
+		//load a model with the loaded data
+		Model mod;
+		//if model loading was successful then process the model further
+		if (mod.loadModel(strings[0], defaultVert, defaultFrag))
+		{
+			idCounter++;
+			mod.position.x = std::stof(strings[2]);
+			mod.position.y = std::stof(strings[3]);
+			mod.position.z = std::stof(strings[4]);
+
+			mod.EulerAngle.z = std::stof(strings[5]);
+			mod.EulerAngle.z = std::stof(strings[6]);
+			mod.EulerAngle.z = std::stof(strings[7]);
+
+			mod.scale.z = std::stof(strings[8]);
+			mod.scale.z = std::stof(strings[9]);
+			mod.scale.z = std::stof(strings[10]);
+			mod.id = idCounter;
+			mod.modelName = strings[1];
+			models.push_back(mod);
+			modelNames.push_back(mod.modelName);
+			modelError = false;
+		}
+		else
+			modelError = true;
+
+		strings.clear();
+	}
 }
+
 //draws the main menu with all of the model objects like position and name ect, also allows changing of position and name
 //and other variables of the model
 void Core::drawMenu()
@@ -252,7 +319,7 @@ void Core::drawMenu()
     //a boolean to check if the initial model scale has been set.
     static bool first = false;
 
-	static bool modelError = false;
+	
 
     static float selectedPos[3];
     static float selectedRot[3];
@@ -384,68 +451,7 @@ void Core::drawMenu()
 	ImGui::SameLine();
 	if (ImGui::Button("Load Scene"))
 	{
-		std::ifstream ifs(scenePath);
-		
-		std::string line;
-		while (std::getline(ifs, line))
-		{
-			//vector of strings to represent all loaded data
-			std::vector<std::string> strings;
-
-			//the string to push to the vector representing a piece of the parsed data(model name, position ect.)
-			std::string push;
-
-			//load a part of the strings
-			static bool flag = false;
-			for (std::string::iterator i = line.begin(); i != line.end(); i++)
-			{
-				//until we hit a space keep loading data
-				if (*i != ' ')
-				{
-					push += *i;
-				}
-				//if a space is hit then load the element
-				else
-				{
-					strings.push_back(push);
-					push.clear();
-					continue;
-				}
-				//if the iterator is at the end of string then push back the last element and leave.
-				if (i == line.end() - 1)
-				{
-					strings.push_back(push);
-					break;
-				}
-			}
-			//load a model with the loaded data
-			Model mod;
-			//if model loading was successful then process the model further
-			if (mod.loadModel(strings[0], defaultVert, defaultFrag))
-			{
-				idCounter++;
-				mod.position.x = std::stof(strings[2]);
-				mod.position.y = std::stof(strings[3]);
-				mod.position.z = std::stof(strings[4]);
-
-				mod.EulerAngle.z = std::stof(strings[5]);
-				mod.EulerAngle.z = std::stof(strings[6]);
-				mod.EulerAngle.z = std::stof(strings[7]);
-				
-				mod.scale.z = std::stof(strings[8]);
-				mod.scale.z = std::stof(strings[9]);
-				mod.scale.z = std::stof(strings[10]);
-				mod.id = idCounter;
-				mod.modelName = strings[1];
-				models.push_back(mod);
-				modelNames.push_back(mod.modelName);
-				modelError = false;
-			}
-			else
-				modelError = true;
-
-			strings.clear();
-		}
+		loadScene(scenePath);
 	}
 
 	ImGui::InputText("Scene Path", scenePath, IM_ARRAYSIZE(scenePath));
@@ -513,8 +519,10 @@ void Core::drawMenu()
         }
 
         //update model position and rotation from float input.
-        loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
-
+		
+		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
+		
+		
         //if the delete button is pressed, then delete the current model and exit the menu drawing function
         if(ImGui::Button("Delete Model"))
         {
@@ -541,8 +549,6 @@ void Core::drawMenu()
 
                 models.erase(models.begin() + currentItem);
 
-				
-				
                 currentItem--;
 			}
 			else
@@ -556,8 +562,6 @@ void Core::drawMenu()
 
             /*this is here to reload the model changing box when a model is deleted*/
             loadClear(curModelName);
-
-
         }
     }
 }
@@ -630,15 +634,19 @@ void Core::renderLoop()
 		}
 		ImGui::End();
 		
-        ImGui::Begin("Control Panel");
-        drawMenu();
+        
+		if (editorEnable)
+		{
+			ImGui::Begin("Control Panel");
+			drawMenu();
 
-        //setup checkboxes for the render flags
-        ImGui::Checkbox("Wireframe Mode", &wireFrame);
-        ImGui::Checkbox("Render?", &toRender);
-        ImGui::Checkbox("Vsync", &vsync);
+			//setup checkboxes for the render flags
+			ImGui::Checkbox("Wireframe Mode", &wireFrame);
+			ImGui::Checkbox("Render?", &toRender);
+			ImGui::Checkbox("Vsync", &vsync);
 
-        ImGui::End();
+			ImGui::End();
+		}
 		
         ImGui::Render();
 
@@ -695,7 +703,7 @@ void Core::renderLoop()
 
         glfwSwapBuffers(window.window);
 
-		update();
+		update(models);
     }
     //delete all of the heap allocated models and clear all of the opengl objects associated with them.
     for (Model m : models)

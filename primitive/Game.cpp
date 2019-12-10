@@ -1,12 +1,17 @@
 #include "Game.hpp"
 
-void start()
+Input input;
+extern Core core;
+void start(GLFWwindow* window)
 {
-	
+	input.init(window);
+	core.loadScene("test.txt");
 }
 
-void update()
+void update(std::vector<Model>& modelArray)
 {
-	key_callback();
-
+	if (input.isKeyPressed(GLFW_KEY_Y))
+	{
+		modelArray[0].position.y += 1 * deltaTime;
+	}
 }

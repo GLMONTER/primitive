@@ -5,13 +5,16 @@
 #include "Input.hpp"
 #include<iostream>
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+bool Input::isKeyPressed(int keyCode)
 {
-    if (key == GLFW_KEY_E && action == GLFW_PRESS)
-        std::cout << "yes";
+    auto state = glfwGetKey(win, keyCode);
+
+    if (state == GLFW_PRESS || state == GLFW_REPEAT)
+    
+    return state == GLFW_PRESS || state == GLFW_REPEAT;
 }
 
-void Input::init(GLFWwindow *window)
+void Input::init(GLFWwindow* window)
 {
     win = window;
 }
@@ -20,5 +23,5 @@ void Input::getMousePos()
 {
     double xPos, yPos;
     glfwGetCursorPos(win, &xPos, &yPos);
-    std::cout<<xPos<<std::endl;
+    std::cout << xPos << std::endl;
 }

@@ -1,8 +1,8 @@
 #include<Core.hpp>
-
+Core core;
 int main() 
 {
-    Core core;
+    
     core.Init();
 
     return EXIT_SUCCESS;
