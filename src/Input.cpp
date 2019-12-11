@@ -5,13 +5,16 @@
 #include "Input.hpp"
 #include<iostream>
 
+extern bool editorEnable = true;
+
 bool Input::isKeyPressed(int keyCode)
 {
-    auto state = glfwGetKey(win, keyCode);
+    int state = glfwGetKey(win, keyCode);
 
-    if (state == GLFW_PRESS || state == GLFW_REPEAT)
-    
-    return state == GLFW_PRESS || state == GLFW_REPEAT;
+    if (!(state == GLFW_PRESS || state == GLFW_REPEAT))
+        return false;
+    else
+        return true;
 }
 
 void Input::init(GLFWwindow* window)

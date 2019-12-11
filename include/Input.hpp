@@ -6,7 +6,7 @@
 #include<GLFW/glfw3.h>
 #include<glm/glm.hpp>
 extern float deltaTime;
-static bool editorEnable = false;
+
 
 class Input
 {

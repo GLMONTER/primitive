@@ -30,12 +30,14 @@ public:
     void updateCamera(unsigned int wid, unsigned int hei);
     void drawMenu();
     void loadScene(std::string scenePath);
-
+    Model* findObject(std::string name);
     unsigned int idCounter = 0;
     std::vector<Shader> shaders;
     Camera mainCamera;
     std::vector<Model> models;
     std::vector<std::string> modelNames;
+
+    Window window;
 private:
     void loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], float (&selectedScl)[3], bool load);
     void loadClear(char (&cur)[1024]);
@@ -51,10 +53,8 @@ private:
 
     Input input;
     SoundSystem soundSystem;
-    Window window;
+    
 
     Shader defaultVert;
     Shader defaultFrag;
-
-   
 };

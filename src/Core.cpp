@@ -33,6 +33,19 @@ extern void start(GLFWwindow* window);
 
 extern bool inputFlag;
 
+extern bool editorEnable;
+
+Model* Core::findObject(std::string name)
+{
+	if (modelNames.size() == 0)
+		return nullptr;
+	for (unsigned int i = 0; i != modelNames.size(); i++)
+	{
+		if (modelNames[i] == name)
+			return &models[i];
+	}
+}
+
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	static double lastX = static_cast<float>(width), lastY = static_cast<float>(height);
@@ -93,6 +106,11 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 }
 void Core::Init()
 {
+	std::ifstream f("config.txt");
+	if (f.get() == '0')
+		editorEnable = false;
+	else
+		editorEnable = true;
     //init the sound system
     SoundSystem::init();
 
@@ -100,7 +118,7 @@ void Core::Init()
 	if(editorEnable)
 		window.createWindow(false);
 	else
-		window.createWindow(true);
+		window.createWindow(false);
 
     //change camera parameters for matrix calculations
     mainCamera.widthH = window.width;
@@ -682,6 +700,12 @@ void Core::renderLoop()
 		if (input.isKeyPressed(GLFW_KEY_D))
 		{
 			mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
+		}
+
+		if (input.isKeyPressed(GLFW_KEY_ESCAPE))
+		{
+			editorEnable = 1 - editorEnable;
+			
 		}
 
 		//show and hide the cursor if we are holding the right mouse button or not.
