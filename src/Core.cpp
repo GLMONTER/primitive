@@ -35,6 +35,10 @@ extern bool inputFlag;
 
 extern bool editorEnable;
 
+//button toggle variables
+static bool buttonPressed = false;
+static bool buttonToggle = false;
+
 Model* Core::findObject(std::string name)
 {
 	if (modelNames.size() == 0)
@@ -74,12 +78,14 @@ void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 		pitch = 89.0f;
 	if(pitch < -89.0f)
 		pitch = -89.0f;
-	
-	if (mouseState == GLFW_PRESS)
+	if (editorEnable)
 	{
-		camFront.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
-		camFront.y = sin(glm::radians(pitch));
-		camFront.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
+		if (mouseState == GLFW_PRESS)
+		{
+			camFront.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
+			camFront.y = sin(glm::radians(pitch));
+			camFront.z = cos(glm::radians(pitch)) * sin(glm::radians(yaw));
+		}
 	}
 }
 
@@ -684,29 +690,48 @@ void Core::renderLoop()
 		glViewport(0, 0, window.width, window.height);
 
 		mainCamera.camFront = glm::normalize(camFront);	
-		if (input.isKeyPressed(GLFW_KEY_W))
+		if (editorEnable)
 		{
-			mainCamera.position += (camSpeed * deltaTime) * mainCamera.camFront;
+			if (input.isKeyPressed(GLFW_KEY_W))
+			{
+				mainCamera.position += (camSpeed * deltaTime) * mainCamera.camFront;
+			}
+			if (input.isKeyPressed(GLFW_KEY_S))
+			{
+				mainCamera.position -= (camSpeed * deltaTime) * mainCamera.camFront;
+			}
+			//DO SOME RESEARCH ON HOW THIS WORKS
+			if (input.isKeyPressed(GLFW_KEY_A))
+			{
+				mainCamera.position -= glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
+			}
+			if (input.isKeyPressed(GLFW_KEY_D))
+			{
+				mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
+			}
 		}
-		if (input.isKeyPressed(GLFW_KEY_S))
-		{
-			mainCamera.position -= (camSpeed * deltaTime) * mainCamera.camFront;
-		}
-		//DO SOME RESEARCH ON HOW THIS WORKS
-		if (input.isKeyPressed(GLFW_KEY_A))
-		{
-			mainCamera.position -= glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
-		}
-		if (input.isKeyPressed(GLFW_KEY_D))
-		{
-			mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
-		}
-
+		
+		//button toggle system to toggle the editor on and off
 		if (input.isKeyPressed(GLFW_KEY_ESCAPE))
 		{
-			editorEnable = 1 - editorEnable;
 			
+			if (!buttonPressed)
+			{
+				std::cout << buttonToggle;
+
+				buttonToggle = 1 - buttonToggle;
+				buttonPressed = 1;
+			}
 		}
+		else
+			buttonPressed = 0;
+
+		if (buttonToggle)
+		{
+			editorEnable = 0;
+		}
+		else
+			editorEnable = 1;
 
 		//show and hide the cursor if we are holding the right mouse button or not.
 		mouseState = glfwGetMouseButton(window.window, GLFW_MOUSE_BUTTON_RIGHT);
