@@ -1,18 +1,32 @@
-﻿  Camera.cpp
+﻿  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui.cpp
+  imgui_draw.cpp
+  imgui_widgets.cpp
+  Camera.cpp
   Core.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(74,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(75,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(635,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(635,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(657,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(747,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(78,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(79,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(653,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(653,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(675,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(765,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Input.cpp
   Mesh.cpp
 C:\Users\MONTER\Documents\primitive\src\Mesh.cpp(201,81): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
   Model.cpp
+  Shader.cpp
+  Sound.cpp
+  Texture.cpp
+  Window.cpp
   main.cpp
   Game.cpp
   Generating Code...
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(51): warning C4715: 'Core::findObject': not all control paths return a value
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(55): warning C4715: 'Core::findObject': not all control paths return a value
+  LINK : C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\MONTER\Documents\primitive\x64\Debug\vc120.pdb'; linking object as if no debug info
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe

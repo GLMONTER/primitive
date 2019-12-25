@@ -7,4 +7,6 @@
 
 -sound error handling
 
-*fix model loading bug with cube
+
+
+commit - fixed bug that caused model to be in the wrong position if it was the first model to load.

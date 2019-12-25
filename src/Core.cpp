@@ -14,6 +14,10 @@ glm::vec3 direction = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 camFront = glm::vec3(0.0f, 0.0f, -1.0f);
 static float pitch, yaw;
 
+static float selectedPos[3];
+static float selectedRot[3];
+static float selectedScl[3];
+
 //used to scale different speeds to higher or lower framerates
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
@@ -325,7 +329,25 @@ void Core::loadScene(std::string scenePath)
 			mod.scale.z = std::stof(strings[10]);
 			mod.id = idCounter;
 			mod.modelName = strings[1];
+			
 			models.push_back(mod);
+			if (models.size() == 1)
+			{
+				//position
+				selectedPos[0] = models[0].position.x;
+				selectedPos[1] = models[0].position.y;
+				selectedPos[2] = models[0].position.z;
+
+				//rotation
+				selectedRot[0] = models[0].EulerAngle.x;
+				selectedRot[1] = models[0].EulerAngle.y;
+				selectedRot[2] = models[0].EulerAngle.z;
+
+				//scale
+				selectedScl[0] = models[0].scale.x;
+				selectedScl[1] = models[0].scale.y;
+				selectedScl[2] = models[0].scale.z;
+			}
 			modelNames.push_back(mod.modelName);
 			modelError = false;
 		}
@@ -343,11 +365,6 @@ void Core::drawMenu()
     //a boolean to check if the initial model scale has been set.
     static bool first = false;
 
-	
-
-    static float selectedPos[3];
-    static float selectedRot[3];
-    static float selectedScl[3];
 
     if(!first)
     {
@@ -528,7 +545,7 @@ void Core::drawMenu()
         //update the input float positions to the current model positions
         loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
     }
-
+	
     //if the selected item hasen't changed then check for changes in position and check for
     //the button press to change the model name.
     else
@@ -545,6 +562,7 @@ void Core::drawMenu()
         //update model position and rotation from float input.
 		
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
+		
 		
 		
         //if the delete button is pressed, then delete the current model and exit the menu drawing function

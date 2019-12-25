@@ -13,7 +13,7 @@ void start(GLFWwindow* window)
 	core.loadScene("test.txt");
 
 	core.findObject("Cube")->position.x = 0;
-	core.findObject("Cube")->position.y = 0;
+	//core.findObject("Cube")->position.y = 0;
 	core.findObject("Cube")->position.z = 0;
 
 	startedFlag = true;
@@ -33,5 +33,5 @@ void update(std::vector<Model>& modelArray)
 	if (input.isKeyPressed(GLFW_KEY_Y))
 	{
 	}
-			core.findObject("Cube")->position.z -= deltaTime;
+	core.findObject("Cube")->position.z -= deltaTime;
 }

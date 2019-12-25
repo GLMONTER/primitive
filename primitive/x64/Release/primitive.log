@@ -1,12 +1,12 @@
 ﻿  Core.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(74,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(75,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(635,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(635,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(657,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(747,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(78,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(79,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(653,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(653,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(675,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(765,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
   0 of 2422 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
