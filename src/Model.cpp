@@ -8,20 +8,19 @@
 //delete all of the meshes allocated on the heap
 void Model::cleanup()
 {
-    for(Mesh* m : mm)
+    for(Mesh* mesh : abstractMeshes)
     {
-        delete(m);
+        delete(mesh);
     }
 }
 
 
 void Model::deleteBuffers()
 {
-	for (Mesh* m : mm)
+	for (Mesh* mesh : abstractMeshes)
 	{
-		m->cleanup();
+        mesh->cleanup();
 	}
-    
 }
 
 //iterate through all of the nodes and get the mesh objects from them
@@ -65,7 +64,7 @@ bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
         mesh = mesh->init(m, vShader, fShader, scene);
 
         mesh->nameH = m->mName.data;
-        mm.push_back(mesh);
+        abstractMeshes.push_back(mesh);
 
         //give the model the indices of the meshes so we can used glDrawElements
         indicesH = mesh->indices;
@@ -81,8 +80,8 @@ bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
 //iterate through every mesh in the model and call the render function on the meshes
 void Model::draw(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
 {
-    for(Mesh* mmm : mm)
+    for(Mesh* mesh : abstractMeshes)
     {
-        mmm->render(pos, euler, scale, c);
+        mesh->render(pos, euler, scale, c);
     }
 }

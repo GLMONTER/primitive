@@ -158,8 +158,6 @@ void Mesh::cleanup()
 
 	glDeleteVertexArrays(1, &VAO);
 
-
-
 	//delete all of the texture objects associated with the mesh
 	for (Texture t : textures)
 	{
@@ -181,7 +179,7 @@ void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
         glBindTexture(GL_TEXTURE_2D, textures[i].id);
     }
 
-   // glActiveTexture(GL_TEXTURE0);
+    //glActiveTexture(GL_TEXTURE0);
 
     glm::mat4 rotationMatrix(1.0f);
     rotationMatrix = glm::rotate(rotationMatrix, glm::radians(euler.x), glm::vec3(1,0,0));

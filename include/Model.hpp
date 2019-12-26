@@ -23,5 +23,5 @@ public:
     unsigned int id;
 private:
     std::vector<aiMesh*> meshes;
-    std::vector<Mesh*> mm;
+    std::vector<Mesh*> abstractMeshes;
 };

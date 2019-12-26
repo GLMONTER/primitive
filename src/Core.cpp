@@ -130,6 +130,7 @@ void Core::Init()
 	else
 		window.createWindow(false);
 
+
     //change camera parameters for matrix calculations
     mainCamera.widthH = window.width;
     mainCamera.heightH = window.height;
@@ -315,20 +316,24 @@ void Core::loadScene(std::string scenePath)
 		//if model loading was successful then process the model further
 		if (mod.loadModel(strings[0], defaultVert, defaultFrag))
 		{
+			
 			idCounter++;
 			mod.position.x = std::stof(strings[2]);
 			mod.position.y = std::stof(strings[3]);
 			mod.position.z = std::stof(strings[4]);
 
-			mod.EulerAngle.z = std::stof(strings[5]);
-			mod.EulerAngle.z = std::stof(strings[6]);
+			mod.EulerAngle.x = std::stof(strings[5]);
+			mod.EulerAngle.y = std::stof(strings[6]);
 			mod.EulerAngle.z = std::stof(strings[7]);
-
-			mod.scale.z = std::stof(strings[8]);
-			mod.scale.z = std::stof(strings[9]);
+			mod.modelName = strings[1];
+			if (strings[1] == "Cube2")
+			{
+				std::cout << "Cube";
+			}
+			mod.scale.x = std::stof(strings[8]);
+			mod.scale.y = std::stof(strings[9]);
 			mod.scale.z = std::stof(strings[10]);
 			mod.id = idCounter;
-			mod.modelName = strings[1];
 			
 			models.push_back(mod);
 			if (models.size() == 1)
@@ -550,6 +555,7 @@ void Core::drawMenu()
     //the button press to change the model name.
     else
     {
+		static unsigned int sizeofModels;
         //the input text box for model name changing.
         ImGui::InputText("Current Model Name", curModelName, IM_ARRAYSIZE(curModelName));
 
@@ -559,12 +565,29 @@ void Core::drawMenu()
             models[static_cast<size_t>(currentItem)].modelName = curModelName;
         }
 
-        //update model position and rotation from float input.
-		
+        //if the user has deleted a model then we need to update the imgui inputs to match
+		//the new model data so we don't overwrite it with the previous model data
+		if (sizeofModels != models.size())
+		{
+			//position
+			selectedPos[0] = models[static_cast<size_t>(currentItem)].position.x;
+			selectedPos[1] = models[static_cast<size_t>(currentItem)].position.y;
+			selectedPos[2] = models[static_cast<size_t>(currentItem)].position.z;
+
+			//rotation
+			selectedRot[0] = models[static_cast<size_t>(currentItem)].EulerAngle.x;
+			selectedRot[1] = models[static_cast<size_t>(currentItem)].EulerAngle.y;
+			selectedRot[2] = models[static_cast<size_t>(currentItem)].EulerAngle.z;
+
+			//scale
+			selectedScl[0] = models[static_cast<size_t>(currentItem)].scale.x;
+			selectedScl[1] = models[static_cast<size_t>(currentItem)].scale.y;
+			selectedScl[2] = models[static_cast<size_t>(currentItem)].scale.z;
+		}
+		//update model position and rotation from float input.
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
 		
-		
-		
+		sizeofModels = models.size();
         //if the delete button is pressed, then delete the current model and exit the menu drawing function
         if(ImGui::Button("Delete Model"))
         {
@@ -635,10 +658,13 @@ void Core::renderLoop()
 
         glfwPollEvents();
 
-        //Start the Dear ImGui frame
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+		if (editorEnable)
+		{
+			//Start the Dear ImGui frame
+			ImGui_ImplOpenGL3_NewFrame();
+			ImGui_ImplGlfw_NewFrame();
+			ImGui::NewFrame();
+		}
 
         //clear both framebuffers
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
@@ -650,35 +676,34 @@ void Core::renderLoop()
 		static bool hasSet = false;
 		static bool temp;
 		
-		ImGui::SetNextWindowSize(ImVec2(window.width, window.height));
-		if (!hasSet)
-		{
-			ImGui::SetNextWindowPos(ImVec2(0, 0));
-			hasSet = true;
-		}
-		//Master dock window
-		ImGui::Begin("Master");
-		{
-			//draw the image on the screen
-			static ImGuiID dockspaceID = 0;
-			// Declare Central dockspace
-			dockspaceID = ImGui::GetID("HUB_DockSpace");
-			ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode/*|ImGuiDockNodeFlags_NoResize*/);
-
-			ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-		}
-		ImGui::End();
-		//draw the viewport as an imgui image
-		ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus*/ |
-		ImGuiWindowFlags_::ImGuiWindowFlags_NoResize /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoMove*/);
-		{
-			ImGui::Image((void*)FBTexture, ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
-		}
-		ImGui::End();
-		
-        
 		if (editorEnable)
 		{
+			ImGui::SetNextWindowSize(ImVec2(window.width, window.height));
+			if (!hasSet)
+			{
+				ImGui::SetNextWindowPos(ImVec2(0, 0));
+				hasSet = true;
+			}
+			//Master dock window
+			ImGui::Begin("Master");
+			{
+				//draw the image on the screen
+				static ImGuiID dockspaceID = 0;
+				// Declare Central dockspace
+				dockspaceID = ImGui::GetID("HUB_DockSpace");
+				ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode/*|ImGuiDockNodeFlags_NoResize*/);
+
+				ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
+			}
+			ImGui::End();
+			//draw the viewport as an imgui image
+			ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus*/ |
+				ImGuiWindowFlags_::ImGuiWindowFlags_NoResize /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoMove*/);
+			{
+				ImGui::Image((void*)FBTexture, ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
+			}
+			ImGui::End();
+
 			ImGui::Begin("Control Panel");
 			drawMenu();
 
@@ -688,23 +713,40 @@ void Core::renderLoop()
 			ImGui::Checkbox("Vsync", &vsync);
 
 			ImGui::End();
+			
+
+			ImGui::Render();
 		}
-		
-        ImGui::Render();
 
         //iterate through all of models and draw with the main camera
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
-        if(toRender)
-        {
-            if (models.size() > 0)
-            {
-                for (Model m : models)
-                {
-                    m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
-                }
-            }
-        }
+		if (editorEnable)
+		{
+			if (toRender)
+			{
+				if (models.size() > 0)
+				{
+					for (Model m : models)
+					{
+						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+					}
+				}
+			}
+		}
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		if(!editorEnable)
+		{
+			if (toRender)
+			{
+				if (models.size() > 0)
+				{
+					for (Model m : models)
+					{
+						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+					}
+				}
+			}
+		}
 		glViewport(0, 0, window.width, window.height);
 
 		mainCamera.camFront = glm::normalize(camFront);	
@@ -766,7 +808,10 @@ void Core::renderLoop()
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
 
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		if (editorEnable)
+		{
+			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		}
 
         glfwSwapBuffers(window.window);
 
