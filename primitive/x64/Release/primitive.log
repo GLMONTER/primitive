@@ -7,16 +7,17 @@ C:\Users\MONTER\Documents\primitive\src\Core.cpp(590,31): warning C4267: '=': co
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(681,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(681,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(703,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(810,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Model.cpp
-  Texture.cpp
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(807,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   main.cpp
+  Model.cpp
+  Collider.cpp
   Game.cpp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  5 of 2424 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    30 functions had inline decision re-evaluated but remain unchanged
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(55): warning C4715: 'Core::findObject': not all control paths return a value
+  71 of 2427 functions ( 2.9%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    51 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\MONTER\Documents\primitive\x64\Release\vc120.pdb'; linking object as if no debug info
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Release\primitive.exe

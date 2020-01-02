@@ -147,10 +147,12 @@
     <ClCompile Include="..\src\Sound.cpp" />
     <ClCompile Include="..\src\Texture.cpp" />
     <ClCompile Include="..\src\Window.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Camera.hpp" />
+    <ClInclude Include="..\include\Collider.hpp" />
     <ClInclude Include="..\include\Core.hpp" />
     <ClInclude Include="..\include\Input.hpp" />
     <ClInclude Include="..\include\Mesh.hpp" />
