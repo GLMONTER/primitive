@@ -79,7 +79,6 @@ bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
 //iterate through every mesh in the model and call the render function on the meshes
 void Model::draw(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
 {
-    std::cout << abstractMeshes[0]->vertices[0].Position.x<<std::endl;
     for(Mesh* mesh : abstractMeshes)
     {
         mesh->render(pos, euler, scale, c);

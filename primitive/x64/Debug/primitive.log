@@ -3,9 +3,19 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(1
 C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(78,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(79,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(657,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(657,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(679,33): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(769,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(590,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(681,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(681,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(703,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(807,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Input.cpp
+  Mesh.cpp
+C:\Users\MONTER\Documents\primitive\src\Mesh.cpp(199,81): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Model.cpp
+  Collider.cpp
+  Generating Code...
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(55): warning C4715: 'Core::findObject': not all control paths return a value
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\MONTER\Documents\primitive\x64\Debug\vc120.pdb'; linking object as if no debug info
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe
