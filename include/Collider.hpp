@@ -8,5 +8,7 @@ class Collider
 	glm::vec3 colPosition = glm::vec3(0, 0, 0);
 	glm::vec3 scale = glm::vec3(1, 1, 1);
 	glm::vec3 EulerAngle = glm::vec3(0, 0, 0);
+public:
+	bool isNull = true;
 };
 

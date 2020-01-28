@@ -6,7 +6,7 @@
 #include "Core.hpp"
 #include<algorithm>
 //for file dialog
-#include <shobjidl.h> 
+#include <shobjidl.h>
 #include <locale>
 
 //camera variables
@@ -628,6 +628,16 @@ void Core::drawMenu()
             /*this is here to reload the model changing box when a model is deleted*/
             loadClear(curModelName);
         }
+
+		if (models[currentItem].col.isNull == true)
+		{
+			if (ImGui::Button("Add Box Collider"))
+			{
+				models[currentItem].col.isNull = false;
+			}
+			ImGui::SameLine();
+			ImGui::Button("Add Sphere Collider");
+		}
     }
 }
 
@@ -685,20 +695,19 @@ void Core::renderLoop()
 				hasSet = true;
 			}
 			//Master dock window
-			ImGui::Begin("Master");
+			ImGui::Begin("Master", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoMove | ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse);
 			{
 				//draw the image on the screen
 				static ImGuiID dockspaceID = 0;
 				// Declare Central dockspace
 				dockspaceID = ImGui::GetID("HUB_DockSpace");
-				ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode/*|ImGuiDockNodeFlags_NoResize*/);
+				ImGui::DockSpace(dockspaceID, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode);
 
 				ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
 			}
 			ImGui::End();
 			//draw the viewport as an imgui image
-			ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus*/ |
-				ImGuiWindowFlags_::ImGuiWindowFlags_NoResize /*| ImGuiWindowFlags_::ImGuiWindowFlags_NoMove*/);
+			ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize);
 			{
 				ImGui::Image((void*)FBTexture, ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
 			}
