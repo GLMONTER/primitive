@@ -95,24 +95,24 @@ void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 
 void Core::updateCamera(unsigned int wid, unsigned int hei)
 {
-    //update camera values
-    mainCamera.widthH = wid;
-    mainCamera.heightH = hei;
+	//update camera values
+	mainCamera.widthH = wid;
+	mainCamera.heightH = hei;
 		
-    //check if they are not zero so glm doesn't assert
-    if(mainCamera.widthH == 0 || mainCamera.heightH == 0)
-        return;
-    //recalculate the projection matrix.
-    mainCamera.calc();
+	//check if they are not zero so glm doesn't assert
+	if(mainCamera.widthH == 0 || mainCamera.heightH == 0)
+		return;
+	//recalculate the projection matrix.
+	mainCamera.calc();
 }
 
 //a callback for windows resizing, also updates the OpenGL viewport
 void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 {
-    glViewport(0, 0, w, h);
+	glViewport(0, 0, w, h);
 	
-    width = static_cast<unsigned int>(w);
-    height = static_cast<unsigned int>(h);
+	width = static_cast<unsigned int>(w);
+	height = static_cast<unsigned int>(h);
 }
 void Core::Init()
 {
@@ -121,67 +121,67 @@ void Core::Init()
 		editorEnable = false;
 	else
 		editorEnable = true;
-    //init the sound system
-    SoundSystem::init();
+	//init the sound system
+	SoundSystem::init();
 
-    //create the window and set the camera width and height to have the correct camera matrix without resizing.
+	//create the window and set the camera width and height to have the correct camera matrix without resizing.
 	if(editorEnable)
 		window.createWindow(false);
 	else
 		window.createWindow(false);
 
 
-    //change camera parameters for matrix calculations
-    mainCamera.widthH = window.width;
-    mainCamera.heightH = window.height;
+	//change camera parameters for matrix calculations
+	mainCamera.widthH = window.width;
+	mainCamera.heightH = window.height;
 	
-    //recalculate the camera matrix
-    mainCamera.calc();
+	//recalculate the camera matrix
+	mainCamera.calc();
 	
-    //init GLEW
-    if(glewInit() != GLEW_OK)
-        throw std::runtime_error("GLEW FAILED TO INIT.");
+	//init GLEW
+	if(glewInit() != GLEW_OK)
+		throw std::runtime_error("GLEW FAILED TO INIT.");
 
-    //set the window resize callback to change things like the camera matrix
-    glfwSetWindowSizeCallback(window.window, Core::glfwFramebufferSizeCallback);
+	//set the window resize callback to change things like the camera matrix
+	glfwSetWindowSizeCallback(window.window, Core::glfwFramebufferSizeCallback);
 	glfwSetCursorPosCallback(window.window, GLFW_MouseCallback);
 
-    //init the input system.
-    input.init(window.window);
+	//init the input system.
+	input.init(window.window);
 
-    glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
-    //setup imgui Context
-    ImGui::CreateContext();
+	glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
+	//setup imgui Context
+	ImGui::CreateContext();
 
-    //setup imgui io and enable docking, not needed right now.
-    
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
-    //enable window docking
-    io.ConfigFlags |= ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable;
-     
+	//setup imgui io and enable docking, not needed right now.
+	
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//enable window docking
+	io.ConfigFlags |= ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable;
+	 
 
-    //Setup imgui theme or style
+	//Setup imgui theme or style
 	ImGui::StyleColorsDark();
 
-    // Setup Platform/Renderer bindings
-    ImGui_ImplGlfw_InitForOpenGL(window.window, true);
-    ImGui_ImplOpenGL3_Init("#version 330 core");
+	// Setup Platform/Renderer bindings
+	ImGui_ImplGlfw_InitForOpenGL(window.window, true);
+	ImGui_ImplOpenGL3_Init("#version 330 core");
 
-    //enable vsync by default
-    glfwSwapInterval(0);
+	//enable vsync by default
+	glfwSwapInterval(0);
 
-    //make the default shaders for basic rendering.
+	//make the default shaders for basic rendering.
 	defaultVert.createShader(Shader::VertexShader, "rec/basic.vert");
 	defaultFrag.createShader(Shader::FragmentShader, "rec/basic.frag");
 
-    //enable face culling for better performance
-    glEnable(GL_CULL_FACE);
+	//enable face culling for better performance
+	glEnable(GL_CULL_FACE);
 
-    //do some research on this...
-    glEnable(GL_DEPTH_TEST);
+	//do some research on this...
+	glEnable(GL_DEPTH_TEST);
 		
 	//enable msaa
-    glEnable(GL_MULTISAMPLE);
+	glEnable(GL_MULTISAMPLE);
 	
 	//generate Framebuffer and bind it
 	glGenFramebuffers(1, &FBO);
@@ -222,56 +222,56 @@ void Core::Init()
 
 void Core::loadClear(char (&cur)[1024])
 {
-    //clear
-    memset(cur, 0, sizeof(cur));
+	//clear
+	memset(cur, 0, sizeof(cur));
 
-    //if we have no models, don't worry about reloading the buffer.
-    if(models.size() == 0)
-        return;
+	//if we have no models, don't worry about reloading the buffer.
+	if(models.size() == 0)
+		return;
 
-    //actually load the selected model name into the buffer.
-    for(unsigned int i = 0;i != models[static_cast<size_t>(currentItem)].modelName.length(); i++)
-    {
-        cur[i] = models[static_cast<size_t>(currentItem)].modelName[i];
-    }
+	//actually load the selected model name into the buffer.
+	for(unsigned int i = 0;i != models[static_cast<size_t>(currentItem)].modelName.length(); i++)
+	{
+		cur[i] = models[static_cast<size_t>(currentItem)].modelName[i];
+	}
 }
 
 void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], float (&selectedScl)[3], bool load)
 {
-    if(!load)
-    {
-        //position
-        selectedPos[0] = models[static_cast<size_t>(currentItem)].position.x;
-        selectedPos[1] = models[static_cast<size_t>(currentItem)].position.y;
-        selectedPos[2] = models[static_cast<size_t>(currentItem)].position.z;
-
-        //rotation
-        selectedRot[0] = models[static_cast<size_t>(currentItem)].EulerAngle.x;
-        selectedRot[1] = models[static_cast<size_t>(currentItem)].EulerAngle.y;
-        selectedRot[2] = models[static_cast<size_t>(currentItem)].EulerAngle.z;
-
-        //scale
-        selectedScl[0] = models[static_cast<size_t>(currentItem)].scale.x;
-        selectedScl[1] = models[static_cast<size_t>(currentItem)].scale.y;
-        selectedScl[2] = models[static_cast<size_t>(currentItem)].scale.z;
-    }
-    else 
+	if(!load)
 	{
-        //position
-        models[static_cast<size_t>(currentItem)].position.x = selectedPos[0];
-        models[static_cast<size_t>(currentItem)].position.y = selectedPos[1];
-        models[static_cast<size_t>(currentItem)].position.z = selectedPos[2];
+		//position
+		selectedPos[0] = models[static_cast<size_t>(currentItem)].position.x;
+		selectedPos[1] = models[static_cast<size_t>(currentItem)].position.y;
+		selectedPos[2] = models[static_cast<size_t>(currentItem)].position.z;
 
-        //rotation
-        models[static_cast<size_t>(currentItem)].EulerAngle.x = selectedRot[0];
-        models[static_cast<size_t>(currentItem)].EulerAngle.y = selectedRot[1];
-        models[static_cast<size_t>(currentItem)].EulerAngle.z = selectedRot[2];
+		//rotation
+		selectedRot[0] = models[static_cast<size_t>(currentItem)].EulerAngle.x;
+		selectedRot[1] = models[static_cast<size_t>(currentItem)].EulerAngle.y;
+		selectedRot[2] = models[static_cast<size_t>(currentItem)].EulerAngle.z;
 
-        //scale
-        models[static_cast<size_t>(currentItem)].scale.x = selectedScl[0];
-        models[static_cast<size_t>(currentItem)].scale.y = selectedScl[1];
-        models[static_cast<size_t>(currentItem)].scale.z = selectedScl[2];
-    }
+		//scale
+		selectedScl[0] = models[static_cast<size_t>(currentItem)].scale.x;
+		selectedScl[1] = models[static_cast<size_t>(currentItem)].scale.y;
+		selectedScl[2] = models[static_cast<size_t>(currentItem)].scale.z;
+	}
+	else 
+	{
+		//position
+		models[static_cast<size_t>(currentItem)].position.x = selectedPos[0];
+		models[static_cast<size_t>(currentItem)].position.y = selectedPos[1];
+		models[static_cast<size_t>(currentItem)].position.z = selectedPos[2];
+
+		//rotation
+		models[static_cast<size_t>(currentItem)].EulerAngle.x = selectedRot[0];
+		models[static_cast<size_t>(currentItem)].EulerAngle.y = selectedRot[1];
+		models[static_cast<size_t>(currentItem)].EulerAngle.z = selectedRot[2];
+
+		//scale
+		models[static_cast<size_t>(currentItem)].scale.x = selectedScl[0];
+		models[static_cast<size_t>(currentItem)].scale.y = selectedScl[1];
+		models[static_cast<size_t>(currentItem)].scale.z = selectedScl[2];
+	}
 }
 static bool modelError = false;
 void Core::loadScene(std::string scenePath)
@@ -367,41 +367,40 @@ void Core::loadScene(std::string scenePath)
 //and other variables of the model
 void Core::drawMenu()
 {
-    //a boolean to check if the initial model scale has been set.
-    static bool first = false;
+	//a boolean to check if the initial model scale has been set.
+	static bool first = false;
 
-
-    if(!first)
-    {
-        selectedScl[0] = 1.0f;
-        selectedScl[1] = 1.0f;
-        selectedScl[2] = 1.0f;
-        first = true;
-    }
+	if(!first)
+	{
+		selectedScl[0] = 1.0f;
+		selectedScl[1] = 1.0f;
+		selectedScl[2] = 1.0f;
+		first = true;
+	}
 	
-    std::string vendor = "Driver vendor : ";
-    std::string glString = ((char*)glGetString(GL_VENDOR));
+	std::string vendor = "Driver vendor : ";
+	std::string glString = ((char*)glGetString(GL_VENDOR));
 	vendor.append(glString);
-    ImGui::Text(vendor.c_str());
+	ImGui::Text(vendor.c_str());
 
-    static char curModelName[1024];
-    ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
+	static char curModelName[1024];
+	ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
 	
 	mainCamera.widthH = window.width;
 	mainCamera.heightH = window.height;
-    ImGui::SliderFloat("FOV", &mainCamera.fov, 30, 110);
+	ImGui::SliderFloat("FOV", &mainCamera.fov, 30, 110);
 	
-    mainCamera.calc();
+	mainCamera.calc();
 
-    //model position input
-    static float spawnPos[3];
-    ImGui::InputFloat3("Spawn Position", spawnPos);
+	//model position input
+	static float spawnPos[3];
+	ImGui::InputFloat3("Spawn Position", spawnPos);
 
 	//buffer to hold the model path
 	static char buffer[1024];
 
-    if(ImGui::Button("Load Model"))
-    {
+	if(ImGui::Button("Load Model"))
+	{
 #ifdef WIN32
 		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
 			COINIT_DISABLE_OLE1DDE);
@@ -443,12 +442,12 @@ void Core::drawMenu()
 		}
 #endif
 		//std::cout << fileName.lpstrFile;
-        if(currentItem == -1)
-            currentItem = 0;
+		if(currentItem == -1)
+			currentItem = 0;
 
-        Model tempModel;
+		Model tempModel;
 		std::string conv = buffer;
-        //if model loading was successful then process the model further
+		//if model loading was successful then process the model further
 		if (tempModel.loadModel(conv, defaultVert, defaultFrag))
 		{
 			idCounter++;
@@ -462,8 +461,7 @@ void Core::drawMenu()
 		}
 		else
 			modelError = true;
-
-    }
+	}
 
 	if (modelError)
 	{ 
@@ -502,70 +500,86 @@ void Core::drawMenu()
 
 	ImGui::InputText("Scene Path", scenePath, IM_ARRAYSIZE(scenePath));
 
-    //if no models are loaded, don't worry about anything related to modifying models or else... segfault.
-    if(models.size() == 0)
-        return;
+	//if no models are loaded, don't worry about anything related to modifying models or else... segfault.
+	if (models.size() == 0)
+	{
+		//the setting is to prevent new models from taking the scales, positions, and rotations of older deleted models.
+		selectedScl[0] = 1;
+		selectedScl[1] = 1;
+		selectedScl[2] = 1;
+		
+		//position
+		selectedPos[0] = 0;
+		selectedPos[1] = 0;
+		selectedPos[2] = 0;
 
-    ImGui::InputFloat3("Position", selectedPos);
-    ImGui::InputFloat3("Rotation", selectedRot);
-    ImGui::InputFloat3("Scale", selectedScl);
+		//rotation
+		selectedRot[0] = 0;
+		selectedRot[1] = 0;
+		selectedRot[2] = 0;
 
-    //basically iterates through every model to make sure none of them have the same name,
-    //if they do have the same name then append the id of model to the model name.
-    for(std::vector<Model>::iterator i = models.begin(); i != models.end(); i++)
-    {
-        for(std::vector<Model>::iterator mod = models.begin(); mod != models.end(); mod++)
-        {
-            //if both loops are on the same model, then ignore it.
-            if(std::distance(models.begin(), i) == std::distance(models.begin(), mod))
-                continue;
-            //if it happens to find 2 models with the same name then append the id of the model to prevent naming conflicts.
-            if(i->modelName == mod->modelName)
-            {
-                //actually append the id to the model string
-                mod->modelName.append(std::to_string(mod->id));
-            }
-        }
-    }
+		return;
+	}
 
+	ImGui::InputFloat3("Position", selectedPos);
+	ImGui::InputFloat3("Rotation", selectedRot);
+	ImGui::InputFloat3("Scale", selectedScl);
 
-    //clear and reload the modelNames array to reflect name changes made in the models array
-    modelNames.clear();
-    for(Model m : models)
-    {
-        modelNames.push_back(m.modelName);
-    }
+	//basically iterates through every model to make sure none of them have the same name,
+	//if they do have the same name then append the id of model to the model name.
+	for(std::vector<Model>::iterator i = models.begin(); i != models.end(); i++)
+	{
+		for(std::vector<Model>::iterator mod = models.begin(); mod != models.end(); mod++)
+		{
+			//if both loops are on the same model, then ignore it.
+			if(std::distance(models.begin(), i) == std::distance(models.begin(), mod))
+				continue;
+			//if it happens to find 2 models with the same name then append the id of the model to prevent naming conflicts.
+			if(i->modelName == mod->modelName)
+			{
+				//actually append the id to the model string
+				mod->modelName.append(std::to_string(mod->id));
+			}
+		}
+	}
 
-    //convert all of the model names (std::string) to const char* array so imgui may use it
+	//clear and reload the modelNames array to reflect name changes made in the models array
+	modelNames.clear();
+	for(Model m : models)
+	{
+		modelNames.push_back(m.modelName);
+	}
+
+	//convert all of the model names (std::string) to const char* array so imgui may use it
 	std::vector<const char*> array(modelNames.size());
 
-    for (unsigned int i = 0; i != modelNames.size(); i++) {
-        array[i] = modelNames[i].c_str();
-    }
+	for (unsigned int i = 0; i != modelNames.size(); i++) {
+		array[i] = modelNames[i].c_str();
+	}
 
-    //if the selected item in the listbox has changed, clear the change name array and reload it with the selected model name
-    if(ImGui::ListBox("Models", &currentItem, array.data(), static_cast<int>(array.size())))
-    {
-        loadClear(curModelName);
-        //update the input float positions to the current model positions
-        loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
-    }
+	//if the selected item in the listbox has changed, clear the change name array and reload it with the selected model name
+	if(ImGui::ListBox("Models", &currentItem, array.data(), static_cast<int>(array.size())))
+	{
+		loadClear(curModelName);
+		//update the input float positions to the current model positions
+		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
+	}
 	
-    //if the selected item hasen't changed then check for changes in position and check for
-    //the button press to change the model name.
-    else
-    {
+	//if the selected item hasen't changed then check for changes in position and check for
+	//the button press to change the model name.
+	else
+	{
 		static unsigned int sizeofModels;
-        //the input text box for model name changing.
-        ImGui::InputText("Current Model Name", curModelName, IM_ARRAYSIZE(curModelName));
+		//the input text box for model name changing.
+		ImGui::InputText("Current Model Name", curModelName, IM_ARRAYSIZE(curModelName));
 
-        //if the change name button is pressed, change the model name to the input text box data.
-        if(ImGui::Button("Change Name"))
-        {
-            models[static_cast<size_t>(currentItem)].modelName = curModelName;
-        }
+		//if the change name button is pressed, change the model name to the input text box data.
+		if(ImGui::Button("Change Name"))
+		{
+			models[static_cast<size_t>(currentItem)].modelName = curModelName;
+		}
 
-        //if the user has deleted a model then we need to update the imgui inputs to match
+		//if the user has deleted a model then we need to update the imgui inputs to match
 		//the new model data so we don't overwrite it with the previous model data
 		if (sizeofModels != models.size())
 		{
@@ -588,33 +602,33 @@ void Core::drawMenu()
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
 		
 		sizeofModels = models.size();
-        //if the delete button is pressed, then delete the current model and exit the menu drawing function
-        if(ImGui::Button("Delete Model"))
-        {
-            //if the user trys to delete the last model in the array, pull back the current item index so the program
-            //doesn't try and reference an object that doesn't exist
-            if(models.size() == 1)
-            {
+		//if the delete button is pressed, then delete the current model and exit the menu drawing function
+		if(ImGui::Button("Delete Model"))
+		{
+			//if the user trys to delete the last model in the array, pull back the current item index so the program
+			//doesn't try and reference an object that doesn't exist
+			if(models.size() == 1)
+			{
 				models.begin()->deleteBuffers();
 				modelNames.clear();
 				models.begin()->cleanup();
-                models.erase(models.begin());
+				models.erase(models.begin());
 
-                currentItem = 0;
-                loadClear(curModelName);
-                return;
-            }
+				currentItem = 0;
+				loadClear(curModelName);
+				return;
+			}
 			std::vector<std::string>::iterator iter;
-            if(static_cast<unsigned long>(currentItem)+1 == models.size())
+			if(static_cast<unsigned long>(currentItem)+1 == models.size())
 			{
 				(models.begin() + currentItem)->deleteBuffers();
 				(models.begin() + currentItem)->cleanup();
 				iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + currentItem)->modelName);
 				modelNames.erase(iter);
 
-                models.erase(models.begin() + currentItem);
+				models.erase(models.begin() + currentItem);
 
-                currentItem--;
+				currentItem--;
 			}
 			else
 			{
@@ -625,10 +639,10 @@ void Core::drawMenu()
 				models.erase(models.begin() + currentItem);
 			}
 
-            /*this is here to reload the model changing box when a model is deleted*/
-            loadClear(curModelName);
-        }
-
+			/*this is here to reload the model changing box when a model is deleted*/
+			loadClear(curModelName);
+		}
+		
 		if (models[currentItem].col.isNull == true)
 		{
 			if (ImGui::Button("Add Box Collider"))
@@ -638,20 +652,20 @@ void Core::drawMenu()
 			ImGui::SameLine();
 			ImGui::Button("Add Sphere Collider");
 		}
-    }
+	}
 }
 
 void Core::renderLoop()
 {
-    //render flags
-    static bool wireFrame = false;
-    //if we want to render objects (doesn't include imgui).
-    static bool toRender = true;
-    static bool vsync = true;
+	//render flags
+	static bool wireFrame = false;
+	//if we want to render objects (doesn't include imgui).
+	static bool toRender = true;
+	static bool vsync = true;
 
-    //render loop :)
-    while(!glfwWindowShouldClose(window.window))
-    {
+	//render loop :)
+	while(!glfwWindowShouldClose(window.window))
+	{
 		if (width > 0)
 		{
 			window.width = width;
@@ -659,14 +673,14 @@ void Core::renderLoop()
 		}
 		updateCamera(window.width, window.height);
 
-        glfwSwapInterval(vsync);
+		glfwSwapInterval(vsync);
 
-        if(wireFrame)
-            glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-        else
-            glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+		if(wireFrame)
+			glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+		else
+			glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 
-        glfwPollEvents();
+		glfwPollEvents();
 
 		if (editorEnable)
 		{
@@ -676,9 +690,9 @@ void Core::renderLoop()
 			ImGui::NewFrame();
 		}
 
-        //clear both framebuffers
+		//clear both framebuffers
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -727,7 +741,7 @@ void Core::renderLoop()
 			ImGui::Render();
 		}
 
-        //iterate through all of models and draw with the main camera
+		//iterate through all of models and draw with the main camera
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
 		if (editorEnable)
 		{
@@ -822,19 +836,19 @@ void Core::renderLoop()
 			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		}
 
-        glfwSwapBuffers(window.window);
+		glfwSwapBuffers(window.window);
 
 		update(models);
-    }
-    //delete all of the heap allocated models and clear all of the opengl objects associated with them.
-    for (Model m : models)
-    {
+	}
+	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
+	for (Model m : models)
+	{
 		m.deleteBuffers();
-        m.cleanup();
-    }
+		m.cleanup();
+	}
 	//terminate GLFW
 	glfwTerminate();
 
 	//destroy the FMOD sound system.
-    soundSystem.destroySS();
+	soundSystem.destroySS();
 }

@@ -28,10 +28,10 @@ void update(std::vector<Model>& modelArray)
 	
 	core.mainCamera.position.z = core.findObject("Cube")->position.z + 15;
 	core.mainCamera.position.y = core.findObject("Cube")->position.y + 3;
-	//core.mainCamera.camFront = core.mainCamera.camFront + core.findObject("Cube")->position;
 
 	if (input.isKeyPressed(GLFW_KEY_Y))
 	{
+
 	}
 	core.findObject("Cube")->position.z -= deltaTime;
 }

@@ -9,4 +9,4 @@
 
 
 
-commit - fixed bug that caused model to be in the wrong position if it was the first model to load.
+commit - fixed bug that caused a model to be in the wrong position if it was loaded after every model was deleted.

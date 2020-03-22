@@ -3,15 +3,10 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(1
 C:\Users\MONTER\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(78,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(79,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(590,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(691,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(691,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(712,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\MONTER\Documents\primitive\src\Core.cpp(816,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Model.cpp
-  main.cpp
-  Collider.cpp
-  Game.cpp
-  Generating Code...
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(604,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(705,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(705,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(726,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\MONTER\Documents\primitive\src\Core.cpp(830,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\MONTER\Documents\primitive\src\Core.cpp(55): warning C4715: 'Core::findObject': not all control paths return a value
   primitive.vcxproj -> C:\Users\MONTER\Documents\primitive\x64\Debug\primitive.exe
