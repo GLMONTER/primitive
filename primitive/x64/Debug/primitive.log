@@ -1,16 +1,15 @@
 ﻿  Core.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Users\logis\Documents\primitive\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
-C:\Users\logis\Documents\primitive\src\Core.cpp(80,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\logis\Documents\primitive\src\Core.cpp(81,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\logis\Documents\primitive\src\Core.cpp(606,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\logis\Documents\primitive\src\Core.cpp(720,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\logis\Documents\primitive\src\Core.cpp(720,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\logis\Documents\primitive\src\Core.cpp(741,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
-C:\Users\logis\Documents\primitive\src\Core.cpp(853,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Game.cpp
+C:\Users\logis\Documents\primitive\src\Core.cpp(83,16): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(84,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(630,44): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(631,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(756,56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(756,42): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\logis\Documents\primitive\src\Core.cpp(777,34): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\logis\Documents\primitive\src\Core.cpp(887,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Model.cpp
-  main.cpp
   Generating Code...
-C:\Users\logis\Documents\primitive\src\Core.cpp(57): warning C4715: 'Core::findObject': not all control paths return a value
+C:\Users\logis\Documents\primitive\src\Core.cpp(60): warning C4715: 'Core::findObject': not all control paths return a value
   primitive.vcxproj -> C:\Users\logis\Documents\primitive\x64\Debug\primitive.exe

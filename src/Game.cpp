@@ -30,8 +30,13 @@ void update(std::vector<Model>& modelArray)
 	
 	core.mainCamera.position.z = core.findObject("Cube")->position.z + 15;
 	core.mainCamera.position.y = core.findObject("Cube")->position.y + 3;
-
-	std::cout << Model::isCollided(core.models[0], core.models[1], core.collisionModels)<<std::endl;
+	static int i = 0;
+	i++;
+	if (i == 20)
+	{
+		i = 0;
+		std::cout << "col " << Model::isCollided(core.models[0], core.models[1], core.collisionModels) << std::endl;
+	}
 	
 	core.findObject("Cube")->position.z -= deltaTime;
 }

@@ -20,6 +20,9 @@ static float selectedPos[3];
 static float selectedRot[3];
 static float selectedScl[3];
 
+static float selectedCollisionPos[3];
+static float selectedCollisionScl[3];
+
 //used to scale different speeds to higher or lower framerates
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
@@ -328,10 +331,7 @@ void Core::loadScene(std::string scenePath)
 			mod.EulerAngle.y = std::stof(strings[6]);
 			mod.EulerAngle.z = std::stof(strings[7]);
 			mod.modelName = strings[1];
-			if (strings[1] == "Cube2")
-			{
-				std::cout << "Cube";
-			}
+		
 			mod.scale.x = std::stof(strings[8]);
 			mod.scale.y = std::stof(strings[9]);
 			mod.scale.z = std::stof(strings[10]);
@@ -443,7 +443,6 @@ void Core::drawMenu()
 			CoUninitialize();
 		}
 #endif
-		//std::cout << fileName.lpstrFile;
 		if (currentItem == -1)
 			currentItem = 0;
 
@@ -527,6 +526,12 @@ void Core::drawMenu()
 	ImGui::InputFloat3("Rotation", selectedRot);
 	ImGui::InputFloat3("Scale", selectedScl);
 
+	if (!models[currentItem].col.isNull)
+	{
+		ImGui::InputFloat3("Collider Position", selectedCollisionPos);
+		ImGui::InputFloat3("Collider Scale", selectedCollisionScl);
+	}
+
 	//basically iterates through every model to make sure none of them have the same name,
 	//if they do have the same name then append the id of model to the model name.
 	for (std::vector<Model>::iterator i = models.begin(); i != models.end(); i++)
@@ -572,6 +577,7 @@ void Core::drawMenu()
 	else
 	{
 		static unsigned int sizeofModels;
+		static unsigned int sizeofCollisions;
 		//the input text box for model name changing.
 		ImGui::InputText("Current Model Name", curModelName, IM_ARRAYSIZE(curModelName));
 
@@ -583,7 +589,7 @@ void Core::drawMenu()
 
 		//if the user has deleted a model then we need to update the imgui inputs to match
 		//the new model data so we don't overwrite it with the previous model data
-		if (sizeofModels != models.size())
+		if (sizeofModels != models.size() || sizeofCollisions != collisionModels.size())
 		{
 			//position
 			selectedPos[0] = models[static_cast<size_t>(currentItem)].position.x;
@@ -599,14 +605,36 @@ void Core::drawMenu()
 			selectedScl[0] = models[static_cast<size_t>(currentItem)].scale.x;
 			selectedScl[1] = models[static_cast<size_t>(currentItem)].scale.y;
 			selectedScl[2] = models[static_cast<size_t>(currentItem)].scale.z;
+
+			if (!models[currentItem].col.isNull)
+			{
+				selectedCollisionPos[0] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x;
+				selectedCollisionPos[1] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y;
+				selectedCollisionPos[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z;
+			}
 		}
+		
 		//update model position and rotation from float input.
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
+		if (!models[currentItem].col.isNull)
+		{
+			for (int i = 0; i != collisionModels[models[currentItem].col.id].abstractMeshes[0]->vertices.size(); i++)
+			{
+				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x = selectedCollisionPos[0];
+				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y = selectedCollisionPos[1];
+				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z = selectedCollisionPos[2];
+			}
+		}
+	
 
+		sizeofCollisions = collisionModels.size();
 		sizeofModels = models.size();
 		//if the delete button is pressed, then delete the current model and exit the menu drawing function
 		if (ImGui::Button("Delete Model"))
 		{
+			(collisionModels.begin() + models[currentItem].col.id)->deleteBuffers();
+
+			collisionModels.erase(collisionModels.begin() + models[currentItem].col.id);
 			//if the user trys to delete the last model in the array, pull back the current item index so the program
 			//doesn't try and reference an object that doesn't exist
 			if (models.size() == 1)
@@ -640,7 +668,6 @@ void Core::drawMenu()
 				modelNames.erase(iter);
 				models.erase(models.begin() + currentItem);
 			}
-
 			/*this is here to reload the model changing box when a model is deleted*/
 			loadClear(curModelName);
 		}
@@ -650,8 +677,17 @@ void Core::drawMenu()
 			if (ImGui::Button("Add Box Collider"))
 			{
 				models[currentItem].col.isNull = false;
-				models[currentItem].col.id = collisionModelID;
-				collisionModelID++;
+				if (collisionModels.size() == 0)
+				{
+					models[currentItem].col.id = 0;
+					collisionModelID = 0;
+				}
+				else
+				{
+					collisionModelID++;
+
+					models[currentItem].col.id = collisionModelID;
+				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
 				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
@@ -764,13 +800,13 @@ void Core::renderLoop()
 			{
 				if (models.size() > 0)
 				{
-					for (Model m : models)
+					for (int i = 0; i != models.size(); i++)
 					{
-						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
-					}
-					for (externalModel m : collisionModels)
-					{
-						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
+						if (!models[i].col.isNull)
+						{
+							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, collisionModels[models[i].col.id].scale, mainCamera);
+						}
 					}
 				}
 			}
@@ -782,13 +818,13 @@ void Core::renderLoop()
 			{
 				if (models.size() > 0)
 				{
-					for (Model m : models)
+					for (int i = 0; i != models.size(); i++)
 					{
-						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
-					}
-					for (externalModel m : collisionModels)
-					{
-						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
+						if (!models[i].col.isNull)
+						{
+							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, collisionModels[models[i].col.id].scale, mainCamera);
+						}
 					}
 				}
 			}
@@ -823,8 +859,6 @@ void Core::renderLoop()
 			
 			if (!buttonPressed)
 			{
-				std::cout << buttonToggle;
-
 				buttonToggle = 1 - buttonToggle;
 				buttonPressed = 1;
 			}
@@ -869,11 +903,11 @@ void Core::renderLoop()
 		{
 			if (!m.col.isNull)
 			{
-				collisionModels[m.col.id].position = m.position;
-
+				collisionModels[m.col.id].position =  collisionModels[m.col.id].abstractMeshes[0]->offset + m.position;
+				
 				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
 				{
-					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].position;
+					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].abstractMeshes[0]->offset + collisionModels[m.col.id].position;
 				}
 			}
 		}

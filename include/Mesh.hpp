@@ -21,13 +21,13 @@
 #include<glm/gtc/type_ptr.hpp>
 
 
-
+//dont modify
 struct Vertex
 {
-    glm::vec3 staticPosition;
 	glm::vec3 Position;
 	glm::vec3 Normal;
 	glm::vec2 TextureCoords;
+    glm::vec3 staticPosition;
 };
 
 struct Texture
@@ -49,6 +49,7 @@ public:
 	std::vector<Texture> textures;
     std::string nameH = "Mesh";
     unsigned int faceCount = 0;
+    glm::vec3 offset;
 private:
     std::vector<float> verts;
     std::vector<aiMesh*> meshes;
