@@ -7,11 +7,13 @@
 #include<glm/gtc/matrix_transform.hpp>
 //for glm::value_ptr when using uniforms
 #include<glm/gtc/type_ptr.hpp>
+extern bool cameraGameEnable;
 
 class Camera {
 public:
     unsigned int widthH = 1;
     unsigned int heightH = 1;
+    
 
     float fov = 60.0f;
     glm::vec3 DcamFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -24,6 +26,6 @@ public:
     //position, where to look(the front of the camera), the up vector
     glm::mat4 view = glm::lookAt(position, position + camFront, camUp);
 
-    void calc();
+    void calc(glm::vec3* pos);
     
 };

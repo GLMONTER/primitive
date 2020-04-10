@@ -47,6 +47,7 @@ void Mesh::loadVec(aiMesh* mesh, const aiScene* scene)
 		vertex.Position = vector;
 		vertex.staticPosition = vector;
 
+
 		//set the normals for the vertex
 		if (mesh->HasNormals())
 		{
@@ -170,6 +171,13 @@ void Mesh::cleanup()
 void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
 {
 	glBindVertexArray(VAO);
+	static glm::vec3 checkScale;
+
+	if (checkScale != Scale)
+	{
+		glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
+	}
+	checkScale = Scale;
 
 	glUseProgram(shaderProgram);
 

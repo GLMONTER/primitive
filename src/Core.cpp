@@ -43,7 +43,7 @@ extern void start(GLFWwindow* window);
 extern bool inputFlag;
 
 extern bool editorEnable;
-
+bool cameraGameEnable = false;
 //button toggle variables
 static bool buttonPressed = false;
 static bool buttonToggle = false;
@@ -108,7 +108,7 @@ void Core::updateCamera(unsigned int wid, unsigned int hei)
 	if(mainCamera.widthH == 0 || mainCamera.heightH == 0)
 		return;
 	//recalculate the projection matrix.
-	mainCamera.calc();
+	mainCamera.calc(nullptr);
 }
 
 //a callback for windows resizing, also updates the OpenGL viewport
@@ -141,7 +141,7 @@ void Core::Init()
 	mainCamera.heightH = window.height;
 	
 	//recalculate the camera matrix
-	mainCamera.calc();
+	mainCamera.calc(nullptr);
 	
 	//init GLEW
 	if(glewInit() != GLEW_OK)
@@ -166,7 +166,7 @@ void Core::Init()
 	 
 
 	//Setup imgui theme or style
-	ImGui::StyleColorsDark();
+	ImGui::StyleColorsClassic();
 
 	// Setup Platform/Renderer bindings
 	ImGui_ImplGlfw_InitForOpenGL(window.window, true);
@@ -336,7 +336,35 @@ void Core::loadScene(std::string scenePath)
 			mod.scale.y = std::stof(strings[9]);
 			mod.scale.z = std::stof(strings[10]);
 			mod.id = idCounter;
-			
+
+			if (strings.size() >11)
+			{
+				mod.col.isNull = false;
+				if (collisionModels.size() == 0)
+				{
+					mod.col.id = 0;
+					collisionModelID = 0;
+				}
+				else
+				{
+					collisionModelID++;
+
+					mod.col.id = collisionModelID;
+				}
+				externalModel tempModel;
+				//if model loading was successful then process the model further
+				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				std::cout << strings[11] << std::endl;
+				std::cout << strings[12] << std::endl;
+				std::cout << strings[13] << std::endl;
+
+				tempModel.position.x = std::stof(strings[11]);
+				tempModel.position.y = std::stof(strings[12]);
+				tempModel.position.z = std::stof(strings[13]);
+
+				collisionModels.push_back(tempModel);
+			}
+
 			models.push_back(mod);
 			if (models.size() == 1)
 			{
@@ -392,7 +420,7 @@ void Core::drawMenu()
 	mainCamera.heightH = window.height;
 	ImGui::SliderFloat("FOV", &mainCamera.fov, 30, 110);
 
-	mainCamera.calc();
+	mainCamera.calc(nullptr);
 
 	//model position input
 	static float spawnPos[3];
@@ -488,7 +516,13 @@ void Core::drawMenu()
 				<< ' ' << std::to_string(m.EulerAngle.x) << ' ' << std::to_string(m.EulerAngle.y) << ' ' << std::to_string(m.EulerAngle.z)
 				//write scale
 				<< ' ' << std::to_string(m.scale.x) << ' ' << std::to_string(m.scale.y) << ' ' << std::to_string(m.scale.z);
+			
+			if (!m.col.isNull)
+			{
+				ofs << ' ' << std::to_string(m.col.colPosition.x) << ' ' << std::to_string(m.col.colPosition.y) << ' ' << std::to_string(m.col.colPosition.z);
+			}
 			ofs << std::endl;
+
 		}
 		ofs.close();
 	}
@@ -529,7 +563,7 @@ void Core::drawMenu()
 	if (!models[currentItem].col.isNull)
 	{
 		ImGui::InputFloat3("Collider Position", selectedCollisionPos);
-		ImGui::InputFloat3("Collider Scale", selectedCollisionScl);
+		//ImGui::InputFloat3("Collider Scale", selectedCollisionScl);
 	}
 
 	//basically iterates through every model to make sure none of them have the same name,
@@ -570,6 +604,17 @@ void Core::drawMenu()
 		loadClear(curModelName);
 		//update the input float positions to the current model positions
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
+
+		if (!models[currentItem].col.isNull)
+		{
+			selectedCollisionPos[0] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x;
+			selectedCollisionPos[1] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y;
+			selectedCollisionPos[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z;
+
+			selectedCollisionScl[0] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.x;
+			selectedCollisionScl[1] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.y;
+			selectedCollisionScl[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.z;
+		}
 	}
 
 	//if the selected item hasen't changed then check for changes in position and check for
@@ -611,6 +656,10 @@ void Core::drawMenu()
 				selectedCollisionPos[0] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x;
 				selectedCollisionPos[1] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y;
 				selectedCollisionPos[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z;
+
+				selectedCollisionScl[0] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.x;
+				selectedCollisionScl[1] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.y;
+				selectedCollisionScl[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.z;
 			}
 		}
 		
@@ -618,12 +667,13 @@ void Core::drawMenu()
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
 		if (!models[currentItem].col.isNull)
 		{
-			for (int i = 0; i != collisionModels[models[currentItem].col.id].abstractMeshes[0]->vertices.size(); i++)
-			{
-				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x = selectedCollisionPos[0];
-				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y = selectedCollisionPos[1];
-				collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z = selectedCollisionPos[2];
-			}
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.x = selectedCollisionPos[0];
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.y = selectedCollisionPos[1];
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->offset.z = selectedCollisionPos[2];
+
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.x = selectedCollisionScl[0];
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.y = selectedCollisionScl[1];
+			collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.z = selectedCollisionScl[2];
 		}
 	
 
@@ -632,9 +682,12 @@ void Core::drawMenu()
 		//if the delete button is pressed, then delete the current model and exit the menu drawing function
 		if (ImGui::Button("Delete Model"))
 		{
-			(collisionModels.begin() + models[currentItem].col.id)->deleteBuffers();
+			if (!models[currentItem].col.isNull)
+			{
+				(collisionModels.begin() + models[currentItem].col.id)->deleteBuffers();
+				collisionModels.erase(collisionModels.begin() + models[currentItem].col.id);
+			}
 
-			collisionModels.erase(collisionModels.begin() + models[currentItem].col.id);
 			//if the user trys to delete the last model in the array, pull back the current item index so the program
 			//doesn't try and reference an object that doesn't exist
 			if (models.size() == 1)
@@ -805,7 +858,8 @@ void Core::renderLoop()
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
 						if (!models[i].col.isNull)
 						{
-							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, collisionModels[models[i].col.id].scale, mainCamera);
+							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, 
+								collisionModels[models[i].col.id].scale, mainCamera);
 						}
 					}
 				}
@@ -823,7 +877,8 @@ void Core::renderLoop()
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
 						if (!models[i].col.isNull)
 						{
-							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, collisionModels[models[i].col.id].scale, mainCamera);
+							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, 
+								collisionModels[models[i].col.id].scale, mainCamera);
 						}
 					}
 				}
@@ -907,7 +962,7 @@ void Core::renderLoop()
 				
 				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
 				{
-					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].abstractMeshes[0]->offset + collisionModels[m.col.id].position;
+					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = (collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].abstractMeshes[0]->offset + collisionModels[m.col.id].position) * collisionModels[m.col.id].abstractMeshes[0]->Scale;
 				}
 			}
 		}

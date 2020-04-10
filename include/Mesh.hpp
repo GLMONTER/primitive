@@ -50,6 +50,7 @@ public:
     std::string nameH = "Mesh";
     unsigned int faceCount = 0;
     glm::vec3 offset;
+    glm::vec3 Scale = glm::vec3(1, 1, 1);
 private:
     std::vector<float> verts;
     std::vector<aiMesh*> meshes;

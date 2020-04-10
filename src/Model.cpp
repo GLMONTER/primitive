@@ -90,7 +90,9 @@ bool Model::isCollided(const Model& colA, const Model& colB, std::vector<externa
     //0,7
     std::vector<Mesh*> a = colModels[colA.col.id].abstractMeshes;
     std::vector<Mesh*> b = colModels[colB.col.id].abstractMeshes;
-
+    if (colA.col.isNull || colB.col.isNull)
+        return false;
+    
     return(a[0]->vertices[0].Position.x > b[0]->vertices[7].Position.x &&
         a[0]->vertices[7].Position.x < b[0]->vertices[0].Position.x&&
         a[0]->vertices[0].Position.y > b[0]->vertices[7].Position.y &&
