@@ -138,7 +138,10 @@
     <ClCompile Include="..\include\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="..\src\Camera.cpp" />
+    <ClCompile Include="..\src\Collider.cpp" />
     <ClCompile Include="..\src\Core.cpp" />
+    <ClCompile Include="..\src\externalModel.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
     <ClCompile Include="..\src\Input.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Mesh.cpp" />
@@ -147,13 +150,13 @@
     <ClCompile Include="..\src\Sound.cpp" />
     <ClCompile Include="..\src\Texture.cpp" />
     <ClCompile Include="..\src\Window.cpp" />
-    <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="Game.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Camera.hpp" />
     <ClInclude Include="..\include\Collider.hpp" />
     <ClInclude Include="..\include\Core.hpp" />
+    <ClInclude Include="..\include\externalModel.hpp" />
+    <ClInclude Include="..\include\Game.hpp" />
     <ClInclude Include="..\include\Input.hpp" />
     <ClInclude Include="..\include\Mesh.hpp" />
     <ClInclude Include="..\include\Model.hpp" />
@@ -161,7 +164,6 @@
     <ClInclude Include="..\include\Sound.hpp" />
     <ClInclude Include="..\include\Texture.hpp" />
     <ClInclude Include="..\include\Window.hpp" />
-    <ClInclude Include="Game.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\notes.txt" />
@@ -169,6 +171,7 @@
   <ItemGroup>
     <None Include="..\x64\Release\rec\basic.frag" />
     <None Include="..\x64\Release\rec\basic.vert" />
+    <None Include="rec\collision.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

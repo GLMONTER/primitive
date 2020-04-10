@@ -5,6 +5,7 @@
 
 #include<Mesh.hpp>
 #include<Collider.hpp>
+#include<externalModel.hpp>
 
 class Model
 {
@@ -23,6 +24,8 @@ public:
 	std::string path = "path";
     Collider col;
     unsigned int id;
+    static bool isCollided(const Model& colA, const Model& colB, std::vector<externalModel>& colModels);
+
 private:
     std::vector<aiMesh*> meshes;
     std::vector<Mesh*> abstractMeshes;

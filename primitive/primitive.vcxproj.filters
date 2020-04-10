@@ -63,10 +63,13 @@
     <ClCompile Include="..\include\imgui\examples\imgui_impl_opengl3.cpp">
       <Filter>Source Files\IMGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="..\src\Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Collider.cpp">
+    <ClCompile Include="..\src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\externalModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,10 +101,13 @@
     <ClInclude Include="..\include\Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.hpp">
+    <ClInclude Include="..\include\Collider.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Collider.hpp">
+    <ClInclude Include="..\include\externalModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -115,6 +121,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="..\x64\Release\rec\basic.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="rec\collision.frag">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

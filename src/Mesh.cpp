@@ -45,6 +45,7 @@ void Mesh::loadVec(aiMesh* mesh, const aiScene* scene)
 		vector.y = mesh->mVertices[i].y;
 		vector.z = mesh->mVertices[i].z;
 		vertex.Position = vector;
+		vertex.staticPosition = vector;
 
 		//set the normals for the vertex
 		if (mesh->HasNormals())
@@ -71,6 +72,7 @@ void Mesh::loadVec(aiMesh* mesh, const aiScene* scene)
         }
 		vertices.push_back(vertex);
     }
+
     //get all of the indices for the mesh
     for(unsigned int i = 0; i < mesh->mNumFaces; i++)
     {
@@ -169,7 +171,7 @@ void Mesh::render(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
 {
 	glBindVertexArray(VAO);
 
-    glUseProgram(shaderProgram);
+	glUseProgram(shaderProgram);
 
 	//I don't think we need glActiveTexture because there is only 1 texture per mesh at the moment
     for (unsigned int i = 0; i < textures.size(); i++)

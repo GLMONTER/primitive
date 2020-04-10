@@ -35,6 +35,7 @@ public:
     std::vector<Shader> shaders;
     Camera mainCamera;
     std::vector<Model> models;
+    std::vector<externalModel> collisionModels;
     std::vector<std::string> modelNames;
 
     Window window;

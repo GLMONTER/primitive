@@ -9,6 +9,8 @@
 #include <shobjidl.h>
 #include <locale>
 
+static int collisionModelID = 0;
+
 //camera variables
 glm::vec3 direction = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 camFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -370,14 +372,14 @@ void Core::drawMenu()
 	//a boolean to check if the initial model scale has been set.
 	static bool first = false;
 
-	if(!first)
+	if (!first)
 	{
 		selectedScl[0] = 1.0f;
 		selectedScl[1] = 1.0f;
 		selectedScl[2] = 1.0f;
 		first = true;
 	}
-	
+
 	std::string vendor = "Driver vendor : ";
 	std::string glString = ((char*)glGetString(GL_VENDOR));
 	vendor.append(glString);
@@ -385,11 +387,11 @@ void Core::drawMenu()
 
 	static char curModelName[1024];
 	ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
-	
+
 	mainCamera.widthH = window.width;
 	mainCamera.heightH = window.height;
 	ImGui::SliderFloat("FOV", &mainCamera.fov, 30, 110);
-	
+
 	mainCamera.calc();
 
 	//model position input
@@ -399,7 +401,7 @@ void Core::drawMenu()
 	//buffer to hold the model path
 	static char buffer[1024];
 
-	if(ImGui::Button("Load Model"))
+	if (ImGui::Button("Load Model"))
 	{
 #ifdef WIN32
 		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
@@ -428,7 +430,7 @@ void Core::drawMenu()
 						hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
 						//convert the wide string given by windows to a normal string
 						wcstombs(buffer, pszFilePath, sizeof(buffer));						// Display the file name to the user.
-						
+
 						if (SUCCEEDED(hr))
 						{
 							CoTaskMemFree(pszFilePath);
@@ -442,7 +444,7 @@ void Core::drawMenu()
 		}
 #endif
 		//std::cout << fileName.lpstrFile;
-		if(currentItem == -1)
+		if (currentItem == -1)
 			currentItem = 0;
 
 		Model tempModel;
@@ -464,7 +466,7 @@ void Core::drawMenu()
 	}
 
 	if (modelError)
-	{ 
+	{
 		ImGui::SameLine();
 		ImGui::Text("Model failed to load.");
 	}
@@ -480,7 +482,7 @@ void Core::drawMenu()
 		for (Model m : models)
 		{
 			//write all model information to scene file
-			ofs << m.path << ' ' << m.modelName 
+			ofs << m.path << ' ' << m.modelName
 				//write position
 				<< ' ' << std::to_string(m.position.x) << ' ' << std::to_string(m.position.y) << ' ' << std::to_string(m.position.z)
 				//write rotation
@@ -507,7 +509,7 @@ void Core::drawMenu()
 		selectedScl[0] = 1;
 		selectedScl[1] = 1;
 		selectedScl[2] = 1;
-		
+
 		//position
 		selectedPos[0] = 0;
 		selectedPos[1] = 0;
@@ -527,15 +529,15 @@ void Core::drawMenu()
 
 	//basically iterates through every model to make sure none of them have the same name,
 	//if they do have the same name then append the id of model to the model name.
-	for(std::vector<Model>::iterator i = models.begin(); i != models.end(); i++)
+	for (std::vector<Model>::iterator i = models.begin(); i != models.end(); i++)
 	{
-		for(std::vector<Model>::iterator mod = models.begin(); mod != models.end(); mod++)
+		for (std::vector<Model>::iterator mod = models.begin(); mod != models.end(); mod++)
 		{
 			//if both loops are on the same model, then ignore it.
-			if(std::distance(models.begin(), i) == std::distance(models.begin(), mod))
+			if (std::distance(models.begin(), i) == std::distance(models.begin(), mod))
 				continue;
 			//if it happens to find 2 models with the same name then append the id of the model to prevent naming conflicts.
-			if(i->modelName == mod->modelName)
+			if (i->modelName == mod->modelName)
 			{
 				//actually append the id to the model string
 				mod->modelName.append(std::to_string(mod->id));
@@ -545,7 +547,7 @@ void Core::drawMenu()
 
 	//clear and reload the modelNames array to reflect name changes made in the models array
 	modelNames.clear();
-	for(Model m : models)
+	for (Model m : models)
 	{
 		modelNames.push_back(m.modelName);
 	}
@@ -558,13 +560,13 @@ void Core::drawMenu()
 	}
 
 	//if the selected item in the listbox has changed, clear the change name array and reload it with the selected model name
-	if(ImGui::ListBox("Models", &currentItem, array.data(), static_cast<int>(array.size())))
+	if (ImGui::ListBox("Models", &currentItem, array.data(), static_cast<int>(array.size())))
 	{
 		loadClear(curModelName);
 		//update the input float positions to the current model positions
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, false);
 	}
-	
+
 	//if the selected item hasen't changed then check for changes in position and check for
 	//the button press to change the model name.
 	else
@@ -574,7 +576,7 @@ void Core::drawMenu()
 		ImGui::InputText("Current Model Name", curModelName, IM_ARRAYSIZE(curModelName));
 
 		//if the change name button is pressed, change the model name to the input text box data.
-		if(ImGui::Button("Change Name"))
+		if (ImGui::Button("Change Name"))
 		{
 			models[static_cast<size_t>(currentItem)].modelName = curModelName;
 		}
@@ -600,14 +602,14 @@ void Core::drawMenu()
 		}
 		//update model position and rotation from float input.
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
-		
+
 		sizeofModels = models.size();
 		//if the delete button is pressed, then delete the current model and exit the menu drawing function
-		if(ImGui::Button("Delete Model"))
+		if (ImGui::Button("Delete Model"))
 		{
 			//if the user trys to delete the last model in the array, pull back the current item index so the program
 			//doesn't try and reference an object that doesn't exist
-			if(models.size() == 1)
+			if (models.size() == 1)
 			{
 				models.begin()->deleteBuffers();
 				modelNames.clear();
@@ -619,7 +621,7 @@ void Core::drawMenu()
 				return;
 			}
 			std::vector<std::string>::iterator iter;
-			if(static_cast<unsigned long>(currentItem)+1 == models.size())
+			if (static_cast<unsigned long>(currentItem) + 1 == models.size())
 			{
 				(models.begin() + currentItem)->deleteBuffers();
 				(models.begin() + currentItem)->cleanup();
@@ -642,15 +644,28 @@ void Core::drawMenu()
 			/*this is here to reload the model changing box when a model is deleted*/
 			loadClear(curModelName);
 		}
-		
+
 		if (models[currentItem].col.isNull == true)
 		{
 			if (ImGui::Button("Add Box Collider"))
 			{
 				models[currentItem].col.isNull = false;
+				models[currentItem].col.id = collisionModelID;
+				collisionModelID++;
+				externalModel tempModel;
+				//if model loading was successful then process the model further
+				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+
+				tempModel.position.x = models[currentItem].position.x;
+				tempModel.position.y = models[currentItem].position.y;
+				tempModel.position.z = models[currentItem].position.z;
+
+				collisionModels.push_back(tempModel);
+
+
+				ImGui::SameLine();
+				ImGui::Button("Add Sphere Collider");
 			}
-			ImGui::SameLine();
-			ImGui::Button("Add Sphere Collider");
 		}
 	}
 }
@@ -753,6 +768,10 @@ void Core::renderLoop()
 					{
 						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
 					}
+					for (externalModel m : collisionModels)
+					{
+						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+					}
 				}
 			}
 		}
@@ -764,6 +783,10 @@ void Core::renderLoop()
 				if (models.size() > 0)
 				{
 					for (Model m : models)
+					{
+						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
+					}
+					for (externalModel m : collisionModels)
 					{
 						m.draw(m.position, m.EulerAngle, m.scale, mainCamera);
 					}
@@ -839,6 +862,22 @@ void Core::renderLoop()
 		glfwSwapBuffers(window.window);
 
 		update(models);
+
+
+		//update collision boxes relative to there models
+		for (Model m : models)
+		{
+			if (!m.col.isNull)
+			{
+				collisionModels[m.col.id].position = m.position;
+
+				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
+				{
+					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].position;
+				}
+			}
+		}
+
 	}
 	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
 	for (Model m : models)

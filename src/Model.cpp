@@ -83,4 +83,24 @@ void Model::draw(glm::vec3 pos, glm::vec3 euler, glm::vec3 scale, Camera c)
     {
         mesh->render(pos, euler, scale, c);
     }
+    if (!col.isNull)
+    {
+        col.collisionModel.draw(col.colPosition, col.EulerAngle, col.colScale, c);
+    }
+}
+
+bool Model::isCollided(const Model& colA, const Model& colB, std::vector<externalModel>& colModels)
+{
+    //0,7
+    std::vector<Mesh*> a = colModels[colA.col.id].abstractMeshes;
+    std::vector<Mesh*> b = colModels[colB.col.id].abstractMeshes;
+
+    
+
+    return(a[0]->vertices[0].Position.x > b[0]->vertices[7].Position.x &&
+        a[0]->vertices[7].Position.x < b[0]->vertices[0].Position.x&&
+        a[0]->vertices[0].Position.y > b[0]->vertices[7].Position.y &&
+        a[0]->vertices[7].Position.y < b[0]->vertices[0].Position.y&&
+        a[0]->vertices[0].Position.z > b[0]->vertices[7].Position.z &&
+        a[0]->vertices[7].Position.z < b[0]->vertices[0].Position.z);
 }
