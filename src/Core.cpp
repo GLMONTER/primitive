@@ -354,9 +354,6 @@ void Core::loadScene(std::string scenePath)
 				externalModel tempModel;
 				//if model loading was successful then process the model further
 				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
-				std::cout << strings[11] << std::endl;
-				std::cout << strings[12] << std::endl;
-				std::cout << strings[13] << std::endl;
 
 				tempModel.position.x = std::stof(strings[11]);
 				tempModel.position.y = std::stof(strings[12]);
@@ -849,6 +846,7 @@ void Core::renderLoop()
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
 		if (editorEnable)
 		{
+			cameraGameEnable = false;
 			if (toRender)
 			{
 				if (models.size() > 0)
@@ -856,10 +854,10 @@ void Core::renderLoop()
 					for (int i = 0; i != models.size(); i++)
 					{
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
-						if (!models[i].col.isNull)
+						if (!models[currentItem].col.isNull)
 						{
-							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, 
-								collisionModels[models[i].col.id].scale, mainCamera);
+							collisionModels[models[currentItem].col.id].draw(collisionModels[models[currentItem].col.id].position, collisionModels[models[currentItem].col.id].EulerAngle,
+								collisionModels[models[currentItem].col.id].scale, mainCamera);
 						}
 					}
 				}
@@ -875,10 +873,10 @@ void Core::renderLoop()
 					for (int i = 0; i != models.size(); i++)
 					{
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
-						if (!models[i].col.isNull)
+						if (!models[currentItem].col.isNull)
 						{
-							collisionModels[models[i].col.id].draw(collisionModels[models[i].col.id].position, collisionModels[models[i].col.id].EulerAngle, 
-								collisionModels[models[i].col.id].scale, mainCamera);
+							collisionModels[models[currentItem].col.id].draw(collisionModels[models[currentItem].col.id].position, collisionModels[models[currentItem].col.id].EulerAngle,
+								collisionModels[models[currentItem].col.id].scale, mainCamera);
 						}
 					}
 				}
@@ -916,6 +914,22 @@ void Core::renderLoop()
 			{
 				buttonToggle = 1 - buttonToggle;
 				buttonPressed = 1;
+
+				//the iteration of models resets the scene when swtiching back to the editor
+				if (editorEnable == 1)
+				{
+					for (Model m : models)
+					{
+						m.spawnPosition = m.position;
+					}
+				}
+				else
+				{
+					for (Model m : models)
+					{
+						m.position = m.spawnPosition;
+					}
+				}
 			}
 		}
 		else
@@ -951,7 +965,6 @@ void Core::renderLoop()
 		glfwSwapBuffers(window.window);
 
 		update(models);
-
 
 		//update collision boxes relative to there models
 		for (Model m : models)

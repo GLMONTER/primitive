@@ -15,7 +15,9 @@ public:
     bool loadModel(std::string file, Shader &vShader, Shader &fShader);
     void processNodes(aiNode* node, const aiScene* scene);
 	void deleteBuffers();
+    
     std::vector<unsigned int> indicesH;
+    glm::vec3 spawnPosition;
     glm::vec3 position = glm::vec3(0,0,0);
     glm::vec3 scale = glm::vec3(1,1,1);
     glm::quat Quatern;
@@ -25,7 +27,7 @@ public:
     Collider col;
     unsigned int id;
     static bool isCollided(const Model& colA, const Model& colB, std::vector<externalModel>& colModels);
-
+    static bool isCollidedName(const Model& collider, std::string name, std::vector<externalModel>& colModels, std::vector<Model>& models);
 private:
     std::vector<aiMesh*> meshes;
     std::vector<Mesh*> abstractMeshes;

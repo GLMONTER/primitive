@@ -8,5 +8,4 @@
 -sound error handling
 
 
-
-commit - fixed bug that caused a model to be in the wrong position if it was loaded after every model was deleted.
+commit - changed code to only render collider if object selected. added collision code to check if you have collided with an object with a name

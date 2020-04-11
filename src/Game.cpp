@@ -6,18 +6,19 @@ extern Core core;
 
 void start(GLFWwindow* window)
 {
+	
 	if (editorEnable && !startedFlag)
 		return;
 
+	for (Model& m : core.models)
+	{
+		m.spawnPosition = m.position;
+	}
+
 	input.init(window);
-	/*
-	core.loadScene("test.txt");
-
-	core.findObject("Cube")->position.x = 0;
-	//core.findObject("Cube")->position.y = 0;
-	core.findObject("Cube")->position.z = 0;
-	*/
-
+	
+	//core.loadScene("test.txt");
+	
 	startedFlag = true;
 }
 
@@ -29,15 +30,26 @@ void update(std::vector<Model>& modelArray)
 		return;
 	
 	core.mainCamera.position.z = core.findObject("Cube")->position.z + 15;
-	core.mainCamera.position.y = core.findObject("Cube")->position.y + 3;
+	core.mainCamera.position.y = core.findObject("Cube")->position.y + 5;
 	core.mainCamera.position.x = core.findObject("Cube")->position.x;
-	static int i = 0;
-	i++;
-	if (i == 20)
+
+	if (input.isKeyPressed(GLFW_KEY_A))
 	{
-		i = 0;
-		std::cout << "col " << Model::isCollided(*core.findObject("Cube"), *core.findObject("Cube5"), core.collisionModels) << std::endl;
+		core.findObject("Cube")->position.x -= deltaTime * 4;
+	}
+	if (input.isKeyPressed(GLFW_KEY_D))
+	{
+		core.findObject("Cube")->position.x += deltaTime * 4;
+	}
+	if (Model::isCollidedName(*core.findObject("Cube"), "Cube", core.collisionModels, core.models))
+	{
+		core.findObject("Cube")->position = core.findObject("Cube")->spawnPosition;
+	}
+	else
+	if (Model::isCollidedName(*core.findObject("Cube"), "Win", core.collisionModels, core.models))
+	{
+		exit(0);
 	}
 	core.mainCamera.calc(&core.findObject("Cube")->position);
-	core.findObject("Cube")->position.z -= deltaTime;
+	core.findObject("Cube")->position.z -= deltaTime * 7;
 }

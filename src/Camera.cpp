@@ -11,7 +11,6 @@ void Camera::calc(glm::vec3* pos)
 	{
 		view = glm::lookAt(position, position + camFront, camUp);
 		projection = glm::perspective(glm::radians(fov), static_cast<float>(widthH) / static_cast<float>(heightH), 0.01f, 1000.0f);
-
 	}
 	else
 	{

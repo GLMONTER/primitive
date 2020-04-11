@@ -100,3 +100,28 @@ bool Model::isCollided(const Model& colA, const Model& colB, std::vector<externa
         a[0]->vertices[0].Position.z > b[0]->vertices[7].Position.z &&
         a[0]->vertices[7].Position.z < b[0]->vertices[0].Position.z);
 }
+
+bool Model::isCollidedName(const Model& collider, std::string name, std::vector<externalModel>& colModels, std::vector<Model>& models)
+{
+    bool retValue = false;
+    //0,7
+    std::vector<Mesh*> a = colModels[collider.col.id].abstractMeshes;
+    
+    for (Model m : models)
+    {
+        if (m.col.isNull || collider.id == m.id)
+            continue;
+        std::vector<Mesh*> b = colModels[m.col.id].abstractMeshes;
+        if ((a[0]->vertices[0].Position.x > b[0]->vertices[7].Position.x &&
+            a[0]->vertices[7].Position.x < b[0]->vertices[0].Position.x &&
+            a[0]->vertices[0].Position.y > b[0]->vertices[7].Position.y &&
+            a[0]->vertices[7].Position.y < b[0]->vertices[0].Position.y &&
+            a[0]->vertices[0].Position.z > b[0]->vertices[7].Position.z &&
+            a[0]->vertices[7].Position.z < b[0]->vertices[0].Position.z) && (m.modelName.find(name) != std::string::npos))
+        {
+            retValue = true;
+        }   
+    }
+
+    return retValue;
+}
