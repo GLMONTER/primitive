@@ -17,7 +17,7 @@ void start(GLFWwindow* window)
 
 	input.init(window);
 	
-	//core.loadScene("test.txt");
+	core.loadScene("test.txt");
 	
 	startedFlag = true;
 }

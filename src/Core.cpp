@@ -326,7 +326,7 @@ void Core::loadScene(std::string scenePath)
 			mod.position.x = std::stof(strings[2]);
 			mod.position.y = std::stof(strings[3]);
 			mod.position.z = std::stof(strings[4]);
-
+			mod.spawnPosition = mod.position;
 			mod.EulerAngle.x = std::stof(strings[5]);
 			mod.EulerAngle.y = std::stof(strings[6]);
 			mod.EulerAngle.z = std::stof(strings[7]);
@@ -353,7 +353,7 @@ void Core::loadScene(std::string scenePath)
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel("C:/Users/MONTER/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
 
 				tempModel.position.x = std::stof(strings[11]);
 				tempModel.position.y = std::stof(strings[12]);
@@ -740,7 +740,7 @@ void Core::drawMenu()
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel("C:/Users/MONTER/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
 
 				tempModel.position.x = models[currentItem].position.x;
 				tempModel.position.y = models[currentItem].position.y;
