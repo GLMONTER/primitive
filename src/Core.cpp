@@ -353,7 +353,7 @@ void Core::loadScene(std::string scenePath)
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/MONTER/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
 
 				tempModel.position.x = std::stof(strings[11]);
 				tempModel.position.y = std::stof(strings[12]);
@@ -740,7 +740,7 @@ void Core::drawMenu()
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/MONTER/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
 
 				tempModel.position.x = models[currentItem].position.x;
 				tempModel.position.y = models[currentItem].position.y;
@@ -904,12 +904,21 @@ void Core::renderLoop()
 			{
 				mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
 			}
+			if (input.isKeyPressed(GLFW_KEY_E))
+			{
+				glm::vec3 cameraRight = glm::cross(mainCamera.camUp, direction);
+				mainCamera.position += glm::cross(direction, cameraRight) * (camSpeed * deltaTime);
+			}
+			if (input.isKeyPressed(GLFW_KEY_Q))
+			{
+				glm::vec3 cameraRight = glm::cross(mainCamera.camUp, direction);
+				mainCamera.position -= glm::cross(direction, cameraRight) * (camSpeed * deltaTime);
+			}
 		}
 		
 		//button toggle system to toggle the editor on and off
 		if (input.isKeyPressed(GLFW_KEY_ESCAPE))
 		{
-			
 			if (!buttonPressed)
 			{
 				buttonToggle = 1 - buttonToggle;
