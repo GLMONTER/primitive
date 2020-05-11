@@ -38,6 +38,7 @@ public:
     std::vector<Model> models;
     std::vector<externalModel> collisionModels;
     std::vector<std::string> modelNames;
+    void deleteModel(unsigned int index,  char (&modelNames)[1024]);
 
     Window window;
 private:

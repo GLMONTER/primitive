@@ -59,6 +59,70 @@ Model* Core::findObject(std::string name)
 	}
 }
 
+void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024])
+{
+	static bool colDeleted = false;
+	//checking if erasing any collider models is required.
+	int tempID = 0;
+	if (!models[index].col.isNull)
+	{
+		 tempID = models[index].col.id;
+		(collisionModels.begin() + models[index].col.id)->deleteBuffers();
+		collisionModels.erase(collisionModels.begin() + models[index].col.id);
+		colDeleted = true;
+	}
+
+	//if the user trys to delete the last model in the array, pull back the current item index so the program
+	//doesn't try and reference an object that doesn't exist
+	if (models.size() == 1)
+	{
+		models.begin()->deleteBuffers();
+		modelNames.clear();
+		models.begin()->cleanup();
+		models.erase(models.begin());
+
+		currentItem = 0;
+		loadClear(modelNamesArray);
+		return;
+	}
+	std::vector<std::string>::iterator iter;
+	if (static_cast<unsigned long>(index) + 1 == models.size())
+	{
+		(models.begin() + index)->deleteBuffers();
+		(models.begin() + index)->cleanup();
+		iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + index)->modelName);
+		modelNames.erase(iter);
+
+		models.erase(models.begin() + index);
+
+		index--;
+	}
+	else
+	{
+		(models.begin() + index)->deleteBuffers();
+		(models.begin() + index)->cleanup();
+		iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + index)->modelName);
+		modelNames.erase(iter);
+		models.erase(models.begin() + index);
+	}
+	/*this is here to reload the model changing box when a model is deleted*/
+	loadClear(modelNamesArray);
+
+	//rearrange array id's for collider models if a collider is deleted.
+	if (colDeleted)
+	{
+		for (Model& colModel : models)
+		{
+			if (colModel.col.id > tempID)
+			{
+				colModel.col.id--;
+			}
+		}
+		colDeleted = false;
+	}
+
+}
+
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	static double lastX = static_cast<float>(width), lastY = static_cast<float>(height);
@@ -679,47 +743,7 @@ void Core::drawMenu()
 		//if the delete button is pressed, then delete the current model and exit the menu drawing function
 		if (ImGui::Button("Delete Model"))
 		{
-			if (!models[currentItem].col.isNull)
-			{
-				(collisionModels.begin() + models[currentItem].col.id)->deleteBuffers();
-				collisionModels.erase(collisionModels.begin() + models[currentItem].col.id);
-			}
-
-			//if the user trys to delete the last model in the array, pull back the current item index so the program
-			//doesn't try and reference an object that doesn't exist
-			if (models.size() == 1)
-			{
-				models.begin()->deleteBuffers();
-				modelNames.clear();
-				models.begin()->cleanup();
-				models.erase(models.begin());
-
-				currentItem = 0;
-				loadClear(curModelName);
-				return;
-			}
-			std::vector<std::string>::iterator iter;
-			if (static_cast<unsigned long>(currentItem) + 1 == models.size())
-			{
-				(models.begin() + currentItem)->deleteBuffers();
-				(models.begin() + currentItem)->cleanup();
-				iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + currentItem)->modelName);
-				modelNames.erase(iter);
-
-				models.erase(models.begin() + currentItem);
-
-				currentItem--;
-			}
-			else
-			{
-				(models.begin() + currentItem)->deleteBuffers();
-				(models.begin() + currentItem)->cleanup();
-				iter = std::find(modelNames.begin(), modelNames.end(), (models.begin() + currentItem)->modelName);
-				modelNames.erase(iter);
-				models.erase(models.begin() + currentItem);
-			}
-			/*this is here to reload the model changing box when a model is deleted*/
-			loadClear(curModelName);
+			deleteModel(currentItem, curModelName);
 		}
 
 		if (models[currentItem].col.isNull == true)
@@ -978,9 +1002,15 @@ void Core::renderLoop()
 		//update collision boxes relative to there models
 		for (Model m : models)
 		{
+			
+			if (models.size() == 6)
+			{
+				std::cout << "Test";
+			}
 			if (!m.col.isNull)
 			{
-				collisionModels[m.col.id].position =  collisionModels[m.col.id].abstractMeshes[0]->offset + m.position;
+				
+				collisionModels[m.col.id].position = collisionModels[m.col.id].abstractMeshes[0]->offset + m.position;
 				
 				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
 				{
