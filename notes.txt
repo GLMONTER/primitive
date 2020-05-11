@@ -3,9 +3,11 @@
 ^ = below a breaking bug but something that needs to get done.
 + adding a new feature
 
-^not have every mesh create a shader program
+- not have every mesh create a shader program
 
--sound error handling
+- sound error handling
+
+
 
 
 commit - changed code to only render collider if object selected. added collision code to check if you have collided with an object with a name

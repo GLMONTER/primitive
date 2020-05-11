@@ -8,6 +8,5 @@ layout(location = 0) out vec3 color;
 
 void main()
 {
-        col = texture(texture_diffuse1, texCoords);
- //       col = vec4(0.6, 0.6, 0.6, 1.0);
+    col = texture(texture_diffuse1, texCoords);
 }

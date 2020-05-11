@@ -20,10 +20,14 @@ void start(GLFWwindow* window)
 	core.loadScene("test.txt");
 	
 	startedFlag = true;
+
+	SoundSystem::F_PlaySound(core.workingDir + std::string("/rec/sound.mp3"), 0.25f);
 }
 
 void update(std::vector<Model>& modelArray)
 {
+	glfwSetInputMode(core.window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 	if (!startedFlag)
 		start(core.window.window);
 	if (editorEnable)
@@ -51,5 +55,5 @@ void update(std::vector<Model>& modelArray)
 		exit(0);
 	}
 	core.mainCamera.calc(&core.findObject("Cube")->position);
-	core.findObject("Cube")->position.z -= deltaTime * 7;
+	core.findObject("Cube")->position.z -= deltaTime * 15;
 }

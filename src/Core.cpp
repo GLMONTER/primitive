@@ -48,6 +48,10 @@ bool cameraGameEnable = false;
 static bool buttonPressed = false;
 static bool buttonToggle = false;
 
+static char curModelName[1024];
+
+char workingDir[256];
+
 Model* Core::findObject(std::string name)
 {
 	if (modelNames.size() == 0)
@@ -66,7 +70,7 @@ void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024])
 	int tempID = 0;
 	if (!models[index].col.isNull)
 	{
-		 tempID = models[index].col.id;
+		tempID = models[index].col.id;
 		(collisionModels.begin() + models[index].col.id)->deleteBuffers();
 		collisionModels.erase(collisionModels.begin() + models[index].col.id);
 		colDeleted = true;
@@ -119,8 +123,8 @@ void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024])
 			}
 		}
 		colDeleted = false;
+		collisionModelID--;
 	}
-
 }
 
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
@@ -185,6 +189,8 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 }
 void Core::Init()
 {
+	GetCurrentDirectoryA(256, workingDir);
+
 	std::ifstream f("config.txt");
 	if (f.get() == '0')
 		editorEnable = false;
@@ -417,7 +423,7 @@ void Core::loadScene(std::string scenePath)
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel(workingDir + std::string("/rec/cube.fbx"), defaultVert, defaultFrag);
 
 				tempModel.position.x = std::stof(strings[11]);
 				tempModel.position.y = std::stof(strings[12]);
@@ -474,7 +480,7 @@ void Core::drawMenu()
 	vendor.append(glString);
 	ImGui::Text(vendor.c_str());
 
-	static char curModelName[1024];
+	
 	ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
 
 	mainCamera.widthH = window.width;
@@ -552,13 +558,13 @@ void Core::drawMenu()
 		else
 			modelError = true;
 	}
-
+	//if the model failed to load, write text with imgui.
 	if (modelError)
 	{
 		ImGui::SameLine();
 		ImGui::Text("Model failed to load.");
 	}
-
+	//the char array that holds the scene path.
 	static char scenePath[1024] = "test.txt";
 
 	if (ImGui::Button("Save Scene"))
@@ -764,7 +770,7 @@ void Core::drawMenu()
 				}
 				externalModel tempModel;
 				//if model loading was successful then process the model further
-				tempModel.loadModel("C:/Users/logis/Documents/primitive/x64/Release/rec/cube.fbx", defaultVert, defaultFrag);
+				tempModel.loadModel(workingDir + std::string("/rec/cube.fbx"), defaultVert, defaultFrag);
 
 				tempModel.position.x = models[currentItem].position.x;
 				tempModel.position.y = models[currentItem].position.y;
@@ -939,7 +945,6 @@ void Core::renderLoop()
 				mainCamera.position -= glm::cross(direction, cameraRight) * (camSpeed * deltaTime);
 			}
 		}
-		
 		//button toggle system to toggle the editor on and off
 		if (input.isKeyPressed(GLFW_KEY_ESCAPE))
 		{
@@ -976,13 +981,16 @@ void Core::renderLoop()
 			editorEnable = 1;
 
 		//show and hide the cursor if we are holding the right mouse button or not.
-		mouseState = glfwGetMouseButton(window.window, GLFW_MOUSE_BUTTON_RIGHT);
-		if (mouseState == GLFW_PRESS)
-			glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-		else
+		if (editorEnable)
 		{
-			isMouse = true;
-			glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+			mouseState = glfwGetMouseButton(window.window, GLFW_MOUSE_BUTTON_RIGHT);
+			if (mouseState == GLFW_PRESS)
+				glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+			else
+			{
+				isMouse = true;
+				glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+			}
 		}
 		
 		
@@ -996,17 +1004,14 @@ void Core::renderLoop()
 		}
 
 		glfwSwapBuffers(window.window);
-
-		update(models);
+		if (!editorEnable)
+		{
+			update(models);
+		}
 
 		//update collision boxes relative to there models
 		for (Model m : models)
 		{
-			
-			if (models.size() == 6)
-			{
-				std::cout << "Test";
-			}
 			if (!m.col.isNull)
 			{
 				
@@ -1018,7 +1023,6 @@ void Core::renderLoop()
 				}
 			}
 		}
-
 	}
 	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
 	for (Model m : models)
