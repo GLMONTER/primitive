@@ -63,19 +63,38 @@ Model* Core::findObject(std::string name)
 	}
 }
 
-void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024])
+void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024], const bool clearAll)
 {
 	static bool colDeleted = false;
 	//checking if erasing any collider models is required.
 	int tempID = 0;
-	if (!models[index].col.isNull)
+	if (!clearAll)
 	{
-		tempID = models[index].col.id;
-		(collisionModels.begin() + models[index].col.id)->deleteBuffers();
-		collisionModels.erase(collisionModels.begin() + models[index].col.id);
-		colDeleted = true;
+		if (!models[index].col.isNull)
+		{
+			tempID = models[index].col.id;
+			(collisionModels.begin() + models[index].col.id)->deleteBuffers();
+			collisionModels.erase(collisionModels.begin() + models[index].col.id);
+			colDeleted = true;
+		}
 	}
+	if (clearAll)
+	{
+		if (!models[0].col.isNull)
+		{
+			collisionModels.begin()->deleteBuffers();
+			collisionModels.erase(collisionModels.begin());
+			colDeleted = true;
+		}
+		models.begin()->deleteBuffers();
+		modelNames.clear();
+		models.begin()->cleanup();
+		models.erase(models.begin());
 
+		currentItem = 0;
+		loadClear(modelNamesArray);
+		return;
+	}
 	//if the user trys to delete the last model in the array, pull back the current item index so the program
 	//doesn't try and reference an object that doesn't exist
 	if (models.size() == 1)
@@ -599,6 +618,15 @@ void Core::drawMenu()
 	{
 		loadScene(scenePath);
 	}
+	ImGui::SameLine();
+	if (ImGui::Button("Delete Scene"))
+	{
+		const int tempCounter = models.size();
+		for (int i = 0; i != tempCounter; i++)
+		{
+			deleteModel(i, curModelName, true);
+		}
+	}
 
 	ImGui::InputText("Scene Path", scenePath, IM_ARRAYSIZE(scenePath));
 
@@ -749,7 +777,7 @@ void Core::drawMenu()
 		//if the delete button is pressed, then delete the current model and exit the menu drawing function
 		if (ImGui::Button("Delete Model"))
 		{
-			deleteModel(currentItem, curModelName);
+			deleteModel(currentItem, curModelName, false);
 		}
 
 		if (models[currentItem].col.isNull == true)
@@ -815,7 +843,7 @@ void Core::renderLoop()
 
 		if (editorEnable)
 		{
-			//Start the Dear ImGui frame
+			//Start the ImGui frame
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
@@ -868,7 +896,6 @@ void Core::renderLoop()
 
 			ImGui::End();
 			
-
 			ImGui::Render();
 		}
 
@@ -960,9 +987,16 @@ void Core::renderLoop()
 					{
 						m.spawnPosition = m.position;
 					}
+					extern bool startedFlag;
+					startedFlag = false;
 				}
 				else
 				{
+					const int tempCounter = models.size();
+					for (int i = 0; i != tempCounter; i++)
+					{
+						deleteModel(i, curModelName, true);
+					}
 					for (Model m : models)
 					{
 						m.position = m.spawnPosition;
@@ -1032,7 +1066,6 @@ void Core::renderLoop()
 	}
 	//terminate GLFW
 	glfwTerminate();
-
 	//destroy the FMOD sound system.
 	soundSystem.destroySS();
 }

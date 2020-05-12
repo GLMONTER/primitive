@@ -38,7 +38,7 @@ public:
     std::vector<Model> models;
     std::vector<externalModel> collisionModels;
     std::vector<std::string> modelNames;
-    void deleteModel(unsigned int index,  char (&modelNames)[1024]);
+    void deleteModel(unsigned int index,  char (&modelNames)[1024], const bool clearAll);
     char workingDir[256];
 
     Window window;

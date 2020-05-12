@@ -40,9 +40,7 @@ void Model::processNodes(aiNode* node, const aiScene* scene)
 
 //loads a model from a file and uses the specified shader for rendering them
 bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
-{
-	std::cout << aiGetVersionMajor()<<aiGetVersionMinor();
-	
+{	
     Assimp::Importer importer;
     const aiScene* scene = importer.ReadFile(file, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_SortByPType | aiProcess_GenNormals);
 
@@ -53,8 +51,6 @@ bool Model::loadModel(std::string file, Shader &vShader, Shader &fShader)
     }
 
     processNodes(scene->mRootNode, scene);
-
-    std::cout << file << " loaded" << std::endl;
 
     //for each aiMesh make a new mesh and push it back into the meshes array for later drawing
     for(aiMesh* m : meshes)

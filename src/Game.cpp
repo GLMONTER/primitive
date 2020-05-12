@@ -1,6 +1,6 @@
 #include "Game.hpp"
 extern bool editorEnable;
-static bool startedFlag = false;
+bool startedFlag = false;
 Input input;
 extern Core core;
 
