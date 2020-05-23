@@ -6,7 +6,11 @@
 #include "Core.hpp"
 #include<algorithm>
 //for file dialog
+#ifdef _WIN32
 #include <shobjidl.h>
+#else
+#include <unistd.h>
+#endif
 #include <locale>
 
 static int collisionModelID = 0;
@@ -149,7 +153,7 @@ void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024], const 
 void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	static double lastX = static_cast<float>(width), lastY = static_cast<float>(height);
-			
+
 	if (isMouse)
 	{
 		lastX = xpos;
@@ -169,7 +173,7 @@ void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 
 	yaw += xoffset;
 	pitch += yoffset;
-	
+
 	if(pitch > 89.0f)
 		pitch = 89.0f;
 	if(pitch < -89.0f)
@@ -190,7 +194,7 @@ void Core::updateCamera(unsigned int wid, unsigned int hei)
 	//update camera values
 	mainCamera.widthH = wid;
 	mainCamera.heightH = hei;
-		
+
 	//check if they are not zero so glm doesn't assert
 	if(mainCamera.widthH == 0 || mainCamera.heightH == 0)
 		return;
@@ -202,14 +206,17 @@ void Core::updateCamera(unsigned int wid, unsigned int hei)
 void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 {
 	glViewport(0, 0, w, h);
-	
+
 	width = static_cast<unsigned int>(w);
 	height = static_cast<unsigned int>(h);
 }
 void Core::Init()
 {
+#ifdef _WIN32
 	GetCurrentDirectoryA(256, workingDir);
-
+	#else
+    getcwd(workingDir, 256);
+    #endif
 	std::ifstream f("config.txt");
 	if (f.get() == '0')
 		editorEnable = false;
@@ -228,10 +235,10 @@ void Core::Init()
 	//change camera parameters for matrix calculations
 	mainCamera.widthH = window.width;
 	mainCamera.heightH = window.height;
-	
+
 	//recalculate the camera matrix
 	mainCamera.calc(nullptr);
-	
+
 	//init GLEW
 	if(glewInit() != GLEW_OK)
 		throw std::runtime_error("GLEW FAILED TO INIT.");
@@ -248,11 +255,11 @@ void Core::Init()
 	ImGui::CreateContext();
 
 	//setup imgui io and enable docking, not needed right now.
-	
+
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	//enable window docking
 	io.ConfigFlags |= ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable;
-	 
+
 
 	//Setup imgui theme or style
 	ImGui::StyleColorsClassic();
@@ -265,22 +272,23 @@ void Core::Init()
 	glfwSwapInterval(0);
 
 	//make the default shaders for basic rendering.
-	defaultVert.createShader(Shader::VertexShader, "rec/basic.vert");
-	defaultFrag.createShader(Shader::FragmentShader, "rec/basic.frag");
+
+	defaultVert.createShader(Shader::VertexShader, (std::string(workingDir).c_str() + std::string("/rec/basic.vert")).c_str());
+	defaultFrag.createShader(Shader::FragmentShader, (std::string(workingDir).c_str() + std::string("/rec/basic.frag")).c_str());
 
 	//enable face culling for better performance
 	glEnable(GL_CULL_FACE);
 
 	//do some research on this...
 	glEnable(GL_DEPTH_TEST);
-		
+
 	//enable msaa
 	glEnable(GL_MULTISAMPLE);
-	
+
 	//generate Framebuffer and bind it
 	glGenFramebuffers(1, &FBO);
 	glBindFramebuffer(GL_FRAMEBUFFER, FBO);
-	
+
 	//generate the texture that the framebuffer will render to
 	glGenTextures(1, &FBTexture);
 	glBindTexture(GL_TEXTURE_2D, FBTexture);
@@ -289,11 +297,11 @@ void Core::Init()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, FBTexture, 0);
-	
+
 	//texture params
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	
+
 	glGenRenderbuffers(1, &depthrenderbuffer);
 	glBindRenderbuffer(GL_RENDERBUFFER, depthrenderbuffer);
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, window.width, window.height);
@@ -308,7 +316,7 @@ void Core::Init()
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 		throw std::runtime_error("Framebuffer creation failed");
-	
+
 	start(window.window);
 	//start the renderloop after init is done.
 	renderLoop();
@@ -349,7 +357,7 @@ void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], f
 		selectedScl[1] = models[static_cast<size_t>(currentItem)].scale.y;
 		selectedScl[2] = models[static_cast<size_t>(currentItem)].scale.z;
 	}
-	else 
+	else
 	{
 		//position
 		models[static_cast<size_t>(currentItem)].position.x = selectedPos[0];
@@ -410,7 +418,7 @@ void Core::loadScene(std::string scenePath)
 		//if model loading was successful then process the model further
 		if (mod.loadModel(strings[0], defaultVert, defaultFrag))
 		{
-			
+
 			idCounter++;
 			mod.position.x = std::stof(strings[2]);
 			mod.position.y = std::stof(strings[3]);
@@ -420,7 +428,7 @@ void Core::loadScene(std::string scenePath)
 			mod.EulerAngle.y = std::stof(strings[6]);
 			mod.EulerAngle.z = std::stof(strings[7]);
 			mod.modelName = strings[1];
-		
+
 			mod.scale.x = std::stof(strings[8]);
 			mod.scale.y = std::stof(strings[9]);
 			mod.scale.z = std::stof(strings[10]);
@@ -499,7 +507,7 @@ void Core::drawMenu()
 	vendor.append(glString);
 	ImGui::Text(vendor.c_str());
 
-	
+
 	ImGui::Text("%.1fps", static_cast<double>(ImGui::GetIO().Framerate));
 
 	mainCamera.widthH = window.width;
@@ -602,7 +610,7 @@ void Core::drawMenu()
 				<< ' ' << std::to_string(m.EulerAngle.x) << ' ' << std::to_string(m.EulerAngle.y) << ' ' << std::to_string(m.EulerAngle.z)
 				//write scale
 				<< ' ' << std::to_string(m.scale.x) << ' ' << std::to_string(m.scale.y) << ' ' << std::to_string(m.scale.z);
-			
+
 			if (!m.col.isNull)
 			{
 				ofs << ' ' << std::to_string(m.col.colPosition.x) << ' ' << std::to_string(m.col.colPosition.y) << ' ' << std::to_string(m.col.colPosition.z);
@@ -757,7 +765,7 @@ void Core::drawMenu()
 				selectedCollisionScl[2] = collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.z;
 			}
 		}
-		
+
 		//update model position and rotation from float input.
 		loadOrUnloadModel(selectedPos, selectedRot, selectedScl, true);
 		if (!models[currentItem].col.isNull)
@@ -770,7 +778,7 @@ void Core::drawMenu()
 			collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.y = selectedCollisionScl[1];
 			collisionModels[models[currentItem].col.id].abstractMeshes[0]->Scale.z = selectedCollisionScl[2];
 		}
-	
+
 
 		sizeofCollisions = collisionModels.size();
 		sizeofModels = models.size();
@@ -852,13 +860,13 @@ void Core::renderLoop()
 		//clear both framebuffers
 		glBindFramebuffer(GL_FRAMEBUFFER, FBO);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
+
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
+
 		static bool hasSet = false;
 		static bool temp;
-		
+
 		if (editorEnable)
 		{
 			ImGui::SetNextWindowSize(ImVec2(window.width, window.height));
@@ -895,7 +903,7 @@ void Core::renderLoop()
 			ImGui::Checkbox("Vsync", &vsync);
 
 			ImGui::End();
-			
+
 			ImGui::Render();
 		}
 
@@ -941,7 +949,7 @@ void Core::renderLoop()
 		}
 		glViewport(0, 0, window.width, window.height);
 
-		mainCamera.camFront = glm::normalize(camFront);	
+		mainCamera.camFront = glm::normalize(camFront);
 		if (editorEnable)
 		{
 			if (input.isKeyPressed(GLFW_KEY_W))
@@ -1026,8 +1034,8 @@ void Core::renderLoop()
 				glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 			}
 		}
-		
-		
+
+
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
@@ -1048,9 +1056,9 @@ void Core::renderLoop()
 		{
 			if (!m.col.isNull)
 			{
-				
+
 				collisionModels[m.col.id].position = collisionModels[m.col.id].abstractMeshes[0]->offset + m.position;
-				
+
 				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
 				{
 					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = (collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].abstractMeshes[0]->offset + collisionModels[m.col.id].position) * collisionModels[m.col.id].abstractMeshes[0]->Scale;

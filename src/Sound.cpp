@@ -26,7 +26,6 @@ bool SoundSystem::F_PlaySound(std::string filePath, float volume)
 
 	//actually play the channel from the sound group
 	FM_CALL(SoundSystem::SSystem->playSound(s, SoundSystem::chGroup, false, &ch), flag);
-	
 	//set the channel volume from the incoming volume var
 	ch->setVolume(volume);
 	
