@@ -1,16 +1,25 @@
 #pragma once
 
 #include<string>
+#include<vector>
 #include<iostream>
 
 #include<fmod/fmod.hpp>
 #include<fmod/fmod_errors.h>
 
+class Sound
+{
+public:
+	FMOD::Channel* sound;
+	std::string refName;
+};
 
 class SoundSystem
 {
 public:
-	static bool F_PlaySound(std::string filePath, float volume);
+	static bool stopSound(std::string referenceName);
+	static std::vector<Sound> Sounds;
+	static bool F_PlaySound(std::string filePath, float volume, std::string referenceName);
 	static bool init();
 	static void destroySS();
 private:

@@ -10,9 +10,24 @@
 //actual definition of static member
 FMOD::System* SoundSystem::SSystem = nullptr;
 FMOD::ChannelGroup* SoundSystem::chGroup = nullptr;
+//define for static vector in header
+std::vector<Sound> SoundSystem::Sounds;
+
+bool SoundSystem::stopSound(std::string referenceName)
+{
+	for (Sound s : SoundSystem::Sounds)
+	{
+		if (s.refName == referenceName)
+		{
+			s.sound->stop();
+			return true;
+		}
+	}
+	return false;
+}
 
 //Actually play a sound using FMOD
-bool SoundSystem::F_PlaySound(std::string filePath, float volume)
+bool SoundSystem::F_PlaySound(std::string filePath, float volume, std::string referenceName)
 {
 	bool flag = false;
 
@@ -23,12 +38,17 @@ bool SoundSystem::F_PlaySound(std::string filePath, float volume)
 	//make a channel for the sound to play on and push it into the main ChannelGroup
 	FMOD::Channel* ch = nullptr;
 	ch->setChannelGroup(SoundSystem::chGroup);
-
+	
 	//actually play the channel from the sound group
 	FM_CALL(SoundSystem::SSystem->playSound(s, SoundSystem::chGroup, false, &ch), flag);
 	//set the channel volume from the incoming volume var
 	ch->setVolume(volume);
-	
+
+	Sound tempSound;
+	tempSound.refName = referenceName;
+	tempSound.sound = ch;
+	Sounds.push_back(tempSound);
+
 	return checkFlag(flag);
 }
 

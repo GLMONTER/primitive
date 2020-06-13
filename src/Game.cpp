@@ -20,8 +20,8 @@ void start(GLFWwindow* window)
 	core.loadScene("test.txt");
 	
 	startedFlag = true;
-
-	SoundSystem::F_PlaySound(core.workingDir + std::string("/rec/sound.mp3"), 0.25f);
+	SoundSystem::stopSound("music");
+	SoundSystem::F_PlaySound(core.workingDir + std::string("/rec/sound.mp3"), 0.25f, "music");
 }
 
 void update(std::vector<Model>& modelArray)

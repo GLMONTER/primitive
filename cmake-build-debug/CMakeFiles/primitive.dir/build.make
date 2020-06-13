@@ -61,361 +61,361 @@ include CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.obj: ..\include\imgui\examples\imgui_impl_glfw.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_glfw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_glfw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_glfw.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_glfw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.obj: ..\include\imgui\examples\imgui_impl_opengl3.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_opengl3.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_opengl3.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\examples\imgui_impl_opengl3.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\examples\imgui_impl_opengl3.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\imgui.cpp.obj: ..\include\imgui\imgui.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/primitive.dir/include/imgui/imgui.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\imgui.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\imgui.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/imgui.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\imgui.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/imgui.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\imgui.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\imgui.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.obj: ..\include\imgui\imgui_demo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\imgui_demo.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\imgui_demo.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\imgui_demo.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\imgui_demo.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.obj: ..\include\imgui\imgui_draw.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\imgui_draw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\imgui_draw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\imgui_draw.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\imgui_draw.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.obj: ..\include\imgui\imgui_widgets.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\include\imgui\imgui_widgets.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\include\imgui\imgui_widgets.cpp
 <<
 
 CMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\include\imgui\imgui_widgets.cpp.s /c C:\Users\logis\Documents\primitive\include\imgui\imgui_widgets.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Camera.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Camera.cpp.obj: ..\src\Camera.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/primitive.dir/src/Camera.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Camera.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Camera.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Camera.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Camera.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Camera.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Camera.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Camera.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Camera.cpp.s /c C:\Users\logis\Documents\primitive\src\Camera.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Collider.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Collider.cpp.obj: ..\src\Collider.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/primitive.dir/src/Collider.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Collider.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Collider.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Collider.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Collider.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Collider.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Collider.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Collider.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Collider.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Collider.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Collider.cpp.s /c C:\Users\logis\Documents\primitive\src\Collider.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Core.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Core.cpp.obj: ..\src\Core.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/primitive.dir/src/Core.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Core.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Core.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Core.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Core.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Core.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Core.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Core.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Core.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Core.cpp.s /c C:\Users\logis\Documents\primitive\src\Core.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Game.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Game.cpp.obj: ..\src\Game.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/primitive.dir/src/Game.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Game.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Game.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Game.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Game.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Game.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Game.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Game.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Game.cpp.s /c C:\Users\logis\Documents\primitive\src\Game.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Input.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Input.cpp.obj: ..\src\Input.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/primitive.dir/src/Input.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Input.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Input.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Input.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Input.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Input.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Input.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Input.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Input.cpp.s /c C:\Users\logis\Documents\primitive\src\Input.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Mesh.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Mesh.cpp.obj: ..\src\Mesh.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/primitive.dir/src/Mesh.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Mesh.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Mesh.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Mesh.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Mesh.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Mesh.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Mesh.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Mesh.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Mesh.cpp.s /c C:\Users\logis\Documents\primitive\src\Mesh.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Model.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Model.cpp.obj: ..\src\Model.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/primitive.dir/src/Model.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Model.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Model.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Model.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Model.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Model.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Model.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Model.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Model.cpp.s /c C:\Users\logis\Documents\primitive\src\Model.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Shader.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Shader.cpp.obj: ..\src\Shader.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/primitive.dir/src/Shader.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Shader.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Shader.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Shader.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Shader.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Shader.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Shader.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Shader.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Shader.cpp.s /c C:\Users\logis\Documents\primitive\src\Shader.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Sound.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Sound.cpp.obj: ..\src\Sound.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/primitive.dir/src/Sound.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Sound.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Sound.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Sound.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Sound.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Sound.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Sound.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Sound.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Sound.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Sound.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Sound.cpp.s /c C:\Users\logis\Documents\primitive\src\Sound.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Texture.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Texture.cpp.obj: ..\src\Texture.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/primitive.dir/src/Texture.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Texture.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Texture.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Texture.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Texture.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Texture.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Texture.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Texture.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Texture.cpp.s /c C:\Users\logis\Documents\primitive\src\Texture.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Window.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\Window.cpp.obj: ..\src\Window.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/primitive.dir/src/Window.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\Window.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\Window.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/Window.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\Window.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\Window.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\Window.cpp
 <<
 
 CMakeFiles\primitive.dir\src\Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/Window.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\Window.cpp.s /c C:\Users\logis\Documents\primitive\src\Window.cpp
 <<
 
 CMakeFiles\primitive.dir\src\externalModel.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\externalModel.cpp.obj: ..\src\externalModel.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/primitive.dir/src/externalModel.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\externalModel.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\externalModel.cpp
 <<
 
 CMakeFiles\primitive.dir\src\externalModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/externalModel.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\externalModel.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\externalModel.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\externalModel.cpp
 <<
 
 CMakeFiles\primitive.dir\src\externalModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/externalModel.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\externalModel.cpp.s /c C:\Users\logis\Documents\primitive\src\externalModel.cpp
 <<
 
 CMakeFiles\primitive.dir\src\main.cpp.obj: CMakeFiles\primitive.dir\flags.make
 CMakeFiles\primitive.dir\src\main.cpp.obj: ..\src\main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/primitive.dir/src/main.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\primitive.dir\src\main.cpp.obj /FdCMakeFiles\primitive.dir\ /FS -c C:\Users\logis\Documents\primitive\src\main.cpp
 <<
 
 CMakeFiles\primitive.dir\src\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/primitive.dir/src/main.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe > CMakeFiles\primitive.dir\src\main.cpp.i @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe > CMakeFiles\primitive.dir\src\main.cpp.i @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\logis\Documents\primitive\src\main.cpp
 <<
 
 CMakeFiles\primitive.dir\src\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/primitive.dir/src/main.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @<<
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\primitive.dir\src\main.cpp.s /c C:\Users\logis\Documents\primitive\src\main.cpp
 <<
 
@@ -470,8 +470,8 @@ primitive.exe: ..\lib\WIN32\glew32s.lib
 primitive.exe: ..\lib\WIN32\glfw3.lib
 primitive.exe: CMakeFiles\primitive.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\logis\Documents\primitive\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable primitive.exe"
-	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\primitive.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\primitive.dir\objects1.rsp @<<
- /out:primitive.exe /implib:primitive.lib /pdb:C:\Users\logis\Documents\primitive\cmake-build-debug\primitive.pdb /version:0.0  /machine:x64 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib ..\lib\WIN32\assimp-vc142-mt.lib ..\lib\WIN32\fmod_vc.lib ..\lib\WIN32\glew32s.lib ..\lib\WIN32\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\primitive.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\primitive.dir\objects1.rsp @<<
+ /out:primitive.exe /implib:primitive.lib /pdb:C:\Users\logis\Documents\primitive\cmake-build-debug\primitive.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib ..\lib\WIN32\assimp-vc142-mt.lib ..\lib\WIN32\fmod_vc.lib ..\lib\WIN32\glew32s.lib ..\lib\WIN32\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
