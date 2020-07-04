@@ -1,3 +1,3 @@
-C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir
-C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir

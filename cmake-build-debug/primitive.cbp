@@ -4,163 +4,159 @@
 	<Project>
 		<Option title="primitive"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/logis/Documents/primitive/cmake-build-debug"/>
+				<Option working_dir="/home/monter/Documents/primitive/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="primitive">
-				<Option output="C:/Users/logis/Documents/primitive/cmake-build-debug/primitive.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/logis/Documents/primitive/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add option="-DGLEW_STATIC"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/WIN32"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/glm"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/imgui"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/WIN32/GL"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 primitive"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="primitive/fast">
-				<Option output="C:/Users/logis/Documents/primitive/cmake-build-debug/primitive.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/logis/Documents/primitive/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add option="-DGLEW_STATIC"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/WIN32"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/glm"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/imgui"/>
-					<Add directory="C:/Users/logis/Documents/primitive/include/WIN32/GL"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 primitive/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/logis/Documents/primitive/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/logis/Documents/primitive/cmake-build-debug"/>
+				<Option working_dir="/home/monter/Documents/primitive/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\logis\Documents\primitive\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/monter/Documents/primitive/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="primitive">
+				<Option output="/home/monter/Documents/primitive/cmake-build-debug/primitive" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/monter/Documents/primitive/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/monter/Documents/primitive/include/LINUX"/>
+					<Add directory="/home/monter/Documents/primitive/include"/>
+					<Add directory="/home/monter/Documents/primitive/include/glm"/>
+					<Add directory="/home/monter/Documents/primitive/include/imgui"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 primitive"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="primitive/fast">
+				<Option output="/home/monter/Documents/primitive/cmake-build-debug/primitive" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/monter/Documents/primitive/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/monter/Documents/primitive/include/LINUX"/>
+					<Add directory="/home/monter/Documents/primitive/include"/>
+					<Add directory="/home/monter/Documents/primitive/include/glm"/>
+					<Add directory="/home/monter/Documents/primitive/include/imgui"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 primitive/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/monter/Documents/primitive/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_glfw.h">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.h">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.h">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.h">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/imgui.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/imgui.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/imgui.h">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/imgui.h">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/imgui_demo.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/imgui_demo.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/imgui_draw.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/imgui_draw.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/include/imgui/imgui_widgets.cpp">
+		<Unit filename="/home/monter/Documents/primitive/include/imgui/imgui_widgets.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Camera.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Camera.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Collider.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Collider.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Core.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Core.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Game.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Game.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Input.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Input.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Mesh.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Mesh.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Model.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Model.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Shader.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Shader.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Sound.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Sound.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Texture.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Texture.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/Window.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/Window.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/externalModel.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/externalModel.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/src/main.cpp">
+		<Unit filename="/home/monter/Documents/primitive/src/main.cpp">
 			<Option target="primitive"/>
 		</Unit>
-		<Unit filename="C:/Users/logis/Documents/primitive/CMakeLists.txt">
+		<Unit filename="/home/monter/Documents/primitive/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

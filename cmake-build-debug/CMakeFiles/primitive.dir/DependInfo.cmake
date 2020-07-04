@@ -4,40 +4,34 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.obj"
-  "C:/Users/logis/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.obj"
-  "C:/Users/logis/Documents/primitive/include/imgui/imgui.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui.cpp.obj"
-  "C:/Users/logis/Documents/primitive/include/imgui/imgui_demo.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.obj"
-  "C:/Users/logis/Documents/primitive/include/imgui/imgui_draw.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.obj"
-  "C:/Users/logis/Documents/primitive/include/imgui/imgui_widgets.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Camera.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Camera.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Collider.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Collider.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Core.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Core.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Game.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Game.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Input.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Input.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Mesh.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Mesh.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Model.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Model.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Shader.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Shader.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Sound.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Sound.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Texture.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Texture.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/Window.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Window.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/externalModel.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/externalModel.cpp.obj"
-  "C:/Users/logis/Documents/primitive/src/main.cpp" "C:/Users/logis/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/main.cpp.obj"
+  "/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.o"
+  "/home/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.o"
+  "/home/monter/Documents/primitive/include/imgui/imgui.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui.cpp.o"
+  "/home/monter/Documents/primitive/include/imgui/imgui_demo.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.o"
+  "/home/monter/Documents/primitive/include/imgui/imgui_draw.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.o"
+  "/home/monter/Documents/primitive/include/imgui/imgui_widgets.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.o"
+  "/home/monter/Documents/primitive/src/Camera.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Camera.cpp.o"
+  "/home/monter/Documents/primitive/src/Collider.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Collider.cpp.o"
+  "/home/monter/Documents/primitive/src/Core.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Core.cpp.o"
+  "/home/monter/Documents/primitive/src/Game.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Game.cpp.o"
+  "/home/monter/Documents/primitive/src/Input.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Input.cpp.o"
+  "/home/monter/Documents/primitive/src/Mesh.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Mesh.cpp.o"
+  "/home/monter/Documents/primitive/src/Model.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Model.cpp.o"
+  "/home/monter/Documents/primitive/src/Shader.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Shader.cpp.o"
+  "/home/monter/Documents/primitive/src/Sound.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Sound.cpp.o"
+  "/home/monter/Documents/primitive/src/Texture.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Texture.cpp.o"
+  "/home/monter/Documents/primitive/src/Window.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/Window.cpp.o"
+  "/home/monter/Documents/primitive/src/externalModel.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/externalModel.cpp.o"
+  "/home/monter/Documents/primitive/src/main.cpp" "/home/monter/Documents/primitive/cmake-build-debug/CMakeFiles/primitive.dir/src/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "GLEW_STATIC"
-  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include/WIN32"
+  "../include/LINUX"
   "../include"
   "../include/glm"
   "../include/imgui"
-  "../include/WIN32/GL"
   )
 
 # Targets to which this target links.

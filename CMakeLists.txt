@@ -14,7 +14,7 @@ file(GLOB SRC
         "include/imgui/examples/imgui_impl_opengl3.cpp"
 
         )
-if(LINUX)
+if(UNIX)
     include_directories(include/LINUX include include/glm include/imgui)
 endif()
 
@@ -22,8 +22,8 @@ if(WIN32)
     include_directories(include/WIN32 include include/glm include/imgui include/WIN32/GL)
 endif()
 
-    add_executable(primitive ${SRC})
-if(LINUX)
+add_executable(primitive ${SRC})
+if(UNIX)
 target_link_libraries(primitive /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libglfw.so /usr/lib/x86_64-linux-gnu/libGLEW.so
         /usr/lib/x86_64-linux-gnu/libassimp.so /home/monter/Documents/primitive/lib/LINUX/libfmod.so)
 endif()
