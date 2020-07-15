@@ -14,8 +14,13 @@ file(GLOB SRC
         "include/imgui/examples/imgui_impl_opengl3.cpp"
 
         )
+    if(UNIX)
+        FIND_PACKAGE(PkgConfig REQUIRED)
+        PKG_CHECK_MODULES(GTK3 REQUIRED gtk+-3.0)
+        ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
+    endif()
 if(UNIX)
-    include_directories(include/LINUX include include/glm include/imgui)
+    include_directories(include/LINUX include include/glm include/imgui ${GTK3_INCLUDE_DIRS})
 endif()
 
 if(WIN32)
@@ -24,8 +29,9 @@ endif()
 
 add_executable(primitive ${SRC})
 if(UNIX)
+    LINK_DIRECTORIES(${GTK3_LIBRARY_DIRS})
 target_link_libraries(primitive /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libglfw.so /usr/lib/x86_64-linux-gnu/libGLEW.so
-        /usr/lib/x86_64-linux-gnu/libassimp.so /home/monter/Documents/primitive/lib/LINUX/libfmod.so)
+        /usr/lib/x86_64-linux-gnu/libassimp.so /home/monter/Documents/primitive/lib/LINUX/libfmod.so /home/monter/Documents/primitive/lib/LINUX/libnfd.a  ${GTK3_LIBRARIES})
 endif()
 if(WIN32)
     find_package(OpenGL REQUIRED)

@@ -12,6 +12,7 @@
 #include <unistd.h>
 #endif
 #include <locale>
+#include <nfd.h>
 
 static int collisionModelID = 0;
 
@@ -525,46 +526,20 @@ void Core::drawMenu()
 
 	if (ImGui::Button("Load Model"))
 	{
-#ifdef WIN32
-		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
-			COINIT_DISABLE_OLE1DDE);
-		if (SUCCEEDED(hr))
-		{
-			IFileOpenDialog* pFileOpen;
 
-			// Create the FileOpenDialog object.
-			hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
-				IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+        nfdchar_t *outPath = NULL;
+        nfdresult_t result = NFD_OpenDialog( NULL, NULL, &outPath );
 
-			if (SUCCEEDED(hr))
-			{
-				// Show the Open dialog box.
-				hr = pFileOpen->Show(NULL);
+        if ( result == NFD_OKAY ) {
+            strcpy(buffer, outPath);
+            free(outPath);
+        }
+        else if ( result == NFD_CANCEL ) {
+            std::cout<<"User pressed cancel."<<std::endl;
+        }
+        else
+            std::cout<<NFD_GetError()<<std::endl;
 
-				// Get the file name from the dialog box.
-				if (SUCCEEDED(hr))
-				{
-					IShellItem* pItem;
-					hr = pFileOpen->GetResult(&pItem);
-					if (SUCCEEDED(hr))
-					{
-						wchar_t* pszFilePath;
-						hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-						//convert the wide string given by windows to a normal string
-						wcstombs(buffer, pszFilePath, sizeof(buffer));						// Display the file name to the user.
-
-						if (SUCCEEDED(hr))
-						{
-							CoTaskMemFree(pszFilePath);
-						}
-						pItem->Release();
-					}
-				}
-				pFileOpen->Release();
-			}
-			CoUninitialize();
-		}
-#endif
 		if (currentItem == -1)
 			currentItem = 0;
 
@@ -940,8 +915,10 @@ void Core::renderLoop()
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
 						if (!models[currentItem].col.isNull)
 						{
+                            /*
 							collisionModels[models[currentItem].col.id].draw(collisionModels[models[currentItem].col.id].position, collisionModels[models[currentItem].col.id].EulerAngle,
 								collisionModels[models[currentItem].col.id].scale, mainCamera);
+                                */
 						}
 					}
 				}

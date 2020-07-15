@@ -10,4 +10,4 @@
 
 
 
-commit - changed code to only render collider if object selected. added collision code to check if you have collided with an object with a name
+ubuntu pre : sudo apt install libgtk-3-dev libglew-dev libglfw3-dev libassimp-dev
