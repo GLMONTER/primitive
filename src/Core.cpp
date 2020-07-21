@@ -66,6 +66,7 @@ Model* Core::findObject(std::string name)
 		if (modelNames[i] == name)
 			return &models[i];
 	}
+    return nullptr;
 }
 
 void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024], const bool clearAll)
@@ -175,6 +176,7 @@ void GLFW_MouseCallback(GLFWwindow* window, double xpos, double ypos)
 	yaw += xoffset;
 	pitch += yoffset;
 
+     //clamping camera values
 	if(pitch > 89.0f)
 		pitch = 89.0f;
 	if(pitch < -89.0f)
@@ -216,7 +218,9 @@ void Core::Init()
 #ifdef _WIN32
 	GetCurrentDirectoryA(256, workingDir);
 	#else
-    getcwd(workingDir, 256);
+    char* result = getcwd(workingDir, 256);
+    if(result == NULL)
+        std::cerr<<"get application directory failed."<<std::endl;
     #endif
 	std::ifstream f("config.txt");
 	if (f.get() == '0')
@@ -392,7 +396,6 @@ void Core::loadScene(std::string scenePath)
 		std::string push;
 
 		//load a part of the strings
-		static bool flag = false;
 		for (std::string::iterator i = line.begin(); i != line.end(); i++)
 		{
 			//until we hit a space keep loading data
@@ -865,7 +868,7 @@ void Core::renderLoop()
 			//draw the viewport as an imgui image
 			ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize);
 			{
-				ImGui::Image((void*)FBTexture, ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
+                ImGui::Image(reinterpret_cast<void*>(FBTexture), ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
 			}
 			ImGui::End();
 
@@ -891,7 +894,7 @@ void Core::renderLoop()
 			{
 				if (models.size() > 0)
 				{
-					for (int i = 0; i != models.size(); i++)
+                    for (unsigned int i = 0; i != models.size(); i++)
 					{
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
 						if (!models[currentItem].col.isNull)
@@ -910,7 +913,7 @@ void Core::renderLoop()
 			{
 				if (models.size() > 0)
 				{
-					for (int i = 0; i != models.size(); i++)
+                    for (unsigned int i = 0; i != models.size(); i++)
 					{
 						models[i].draw(models[i].position, models[i].EulerAngle, models[i].scale, mainCamera);
 						if (!models[currentItem].col.isNull)
@@ -1033,15 +1036,16 @@ void Core::renderLoop()
 		{
 			if (!m.col.isNull)
 			{
-
 				collisionModels[m.col.id].position = collisionModels[m.col.id].abstractMeshes[0]->offset + m.position;
 
-				for (int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
+                for (unsigned int i = 0; i != collisionModels[m.col.id].abstractMeshes[0]->vertices.size(); i++)
 				{
 					collisionModels[m.col.id].abstractMeshes[0]->vertices[i].Position = (collisionModels[m.col.id].abstractMeshes[0]->vertices[i].staticPosition + collisionModels[m.col.id].abstractMeshes[0]->offset + collisionModels[m.col.id].position) * collisionModels[m.col.id].abstractMeshes[0]->Scale;
 				}
 			}
 		}
+        SoundSystem::SSystem->update();
+        SoundSystem::set3DAttribs(mainCamera.position, mainCamera.camFront, mainCamera.camUp);
 	}
 	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
 	for (Model m : models)

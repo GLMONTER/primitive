@@ -21,7 +21,7 @@ void start(GLFWwindow* window)
 	
 	startedFlag = true;
 	SoundSystem::stopSound("music");
-	SoundSystem::F_PlaySound(core.workingDir + std::string("/rec/sound.mp3"), 0.25f, "music");
+    SoundSystem::F_PlaySound(core.workingDir + std::string("/rec/sound.mp3"), 0.25f, "music", core.mainCamera.position);
 }
 
 void update(std::vector<Model>& modelArray)

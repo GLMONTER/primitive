@@ -13,7 +13,7 @@ FMOD::ChannelGroup* SoundSystem::chGroup = nullptr;
 //define for static vector in header
 std::vector<Sound> SoundSystem::Sounds;
 
-bool SoundSystem::stopSound(std::string referenceName)
+bool SoundSystem::stopSound(const std::string& referenceName)
 {
 	for (Sound s : SoundSystem::Sounds)
 	{
@@ -27,18 +27,23 @@ bool SoundSystem::stopSound(std::string referenceName)
 }
 
 //Actually play a sound using FMOD
-bool SoundSystem::F_PlaySound(std::string filePath, float volume, std::string referenceName)
+bool SoundSystem::F_PlaySound(const std::string& filePath, float volume, const std::string& referenceName, glm::vec3& playPosition)
 {
 	bool flag = false;
 
 	//create the sound from the file
 	FMOD::Sound* s = nullptr;
-	FM_CALL(SoundSystem::SSystem->createSound(filePath.c_str(), FMOD_DEFAULT, nullptr, &s), flag);
+    FM_CALL(SoundSystem::SSystem->createSound(filePath.c_str(), FMOD_3D, nullptr, &s), flag);
 
 	//make a channel for the sound to play on and push it into the main ChannelGroup
 	FMOD::Channel* ch = nullptr;
 	ch->setChannelGroup(SoundSystem::chGroup);
-	
+    FMOD_VECTOR playPositionTemp;
+    playPositionTemp.x = playPosition.x;
+    playPositionTemp.y = playPosition.y;
+    playPositionTemp.z = playPosition.z;
+
+    ch->set3DAttributes(&playPositionTemp, nullptr);
 	//actually play the channel from the sound group
 	FM_CALL(SoundSystem::SSystem->playSound(s, SoundSystem::chGroup, false, &ch), flag);
 	//set the channel volume from the incoming volume var
@@ -97,6 +102,29 @@ bool SoundSystem::FM_CALL(FMOD_RESULT result, bool& flag)
 	}
 	flag = true;
 	return true;
+}
+
+void SoundSystem::set3DAttribs(glm::vec3& camPos, glm::vec3& camForward, glm::vec3& camUp)
+{
+    //temp variables for listener vectors;
+    FMOD_VECTOR camPosTemp;
+    FMOD_VECTOR camForwardTemp;
+    FMOD_VECTOR camUpTemp;
+
+    //converting glm::vec3 to FMOD_VECTOR for FMOD
+    camPosTemp.x = camPos.x;
+    camPosTemp.y = camPos.y;
+    camPosTemp.z = camPos.z;
+
+    camForwardTemp.x = camForward.x;
+    camForwardTemp.y = camForward.y;
+    camForwardTemp.z = camForward.z;
+
+    camUpTemp.x = camUp.x;
+    camUpTemp.y = camUp.y;
+    camUpTemp.z = camUp.z;
+
+    SoundSystem::SSystem->set3DListenerAttributes(0, &camPosTemp, NULL, &camForwardTemp, &camUpTemp);
 }
 
 //just a bool checker that returns true or false based on the bools state
