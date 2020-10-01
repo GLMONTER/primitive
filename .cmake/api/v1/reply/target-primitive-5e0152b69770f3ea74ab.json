@@ -11,6 +11,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -25,13 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 30,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 23,
+				"line" : 48,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 30,
 				"parent" : 0
 			}
 		]
@@ -42,7 +49,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-O3 -DNDEBUG   -pthread"
+					"fragment" : " -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk  "
 				},
 				{
 					"fragment" : "-std=gnu++2a"
@@ -51,100 +58,28 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
-					"path" : "/home/monter/Documents/primitive/include/LINUX"
+					"backtrace" : 3,
+					"path" : "/Users/monter/Documents/primitive/include/APPLE"
 				},
 				{
-					"backtrace" : 2,
-					"path" : "/home/monter/Documents/primitive/include"
+					"backtrace" : 3,
+					"path" : "/Users/monter/Documents/primitive/include"
 				},
 				{
-					"backtrace" : 2,
-					"path" : "/home/monter/Documents/primitive/include/glm"
+					"backtrace" : 3,
+					"path" : "/Users/monter/Documents/primitive/include/glm"
 				},
 				{
-					"backtrace" : 2,
-					"path" : "/home/monter/Documents/primitive/include/imgui"
+					"backtrace" : 3,
+					"path" : "/Users/monter/Documents/primitive/include/imgui"
 				},
 				{
-					"backtrace" : 2,
-					"path" : "/usr/include/gtk-3.0"
+					"backtrace" : 3,
+					"path" : "/usr/local/Cellar/assimp/5.0.1/include"
 				},
 				{
-					"backtrace" : 2,
-					"path" : "/usr/include/at-spi2-atk/2.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/at-spi-2.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/dbus-1.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/lib/x86_64-linux-gnu/dbus-1.0/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/gio-unix-2.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/cairo"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/pango-1.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/fribidi"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/harfbuzz"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/atk-1.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/pixman-1"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/uuid"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/freetype2"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/libpng16"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/gdk-pixbuf-2.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/libmount"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/blkid"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/include/glib-2.0"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
+					"backtrace" : 3,
+					"path" : "/usr/local/include"
 				}
 			],
 			"language" : "CXX",
@@ -178,87 +113,57 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-O3 -DNDEBUG",
-				"role" : "flags"
-			},
-			{
 				"fragment" : "",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/monter/Documents/primitive/lib/LINUX",
+				"fragment" : "-Wl,-rpath,/Users/monter/Documents/primitive/lib/APPLE",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libGL.so",
+				"fragment" : "-framework",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libglfw.so",
+				"fragment" : "OpenGL",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libGLEW.so",
+				"fragment" : "-framework",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libassimp.so",
+				"fragment" : "OpenGL",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "lib/LINUX/libfmod.so",
+				"backtrace" : 2,
+				"fragment" : "-framework AppKit",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "lib/LINUX/libnfd.a",
+				"backtrace" : 2,
+				"fragment" : "lib/APPLE/libnfd.a",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lgtk-3",
+				"backtrace" : 2,
+				"fragment" : "/usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lgdk-3",
+				"backtrace" : 2,
+				"fragment" : "lib/APPLE/libfmod.dylib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lpangocairo-1.0",
+				"backtrace" : 2,
+				"fragment" : "/usr/local/Cellar/assimp/5.0.1/lib/libassimp.5.0.0.dylib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lpango-1.0",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lharfbuzz",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-latk-1.0",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lcairo-gobject",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lcairo",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lgdk_pixbuf-2.0",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lgio-2.0",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lgobject-2.0",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lglib-2.0",
+				"backtrace" : 2,
+				"fragment" : "/usr/local/Cellar/glfw/3.3.2/lib/libglfw.3.3.dylib",
 				"role" : "libraries"
 			}
 		],
