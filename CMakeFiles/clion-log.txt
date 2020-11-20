@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G "CodeBlocks - Unix Makefiles" /Users/monter/Documents/primitive
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_OSX_ARCHITECTURES=arm64 -G "CodeBlocks - Unix Makefiles" /Users/monter/Documents/primitive
 CMake Warning (dev) at /usr/local/lib/cmake/assimp-5.0/assimpTargets.cmake:54 (if):
   if given arguments:
 

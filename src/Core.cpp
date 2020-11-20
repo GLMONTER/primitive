@@ -228,7 +228,7 @@ void Core::Init()
 	else
 		editorEnable = true;
 	//init the sound system
-	SoundSystem::init();
+	//SoundSystem::init();
 
 	//create the window and set the camera width and height to have the correct camera matrix without resizing.
 	if(editorEnable)
@@ -1044,8 +1044,8 @@ void Core::renderLoop()
 				}
 			}
 		}
-        SoundSystem::SSystem->update();
-        SoundSystem::set3DAttribs(mainCamera.position, mainCamera.camFront, mainCamera.camUp);
+      //  SoundSystem::SSystem->update();
+       // SoundSystem::set3DAttribs(mainCamera.position, mainCamera.camFront, mainCamera.camUp);
 	}
 	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
 	for (Model m : models)
@@ -1056,5 +1056,5 @@ void Core::renderLoop()
 	//terminate GLFW
 	glfwTerminate();
 	//destroy the FMOD sound system.
-	soundSystem.destroySS();
+	//soundSystem.destroySS();
 }

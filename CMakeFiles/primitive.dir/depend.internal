@@ -4,14 +4,14 @@
 CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.o
  /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp
  /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.h
- include/GLFW/glfw3.h
- include/GLFW/glfw3native.h
+ include/APPLE/GLFW/glfw3.h
+ include/APPLE/GLFW/glfw3native.h
  include/imgui/imconfig.h
  include/imgui/imgui.h
 CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.o
  /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp
  /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.h
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
  include/imgui/imconfig.h
  include/imgui/imgui.h
 CMakeFiles/primitive.dir/include/imgui/imgui.cpp.o
@@ -241,38 +241,38 @@ CMakeFiles/primitive.dir/src/Camera.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Collider.cpp.o
  /Users/monter/Documents/primitive/src/Collider.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/quaternion.inl
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
  include/Camera.hpp
  include/Collider.hpp
  include/Mesh.hpp
@@ -475,37 +475,38 @@ CMakeFiles/primitive.dir/src/Collider.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Core.cpp.o
  /Users/monter/Documents/primitive/src/Core.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/GLFW/glfw3.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
  include/APPLE/fmod/fmod.h
  include/APPLE/fmod/fmod.hpp
  include/APPLE/fmod/fmod_codec.h
@@ -517,7 +518,6 @@ CMakeFiles/primitive.dir/src/Core.cpp.o
  include/Camera.hpp
  include/Collider.hpp
  include/Core.hpp
- include/GLFW/glfw3.h
  include/Input.hpp
  include/Mesh.hpp
  include/Model.hpp
@@ -735,37 +735,38 @@ CMakeFiles/primitive.dir/src/Core.cpp.o
  include/nfd.h
 CMakeFiles/primitive.dir/src/Game.cpp.o
  /Users/monter/Documents/primitive/src/Game.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/GLFW/glfw3.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
  include/APPLE/fmod/fmod.h
  include/APPLE/fmod/fmod.hpp
  include/APPLE/fmod/fmod_codec.h
@@ -777,7 +778,6 @@ CMakeFiles/primitive.dir/src/Game.cpp.o
  include/Camera.hpp
  include/Collider.hpp
  include/Core.hpp
- include/GLFW/glfw3.h
  include/Game.hpp
  include/Input.hpp
  include/Mesh.hpp
@@ -995,7 +995,7 @@ CMakeFiles/primitive.dir/src/Game.cpp.o
  include/imgui/imgui.h
 CMakeFiles/primitive.dir/src/Input.cpp.o
  /Users/monter/Documents/primitive/src/Input.cpp
- include/GLFW/glfw3.h
+ include/APPLE/GLFW/glfw3.h
  include/Input.hpp
  include/glm/glm/common.hpp
  include/glm/glm/detail/_fixes.hpp
@@ -1147,38 +1147,38 @@ CMakeFiles/primitive.dir/src/Input.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Mesh.cpp.o
  /Users/monter/Documents/primitive/src/Mesh.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/quaternion.inl
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
  include/Camera.hpp
  include/Mesh.hpp
  include/Shader.hpp
@@ -1379,39 +1379,39 @@ CMakeFiles/primitive.dir/src/Mesh.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Model.cpp.o
  /Users/monter/Documents/primitive/src/Model.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/version.h
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/quaternion.inl
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
+ include/APPLE/assimp/version.h
  include/Camera.hpp
  include/Collider.hpp
  include/Mesh.hpp
@@ -1615,7 +1615,7 @@ CMakeFiles/primitive.dir/src/Model.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Shader.cpp.o
  /Users/monter/Documents/primitive/src/Shader.cpp
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
  include/Shader.hpp
 CMakeFiles/primitive.dir/src/Sound.cpp.o
  /Users/monter/Documents/primitive/src/Sound.cpp
@@ -1778,48 +1778,48 @@ CMakeFiles/primitive.dir/src/Sound.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/Texture.cpp.o
  /Users/monter/Documents/primitive/src/Texture.cpp
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
  include/Texture.hpp
  include/stb/stb_image.h
 CMakeFiles/primitive.dir/src/Window.cpp.o
  /Users/monter/Documents/primitive/src/Window.cpp
- include/GLFW/glfw3.h
+ include/APPLE/GLFW/glfw3.h
  include/Window.hpp
 CMakeFiles/primitive.dir/src/externalModel.cpp.o
  /Users/monter/Documents/primitive/src/externalModel.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/version.h
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/quaternion.inl
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
+ include/APPLE/assimp/version.h
  include/Camera.hpp
  include/Mesh.hpp
  include/Shader.hpp
@@ -2021,37 +2021,38 @@ CMakeFiles/primitive.dir/src/externalModel.cpp.o
  include/glm/glm/vector_relational.hpp
 CMakeFiles/primitive.dir/src/main.cpp.o
  /Users/monter/Documents/primitive/src/main.cpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/poppack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pstdint.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Compiler/pushpack1.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/Importer.hpp
- /usr/local/Cellar/assimp/5.0.1/include/assimp/MathFunctions.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/aabb.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/anim.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/camera.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/color4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/config.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/defs.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/light.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/material.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix3x3.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/matrix4x4.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/mesh.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/metadata.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/postprocess.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/quaternion.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/scene.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/texture.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/types.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector2.inl
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.h
- /usr/local/Cellar/assimp/5.0.1/include/assimp/vector3.inl
- /usr/local/include/GL/glew.h
+ include/APPLE/GL/glew.h
+ include/APPLE/GLFW/glfw3.h
+ include/APPLE/assimp/Compiler/poppack1.h
+ include/APPLE/assimp/Compiler/pstdint.h
+ include/APPLE/assimp/Compiler/pushpack1.h
+ include/APPLE/assimp/Importer.hpp
+ include/APPLE/assimp/MathFunctions.h
+ include/APPLE/assimp/aabb.h
+ include/APPLE/assimp/anim.h
+ include/APPLE/assimp/camera.h
+ include/APPLE/assimp/color4.h
+ include/APPLE/assimp/color4.inl
+ include/APPLE/assimp/config.h
+ include/APPLE/assimp/defs.h
+ include/APPLE/assimp/light.h
+ include/APPLE/assimp/material.h
+ include/APPLE/assimp/material.inl
+ include/APPLE/assimp/matrix3x3.h
+ include/APPLE/assimp/matrix3x3.inl
+ include/APPLE/assimp/matrix4x4.h
+ include/APPLE/assimp/matrix4x4.inl
+ include/APPLE/assimp/mesh.h
+ include/APPLE/assimp/metadata.h
+ include/APPLE/assimp/postprocess.h
+ include/APPLE/assimp/quaternion.h
+ include/APPLE/assimp/scene.h
+ include/APPLE/assimp/texture.h
+ include/APPLE/assimp/types.h
+ include/APPLE/assimp/vector2.h
+ include/APPLE/assimp/vector2.inl
+ include/APPLE/assimp/vector3.h
+ include/APPLE/assimp/vector3.inl
  include/APPLE/fmod/fmod.h
  include/APPLE/fmod/fmod.hpp
  include/APPLE/fmod/fmod_codec.h
@@ -2063,7 +2064,6 @@ CMakeFiles/primitive.dir/src/main.cpp.o
  include/Camera.hpp
  include/Collider.hpp
  include/Core.hpp
- include/GLFW/glfw3.h
  include/Input.hpp
  include/Mesh.hpp
  include/Model.hpp

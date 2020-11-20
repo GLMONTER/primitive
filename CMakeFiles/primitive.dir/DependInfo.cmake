@@ -29,11 +29,13 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include/APPLE"
+  "include/APPLE/GL"
+  "include/APPLE/GLFW"
   "include"
   "include/glm"
   "include/imgui"
-  "/usr/local/Cellar/assimp/5.0.1/include"
   "/usr/local/include"
+  "/usr/local/Cellar/assimp/5.0.1/include"
   )
 
 # Targets to which this target links.

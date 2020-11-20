@@ -1,3 +1,4 @@
+/*
 #include<Sound.hpp>
 #include<cassert>
 
@@ -135,3 +136,4 @@ bool SoundSystem::checkFlag(bool flag)
 	else
 		return false;
 }
+*/

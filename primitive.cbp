@@ -5,7 +5,7 @@
 		<Option title="primitive"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\glew\;CMake Files\..\..\..\..\usr\local\lib\cmake\assimp-5.0\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\assimp-5.0\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/monter/Documents/primitive"/>
@@ -45,11 +45,13 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/monter/Documents/primitive/include/APPLE"/>
+					<Add directory="/Users/monter/Documents/primitive/include/APPLE/GL"/>
+					<Add directory="/Users/monter/Documents/primitive/include/APPLE/GLFW"/>
 					<Add directory="/Users/monter/Documents/primitive/include"/>
 					<Add directory="/Users/monter/Documents/primitive/include/glm"/>
 					<Add directory="/Users/monter/Documents/primitive/include/imgui"/>
-					<Add directory="/usr/local/Cellar/assimp/5.0.1/include"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/assimp/5.0.1/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -71,11 +73,13 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/monter/Documents/primitive/include/APPLE"/>
+					<Add directory="/Users/monter/Documents/primitive/include/APPLE/GL"/>
+					<Add directory="/Users/monter/Documents/primitive/include/APPLE/GLFW"/>
 					<Add directory="/Users/monter/Documents/primitive/include"/>
 					<Add directory="/Users/monter/Documents/primitive/include/glm"/>
 					<Add directory="/Users/monter/Documents/primitive/include/imgui"/>
-					<Add directory="/usr/local/Cellar/assimp/5.0.1/include"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/assimp/5.0.1/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -158,18 +162,6 @@
 		</Unit>
 		<Unit filename="/Users/monter/Documents/primitive/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/Users/monter/Documents/primitive/../../../../usr/local/lib/cmake/glew/CopyImportedTargetProperties.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glew\"/>
-		</Unit>
-		<Unit filename="/Users/monter/Documents/primitive/../../../../usr/local/lib/cmake/glew/glew-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glew\"/>
-		</Unit>
-		<Unit filename="/Users/monter/Documents/primitive/../../../../usr/local/lib/cmake/glew/glew-targets-release.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glew\"/>
-		</Unit>
-		<Unit filename="/Users/monter/Documents/primitive/../../../../usr/local/lib/cmake/glew/glew-targets.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\glew\"/>
 		</Unit>
 		<Unit filename="/Users/monter/Documents/primitive/../../../../usr/local/lib/cmake/assimp-5.0/assimp-config-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\assimp-5.0\"/>

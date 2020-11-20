@@ -370,10 +370,9 @@ primitive: CMakeFiles/primitive.dir/src/externalModel.cpp.o
 primitive: CMakeFiles/primitive.dir/src/main.cpp.o
 primitive: CMakeFiles/primitive.dir/build.make
 primitive: lib/APPLE/libnfd.a
-primitive: /usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib
-primitive: lib/APPLE/libfmod.dylib
-primitive: /usr/local/Cellar/assimp/5.0.1/lib/libassimp.5.0.0.dylib
-primitive: /usr/local/Cellar/glfw/3.3.2/lib/libglfw.3.3.dylib
+primitive: /usr/local/lib/libGLEW.dylib
+primitive: lib/APPLE/libassimp.5.0.1.dylib
+primitive: lib/APPLE/GLFW/libglfw.3.4.dylib
 primitive: CMakeFiles/primitive.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/monter/Documents/primitive/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable primitive"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/primitive.dir/link.txt --verbose=$(VERBOSE)

@@ -37,6 +37,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/Darwin.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/UnixPaths.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/ProcessorCount.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
@@ -45,10 +46,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/lib/cmake/assimp-5.0/assimp-config.cmake"
   "/usr/local/lib/cmake/assimp-5.0/assimpTargets-release.cmake"
   "/usr/local/lib/cmake/assimp-5.0/assimpTargets.cmake"
-  "/usr/local/lib/cmake/glew/CopyImportedTargetProperties.cmake"
-  "/usr/local/lib/cmake/glew/glew-config.cmake"
-  "/usr/local/lib/cmake/glew/glew-targets-release.cmake"
-  "/usr/local/lib/cmake/glew/glew-targets.cmake"
   )
 
 # The corresponding makefile is:
