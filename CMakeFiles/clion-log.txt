@@ -1,18 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_OSX_ARCHITECTURES=arm64 -G "CodeBlocks - Unix Makefiles" /Users/monter/Documents/primitive
-CMake Warning (dev) at /usr/local/lib/cmake/assimp-5.0/assimpTargets.cmake:54 (if):
-  if given arguments:
-
-    "ON"
-
-  An argument named "ON" appears in a conditional statement.  Policy CMP0012
-  is not set: if() recognizes numbers and boolean constants.  Run "cmake
-  --help-policy CMP0012" for policy details.  Use the cmake_policy command to
-  set the policy and suppress this warning.
-Call Stack (most recent call first):
-  /usr/local/lib/cmake/assimp-5.0/assimp-config.cmake:1 (include)
-  CMakeLists.txt:25 (find_package)
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
+"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -G "CodeBlocks - NMake Makefiles" C:\Users\logis\Documents\primitive
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/monter/Documents/primitive
+-- Build files have been written to: C:/Users/logis/Documents/primitive

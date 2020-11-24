@@ -34,7 +34,7 @@ if(LINUX)
 endif()
 
 if(WIN32)
-    include_directories(include/WIN32 include include/glm include/imgui include/WIN32/GL)
+    include_directories(include/WIN32 include include/glm include/imgui include/WIN32/GL include/WIN32/nfd)
 endif()
 
 
@@ -54,6 +54,6 @@ if(WIN32)
 
     target_link_libraries(primitive ${OPENGL_LIBRARIES} C:/Users/logis/Documents/primitive/lib/WIN32/assimp-vc142-mt.lib
             C:/Users/logis/Documents/primitive/lib/WIN32/fmod_vc.lib C:/Users/logis/Documents/primitive/lib/WIN32/glew32s.lib
-            C:/Users/logis/Documents/primitive/lib/WIN32/glfw3.lib)
+            C:/Users/logis/Documents/primitive/lib/WIN32/glfw3.lib C:/Users/logis/Documents/primitive/lib/WIN32/nfd.lib)
 endif()
 
