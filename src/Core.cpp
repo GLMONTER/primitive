@@ -255,7 +255,7 @@ void Core::Init()
 	//init the input system.
 	input.init(window.window);
 
-	glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
+	glClearColor(0.5f, 0.25f, 0.25f, 1.0f);
 	//setup imgui Context
 	ImGui::CreateContext();
 
@@ -271,7 +271,7 @@ void Core::Init()
 
 	// Setup Platform/Renderer bindings
 	ImGui_ImplGlfw_InitForOpenGL(window.window, true);
-	ImGui_ImplOpenGL3_Init("#version 330 core");
+	ImGui_ImplOpenGL3_Init("#version 410 core");
 
 	//enable vsync by default
 	glfwSwapInterval(0);
