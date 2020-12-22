@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.14)
 project(primitive)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 if(WIN32)
     add_compile_definitions(GLEW_STATIC)
@@ -45,8 +45,8 @@ endif()
 if(WIN32)
     find_package(OpenGL REQUIRED)
 
-    target_link_libraries(primitive ${OPENGL_LIBRARIES} C:/Users/logis/Documents/primitive/lib/WIN32/assimp-vc142-mt.lib
-            C:/Users/logis/Documents/primitive/lib/WIN32/fmod_vc.lib C:/Users/logis/Documents/primitive/lib/WIN32/glew32s.lib
-            C:/Users/logis/Documents/primitive/lib/WIN32/glfw3.lib C:/Users/logis/Documents/primitive/lib/WIN32/nfd.lib)
+    target_link_libraries(primitive ${OPENGL_LIBRARIES} ${PROJECT_SOURCE_DIR}/lib/WIN32/assimp-vc142-mt.lib
+            ${PROJECT_SOURCE_DIR}/lib/WIN32/fmod_vc.lib ${PROJECT_SOURCE_DIR}/lib/WIN32/glew32s.lib
+            ${PROJECT_SOURCE_DIR}/lib/WIN32/glfw3.lib ${PROJECT_SOURCE_DIR}/lib/WIN32/nfd.lib)
 endif()
 

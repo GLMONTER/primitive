@@ -265,19 +265,17 @@ void Core::Init()
 	//enable window docking
 	io.ConfigFlags |= ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable;
 
-
 	//Setup imgui theme or style
 	ImGui::StyleColorsClassic();
 
 	// Setup Platform/Renderer bindings
 	ImGui_ImplGlfw_InitForOpenGL(window.window, true);
-	ImGui_ImplOpenGL3_Init("#version 410 core");
+	ImGui_ImplOpenGL3_Init("#version 330 core");
 
 	//enable vsync by default
 	glfwSwapInterval(0);
 
 	//make the default shaders for basic rendering.
-
 	defaultVert.createShader(Shader::VertexShader, (std::string(workingDir).c_str() + std::string("/rec/basic.vert")).c_str());
 	defaultFrag.createShader(Shader::FragmentShader, (std::string(workingDir).c_str() + std::string("/rec/basic.frag")).c_str());
 
@@ -562,6 +560,8 @@ void Core::drawMenu()
 		}
 		else
 			modelError = true;
+
+		memset(buffer, 0, sizeof(buffer));
 	}
 	//if the model failed to load, write text with imgui.
 	if (modelError)

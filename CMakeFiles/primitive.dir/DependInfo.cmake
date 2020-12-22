@@ -4,36 +4,41 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.o"
-  "/Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.o"
-  "/Users/monter/Documents/primitive/include/imgui/imgui.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui.cpp.o"
-  "/Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.o"
-  "/Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.o"
-  "/Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.o"
-  "/Users/monter/Documents/primitive/src/Camera.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Camera.cpp.o"
-  "/Users/monter/Documents/primitive/src/Collider.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Collider.cpp.o"
-  "/Users/monter/Documents/primitive/src/Core.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Core.cpp.o"
-  "/Users/monter/Documents/primitive/src/Game.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Game.cpp.o"
-  "/Users/monter/Documents/primitive/src/Input.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Input.cpp.o"
-  "/Users/monter/Documents/primitive/src/Mesh.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Mesh.cpp.o"
-  "/Users/monter/Documents/primitive/src/Model.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Model.cpp.o"
-  "/Users/monter/Documents/primitive/src/Shader.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Shader.cpp.o"
-  "/Users/monter/Documents/primitive/src/Sound.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Sound.cpp.o"
-  "/Users/monter/Documents/primitive/src/Texture.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Texture.cpp.o"
-  "/Users/monter/Documents/primitive/src/Window.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/Window.cpp.o"
-  "/Users/monter/Documents/primitive/src/externalModel.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/externalModel.cpp.o"
-  "/Users/monter/Documents/primitive/src/main.cpp" "/Users/monter/Documents/primitive/CMakeFiles/primitive.dir/src/main.cpp.o"
+  "/Users/MONTER/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_glfw.cpp.obj"
+  "/Users/MONTER/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/examples/imgui_impl_opengl3.cpp.obj"
+  "/Users/MONTER/Documents/primitive/include/imgui/imgui.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui.cpp.obj"
+  "/Users/MONTER/Documents/primitive/include/imgui/imgui_demo.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_demo.cpp.obj"
+  "/Users/MONTER/Documents/primitive/include/imgui/imgui_draw.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_draw.cpp.obj"
+  "/Users/MONTER/Documents/primitive/include/imgui/imgui_widgets.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/include/imgui/imgui_widgets.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Camera.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Camera.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Collider.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Collider.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Core.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Core.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Game.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Game.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Input.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Input.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Mesh.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Mesh.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Model.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Model.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Shader.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Shader.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Sound.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Sound.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Texture.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Texture.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/Window.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/Window.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/externalModel.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/externalModel.cpp.obj"
+  "/Users/MONTER/Documents/primitive/src/main.cpp" "C:/Users/MONTER/Documents/primitive/CMakeFiles/primitive.dir/src/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "GLEW_STATIC"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "include/APPLE"
-  "include/APPLE/GL"
-  "include/APPLE/GLFW"
-  "include"
-  "include/glm"
-  "include/imgui"
+  "/Users/MONTER/Documents/primitive/include/WIN32"
+  "/Users/MONTER/Documents/primitive/include"
+  "/Users/MONTER/Documents/primitive/include/glm"
+  "/Users/MONTER/Documents/primitive/include/imgui"
+  "/Users/MONTER/Documents/primitive/include/WIN32/GL"
+  "/Users/MONTER/Documents/primitive/include/WIN32/nfd"
   )
 
 # Targets to which this target links.
