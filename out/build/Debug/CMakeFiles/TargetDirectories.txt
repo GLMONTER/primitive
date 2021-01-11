@@ -1,3 +1,0 @@
-C:/Users/MONTER/Documents/primitive/out/build/Debug/CMakeFiles/primitive.dir
-C:/Users/MONTER/Documents/primitive/out/build/Debug/CMakeFiles/edit_cache.dir
-C:/Users/MONTER/Documents/primitive/out/build/Debug/CMakeFiles/rebuild_cache.dir
