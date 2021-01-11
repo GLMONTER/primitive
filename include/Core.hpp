@@ -27,6 +27,7 @@ class Core
 {
 public:
     void Init();
+    void glWrap();
     void renderLoop();
     void updateCamera(unsigned int wid, unsigned int hei);
     void drawMenu();

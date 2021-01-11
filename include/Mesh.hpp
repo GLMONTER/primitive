@@ -52,9 +52,8 @@ public:
     glm::vec3 offset;
     glm::vec3 Scale = glm::vec3(1, 1, 1);
 private:
-    std::vector<float> verts;
     std::vector<aiMesh*> meshes;
     GLuint shaderProgram;
-    GLuint VAO, VBO;
+    GLuint VAO, VBO, IBO;
     GLuint matrixID;
 };

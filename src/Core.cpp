@@ -13,7 +13,6 @@
 #endif
 #include <locale>
 #include <nfd.h>
-
 static int collisionModelID = 0;
 
 //camera variables
@@ -68,7 +67,12 @@ Model* Core::findObject(std::string name)
 	}
     return nullptr;
 }
-
+void Core::glWrap()
+{
+    GLenum error = glGetError();
+    if(error != GL_NO_ERROR)
+        throw std::runtime_error(std::to_string(error));
+}
 void Core::deleteModel(unsigned int index, char (&modelNamesArray)[1024], const bool clearAll)
 {
 	static bool colDeleted = false;
@@ -213,6 +217,19 @@ void Core::glfwFramebufferSizeCallback(GLFWwindow* wind, int w, int h)
 	width = static_cast<unsigned int>(w);
 	height = static_cast<unsigned int>(h);
 }
+void GLAPIENTRY
+MessageCallback( GLenum source,
+                 GLenum type,
+                 GLuint id,
+                 GLenum severity,
+                 GLsizei length,
+                 const GLchar* message,
+                 const void* userParam )
+{
+  fprintf( stderr, "GL CALLBACK: %s type = 0x%x, severity = 0x%x, message = %s\n",
+           ( type == GL_DEBUG_TYPE_ERROR ? "** GL ERROR **" : "" ),
+            type, severity, message );
+}
 void Core::Init()
 {
 #ifdef _WIN32
@@ -247,7 +264,12 @@ void Core::Init()
 	//init GLEW
 	if(glewInit() != GLEW_OK)
 		throw std::runtime_error("GLEW FAILED TO INIT.");
-
+    
+    /*
+    // During init, enable debug output
+    glEnable              ( GL_DEBUG_OUTPUT );
+    glDebugMessageCallback( MessageCallback, nullptr);
+*/
 	//set the window resize callback to change things like the camera matrix
 	glfwSetWindowSizeCallback(window.window, Core::glfwFramebufferSizeCallback);
 	glfwSetCursorPosCallback(window.window, GLFW_MouseCallback);

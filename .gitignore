@@ -1,6 +1,8 @@
 .idea/
 .vs/
 .cmake/
+build/
+primitive.build/
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles

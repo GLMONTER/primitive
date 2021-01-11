@@ -30,7 +30,8 @@ void Window::createWindow(bool fullscreen)
 	glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 	//for msaa
     glfwWindowHint(GLFW_SAMPLES, 4);
-
+    //enable debugging.
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
     if(fullscreen)
         window = glfwCreateWindow(static_cast<int>(mode->width), static_cast<int>(mode->height), "primative", glfwGetPrimaryMonitor(), nullptr);
     else

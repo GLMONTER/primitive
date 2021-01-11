@@ -7,7 +7,6 @@ layout(location = 2) in vec2 coords;
 out vec2 texCoords;
 uniform mat4 MVP;
 
-
 void main()
 {
     texCoords = coords;
