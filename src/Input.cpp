@@ -5,7 +5,7 @@
 #include "Input.hpp"
 #include<iostream>
 
-extern bool editorEnable = true;
+extern bool editorEnable;
 
 bool Input::isKeyPressed(int keyCode)
 {

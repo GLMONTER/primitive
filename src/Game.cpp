@@ -1,5 +1,5 @@
 #include "Game.hpp"
-extern bool editorEnable;
+bool editorEnable = true;
 bool startedFlag = false;
 Input input;
 extern Core core;

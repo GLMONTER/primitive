@@ -281,9 +281,9 @@ void Core::Init()
 	//setup imgui Context
 	ImGui::CreateContext();
 
-	//setup imgui io and enable docking, not needed right now.
-
+	//setup imgui IO
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
+    
 	//enable window docking
 	io.ConfigFlags |= ImGuiConfigFlags_::ImGuiConfigFlags_DockingEnable;
 
