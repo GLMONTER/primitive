@@ -991,26 +991,22 @@ void Core::renderLoop()
 				buttonPressed = 1;
 
 				//the iteration of models resets the scene when swtiching back to the editor
-				if (editorEnable == 1)
+                if (editorEnable)
 				{
-					for (Model m : models)
+                    for (Model& m : models)
 					{
-						m.spawnPosition = m.position;
-					}
+                        m.spawnPosition = m.position;
+                    }
 					extern bool startedFlag;
 					startedFlag = false;
 				}
 				else
 				{
-					const int tempCounter = models.size();
-					for (int i = 0; i != tempCounter; i++)
+
+                    for (Model& m : models)
 					{
-						deleteModel(i, curModelName, true);
-					}
-					for (Model m : models)
-					{
-						m.position = m.spawnPosition;
-					}
+                         m.position = m.spawnPosition;
+                    }
 				}
 			}
 		}

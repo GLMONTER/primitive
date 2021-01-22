@@ -3,7 +3,7 @@ bool editorEnable = true;
 bool startedFlag = false;
 Input input;
 extern Core core;
-
+static bool hasStartedGame = false;
 void start(GLFWwindow* window)
 {
 	
@@ -16,8 +16,9 @@ void start(GLFWwindow* window)
 	}
 
 	input.init(window);
-	
-	core.loadScene("test.txt");
+    if(!hasStartedGame)
+        core.loadScene("test.txt");
+    hasStartedGame = true;
 	
 	startedFlag = true;
 	//SoundSystem::stopSound("music");
@@ -47,7 +48,7 @@ void update(std::vector<Model>& modelArray)
 	}
 	if (Model::isCollidedName(*core.findObject("Cube"), "Cube", core.collisionModels, core.models))
 	{
-		core.findObject("Cube")->position = core.findObject("Cube")->spawnPosition;
+        core.findObject("Cube")->position = core.findObject("Cube")->spawnPosition;
 	}
 	else
 	if (Model::isCollidedName(*core.findObject("Cube"), "Win", core.collisionModels, core.models))
