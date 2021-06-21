@@ -1,5 +1,6 @@
 
-#include<Sound.hpp>
+/*
+ #include<Sound.hpp>
 #include<cassert>
 
 #ifdef _WIN32
@@ -137,3 +138,4 @@ bool SoundSystem::checkFlag(bool flag)
 		return false;
 }
 
+*/

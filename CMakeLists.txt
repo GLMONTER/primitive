@@ -14,7 +14,7 @@ file(GLOB SRC
         "include/imgui/examples/imgui_impl_opengl3.cpp"
         )
 if(APPLE)
-link_directories(/Users/monter/Documents/primitive/lib/APPLE)
+link_directories(${PROJECT_SOURCE_DIR}/lib/APPLE)
 endif()
 add_executable(primitive ${SRC})
     if(UNIX AND NOT APPLE)
@@ -46,7 +46,7 @@ target_link_libraries(primitive ${PROJECT_SOURCE_DIR}/lib/LINUX/libnfd.a ${PROJE
    ${GTK3_LIBRARIES} ${GLEW_LIBRARIES})
 endif()
 if(APPLE)
-    target_link_libraries(primitive "-framework OpenGL" "-framework AppKit" libnfd.a libassimp.5.0.1.dylib libglfw.dylib libGLEW.2.2.0.dylib libfmod.dylib)
+    target_link_libraries(primitive "-framework OpenGL -framework AppKit -framework IOKit" libnfd.a libassimp.5.0.1.dylib libglfw3.a libGLEW.dylib)
 endif()
 if(WIN32)
     find_package(OpenGL REQUIRED)

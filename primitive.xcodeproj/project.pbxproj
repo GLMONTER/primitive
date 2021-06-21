@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		795DB38258B34BB6BAD8D443 /* ZERO_CHECK */ = {
+		33EE8819B6A84C5B92BCD673 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = A70904373E6A49EFB4942AE2 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 37C1FF17793E4B4AA55569E8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				0D96585E9006481DB05E80A6 /* Generate CMakeFiles/ZERO_CHECK */,
+				6FEAF7764D2C5378F092A300 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
 			dependencies = (
 			);
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		9E17132D630047D58874B7E3 /* ALL_BUILD */ = {
+		3513297849DD4777A25A2320 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 8AC5534175A24493BB49CB26 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = CCC42D094201444E9DEDB182 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				22AA2273BF2B4742BA345035 /* Generate CMakeFiles/ALL_BUILD */,
+				C2E124CD627F5C6D2212A12F /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				3E951501794B4A7FB86CA2DA /* PBXTargetDependency */,
-				B7AD40725E814F6B9BB5193D /* PBXTargetDependency */,
+				F3E6F56589124A3E87726464 /* PBXTargetDependency */,
+				33785D52CD844EABA4B8BA1D /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -34,110 +34,110 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		037C54B5CE3545F289972F74 /* /Users/monter/Documents/primitive/src/Model.cpp */ = {isa = PBXBuildFile; fileRef = 94B2FD9DF288498BA2CCB451 /* /Users/monter/Documents/primitive/src/Model.cpp */; };
-		1F620642D1FD48708F850F1D /* /Users/monter/Documents/primitive/src/Core.cpp */ = {isa = PBXBuildFile; fileRef = A82A578AE0C549E28C681E2D /* /Users/monter/Documents/primitive/src/Core.cpp */; };
-		27CE497CD8314598B5C5E1A8 /* /Users/monter/Documents/primitive/src/main.cpp */ = {isa = PBXBuildFile; fileRef = B5B49848685E475AAC2361F6 /* /Users/monter/Documents/primitive/src/main.cpp */; };
-		3374D486F4254D5493956E73 /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4131A2C90BC14FB6A3A22B33 /* /Users/monter/Documents/primitive/CMakeLists.txt */; };
-		3AFCA2CC567F4F4FA96CADF9 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */ = {isa = PBXBuildFile; fileRef = 0210027926794D33BBF6863A /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */; };
-		4AF66A7D85E74F338BC824B3 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */ = {isa = PBXBuildFile; fileRef = BF8AC2E163104B83A015B353 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */; };
-		583777EC06DE4FF1B57579BA /* /Users/monter/Documents/primitive/src/Sound.cpp */ = {isa = PBXBuildFile; fileRef = 9B31B2BB12ED479EBB2979EC /* /Users/monter/Documents/primitive/src/Sound.cpp */; };
-		5F5CBFB7884142DB859F9B4B /* /Users/monter/Documents/primitive/src/Texture.cpp */ = {isa = PBXBuildFile; fileRef = B08CC9849C144EA88566799F /* /Users/monter/Documents/primitive/src/Texture.cpp */; };
-		5FEB5521705B4A96B239AFB0 /* /Users/monter/Documents/primitive/src/Game.cpp */ = {isa = PBXBuildFile; fileRef = 9705B03D70B04FC3AB826BF1 /* /Users/monter/Documents/primitive/src/Game.cpp */; };
-		6929292A5CBC47B5AED5FB17 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */ = {isa = PBXBuildFile; fileRef = B3FF77C79B204C97944D2D65 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */; };
-		7E81F499B0B24F07B50C63CB /* /Users/monter/Documents/primitive/src/Input.cpp */ = {isa = PBXBuildFile; fileRef = 0BA207DF750F4D77A5621B02 /* /Users/monter/Documents/primitive/src/Input.cpp */; };
-		866C5ADB2C854ABF9989AB9A /* /Users/monter/Documents/primitive/src/externalModel.cpp */ = {isa = PBXBuildFile; fileRef = BA780E142DE747B2B0E1A55F /* /Users/monter/Documents/primitive/src/externalModel.cpp */; };
-		8CD650DB81F640E9B6B1B4C4 /* /Users/monter/Documents/primitive/src/Mesh.cpp */ = {isa = PBXBuildFile; fileRef = 9E9DF0DCB19D4261A9F17931 /* /Users/monter/Documents/primitive/src/Mesh.cpp */; };
-		93274B70B1DF4B0DA792CAB8 /* /Users/monter/Documents/primitive/src/Collider.cpp */ = {isa = PBXBuildFile; fileRef = 9EF129F9264A44D1BF708689 /* /Users/monter/Documents/primitive/src/Collider.cpp */; };
-		B26BF5644D934C4A96EFC3E5 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */ = {isa = PBXBuildFile; fileRef = 883E99961C6F4E9F841DC0E9 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */; };
-		B9FCC1AE6ABA4C58BB764898 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */ = {isa = PBXBuildFile; fileRef = 31680033B828446E929DA778 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */; };
-		D5B884E54815463BBC05B475 /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */ = {isa = PBXBuildFile; fileRef = 07031FA743044784A0C7D4DD /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */; };
-		D5C0255A2EFC4D94AA4865E5 /* /Users/monter/Documents/primitive/src/Shader.cpp */ = {isa = PBXBuildFile; fileRef = 94A23EDE6C0C489E8A494C36 /* /Users/monter/Documents/primitive/src/Shader.cpp */; };
-		E45158CBF04142DDBF676929 /* /Users/monter/Documents/primitive/src/Window.cpp */ = {isa = PBXBuildFile; fileRef = 2C363D5770A84A8D9E592C7B /* /Users/monter/Documents/primitive/src/Window.cpp */; };
-		E5210EC4A8AB462ABBA7DA69 /* /Users/monter/Documents/primitive/src/Camera.cpp */ = {isa = PBXBuildFile; fileRef = 90E1B355506548C3AF517093 /* /Users/monter/Documents/primitive/src/Camera.cpp */; };
+		01967E344F8D43DF8D562212 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */ = {isa = PBXBuildFile; fileRef = 77687D256FBD476EB45971B3 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */; };
+		07ADA7785756443B8BBA94A1 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */ = {isa = PBXBuildFile; fileRef = BB3F45E344DE4E248435BF64 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */; };
+		3B21DFE2BBDA46048756EFCE /* /Users/monter/Documents/primitive/src/Shader.cpp */ = {isa = PBXBuildFile; fileRef = 7FA4EF8BD32844648686A5B9 /* /Users/monter/Documents/primitive/src/Shader.cpp */; };
+		557F2B32C4A247BE8DB45E77 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */ = {isa = PBXBuildFile; fileRef = 46CE6160068A4C47AD7DF469 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */; };
+		5EE349F883F944BA94778F0D /* /Users/monter/Documents/primitive/src/Mesh.cpp */ = {isa = PBXBuildFile; fileRef = 81C045B05E2B4ADC9F3B97EB /* /Users/monter/Documents/primitive/src/Mesh.cpp */; };
+		62C96008E5A04D979DE52A32 /* /Users/monter/Documents/primitive/src/Window.cpp */ = {isa = PBXBuildFile; fileRef = CC63568F166945E0AA2BE02D /* /Users/monter/Documents/primitive/src/Window.cpp */; };
+		902AC7A876584BA5B0C1C75C /* /Users/monter/Documents/primitive/src/Camera.cpp */ = {isa = PBXBuildFile; fileRef = 65A55AC6C9DA4C20B9BF6D26 /* /Users/monter/Documents/primitive/src/Camera.cpp */; };
+		981CF32E91E7494881B6A61B /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E2BB2C6701254B749D33F60D /* /Users/monter/Documents/primitive/CMakeLists.txt */; };
+		9AACE27D7F2D4C9EA1C03B11 /* /Users/monter/Documents/primitive/src/Collider.cpp */ = {isa = PBXBuildFile; fileRef = 4CF568D90AB2453AB5D4C7DE /* /Users/monter/Documents/primitive/src/Collider.cpp */; };
+		A4A95882DE5B4E9FA36F0F02 /* /Users/monter/Documents/primitive/src/Core.cpp */ = {isa = PBXBuildFile; fileRef = 020242FAEA0B4EA4A2CDAB4A /* /Users/monter/Documents/primitive/src/Core.cpp */; };
+		A4F06F3F2ED644E783580F1C /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */ = {isa = PBXBuildFile; fileRef = E93583A016F94B7DA1BCE849 /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */; };
+		A82E79CA6C9746A99907DBCD /* /Users/monter/Documents/primitive/src/Texture.cpp */ = {isa = PBXBuildFile; fileRef = B3666472A53E47A7A6872A52 /* /Users/monter/Documents/primitive/src/Texture.cpp */; };
+		A9A32AFE2AA143BBBFF6DDCA /* /Users/monter/Documents/primitive/src/Game.cpp */ = {isa = PBXBuildFile; fileRef = 32AB6FAE66E04FBABB45CC00 /* /Users/monter/Documents/primitive/src/Game.cpp */; };
+		B15666ECB4AB44C7865F82FE /* /Users/monter/Documents/primitive/src/main.cpp */ = {isa = PBXBuildFile; fileRef = AA36E2BF1EEB452F84FF4AB4 /* /Users/monter/Documents/primitive/src/main.cpp */; };
+		B4D0C6AA4DF3490E8B5F0FD9 /* /Users/monter/Documents/primitive/src/Sound.cpp */ = {isa = PBXBuildFile; fileRef = 4B9C0653C06043CFABC56E61 /* /Users/monter/Documents/primitive/src/Sound.cpp */; };
+		BC9519B18FAD42C3AD39535F /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */ = {isa = PBXBuildFile; fileRef = 45CCDFA6EF7A4719AA7DC888 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */; };
+		C3573DD7DB8E455BAC32CDDE /* /Users/monter/Documents/primitive/src/Input.cpp */ = {isa = PBXBuildFile; fileRef = 84B754CBCA7A494B85F17042 /* /Users/monter/Documents/primitive/src/Input.cpp */; };
+		DA5367CDB3CB4FD39338FFBD /* /Users/monter/Documents/primitive/src/externalModel.cpp */ = {isa = PBXBuildFile; fileRef = 2B68679E09164F4BA37FB3C5 /* /Users/monter/Documents/primitive/src/externalModel.cpp */; };
+		DC9E154D7A5A4006AD906B96 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */ = {isa = PBXBuildFile; fileRef = 69B12F718B41441088370543 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */; };
+		E846EA46EC5241F992147BAC /* /Users/monter/Documents/primitive/src/Model.cpp */ = {isa = PBXBuildFile; fileRef = 8645F7BAC6344C0FA3E89A72 /* /Users/monter/Documents/primitive/src/Model.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		5A4AA7A69A7C4E0492E84BC2 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		CB364360BF6A41C6B94F54D4 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		DA3FC621069C4898BF3CB2B5 /* Debug */ = {
+		1CE12AA07A8C4B57B31B0797 /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
 		};
-		DB0DFDCC6AF04C10B674CB54 /* MinSizeRel */ = {
+		656833BF9C7D48958948F8C6 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		C5345B09D9694CF18872DB38 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		FD3287BE5A3246969536E439 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		1C0D4109B1574C0D8940632C /* PBXContainerItemProxy */ = {
+		01AA6BD08DE24262A7DDD148 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA5C70A522024E3995F0C40B /* Project object */;
+			containerPortal = 3396D8B4A13C449188789D3B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 44EE22F662DE4D1A92560C71;
+			remoteGlobalIDString = E7287A49441247B5B46B335E;
 			remoteInfo = primitive;
 		};
-		410C84B58BC44FB69CC4CF0D /* PBXContainerItemProxy */ = {
+		5467C2DC339C4F129BD59998 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA5C70A522024E3995F0C40B /* Project object */;
+			containerPortal = 3396D8B4A13C449188789D3B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 795DB38258B34BB6BAD8D443;
+			remoteGlobalIDString = 33EE8819B6A84C5B92BCD673;
 			remoteInfo = ZERO_CHECK;
 		};
-		EE7B30D195944601BBC2BEDA /* PBXContainerItemProxy */ = {
+		9B173F562B0D46109D99B3A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EA5C70A522024E3995F0C40B /* Project object */;
+			containerPortal = 3396D8B4A13C449188789D3B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 795DB38258B34BB6BAD8D443;
+			remoteGlobalIDString = 33EE8819B6A84C5B92BCD673;
 			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0210027926794D33BBF6863A /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_demo.cpp; path = include/imgui/imgui_demo.cpp; sourceTree = SOURCE_ROOT; };
-		07031FA743044784A0C7D4DD /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = include/imgui/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
-		0BA207DF750F4D77A5621B02 /* /Users/monter/Documents/primitive/src/Input.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Input.cpp; path = src/Input.cpp; sourceTree = SOURCE_ROOT; };
-		2C363D5770A84A8D9E592C7B /* /Users/monter/Documents/primitive/src/Window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Window.cpp; path = src/Window.cpp; sourceTree = SOURCE_ROOT; };
-		31680033B828446E929DA778 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_opengl3.cpp; path = include/imgui/examples/imgui_impl_opengl3.cpp; sourceTree = SOURCE_ROOT; };
-		4131A2C90BC14FB6A3A22B33 /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		883E99961C6F4E9F841DC0E9 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_glfw.cpp; path = include/imgui/examples/imgui_impl_glfw.cpp; sourceTree = SOURCE_ROOT; };
-		88AFAFB6E3244EFABE8C3F53 /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		90E1B355506548C3AF517093 /* /Users/monter/Documents/primitive/src/Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = src/Camera.cpp; sourceTree = SOURCE_ROOT; };
-		94A23EDE6C0C489E8A494C36 /* /Users/monter/Documents/primitive/src/Shader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Shader.cpp; path = src/Shader.cpp; sourceTree = SOURCE_ROOT; };
-		94B2FD9DF288498BA2CCB451 /* /Users/monter/Documents/primitive/src/Model.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Model.cpp; path = src/Model.cpp; sourceTree = SOURCE_ROOT; };
-		9705B03D70B04FC3AB826BF1 /* /Users/monter/Documents/primitive/src/Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Game.cpp; path = src/Game.cpp; sourceTree = SOURCE_ROOT; };
-		9B31B2BB12ED479EBB2979EC /* /Users/monter/Documents/primitive/src/Sound.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sound.cpp; path = src/Sound.cpp; sourceTree = SOURCE_ROOT; };
-		9E9DF0DCB19D4261A9F17931 /* /Users/monter/Documents/primitive/src/Mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh.cpp; path = src/Mesh.cpp; sourceTree = SOURCE_ROOT; };
-		9EF129F9264A44D1BF708689 /* /Users/monter/Documents/primitive/src/Collider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Collider.cpp; path = src/Collider.cpp; sourceTree = SOURCE_ROOT; };
-		A82A578AE0C549E28C681E2D /* /Users/monter/Documents/primitive/src/Core.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Core.cpp; path = src/Core.cpp; sourceTree = SOURCE_ROOT; };
-		B08CC9849C144EA88566799F /* /Users/monter/Documents/primitive/src/Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Texture.cpp; path = src/Texture.cpp; sourceTree = SOURCE_ROOT; };
-		B3FF77C79B204C97944D2D65 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = include/imgui/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
-		B5B49848685E475AAC2361F6 /* /Users/monter/Documents/primitive/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		BA780E142DE747B2B0E1A55F /* /Users/monter/Documents/primitive/src/externalModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = externalModel.cpp; path = src/externalModel.cpp; sourceTree = SOURCE_ROOT; };
-		BF8AC2E163104B83A015B353 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = include/imgui/imgui.cpp; sourceTree = SOURCE_ROOT; };
-		F2389ABBFB4A4A9688B0A78A /* primitive */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = primitive; sourceTree = BUILT_PRODUCTS_DIR; };
+		020242FAEA0B4EA4A2CDAB4A /* /Users/monter/Documents/primitive/src/Core.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Core.cpp; path = src/Core.cpp; sourceTree = SOURCE_ROOT; };
+		22376D43D0164CE8BCBC76ED /* primitive */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = primitive; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B68679E09164F4BA37FB3C5 /* /Users/monter/Documents/primitive/src/externalModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = externalModel.cpp; path = src/externalModel.cpp; sourceTree = SOURCE_ROOT; };
+		32AB6FAE66E04FBABB45CC00 /* /Users/monter/Documents/primitive/src/Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Game.cpp; path = src/Game.cpp; sourceTree = SOURCE_ROOT; };
+		45CCDFA6EF7A4719AA7DC888 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_widgets.cpp; path = include/imgui/imgui_widgets.cpp; sourceTree = SOURCE_ROOT; };
+		46CE6160068A4C47AD7DF469 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_demo.cpp; path = include/imgui/imgui_demo.cpp; sourceTree = SOURCE_ROOT; };
+		4B9C0653C06043CFABC56E61 /* /Users/monter/Documents/primitive/src/Sound.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sound.cpp; path = src/Sound.cpp; sourceTree = SOURCE_ROOT; };
+		4CF568D90AB2453AB5D4C7DE /* /Users/monter/Documents/primitive/src/Collider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Collider.cpp; path = src/Collider.cpp; sourceTree = SOURCE_ROOT; };
+		65A55AC6C9DA4C20B9BF6D26 /* /Users/monter/Documents/primitive/src/Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = src/Camera.cpp; sourceTree = SOURCE_ROOT; };
+		69B12F718B41441088370543 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_opengl3.cpp; path = include/imgui/examples/imgui_impl_opengl3.cpp; sourceTree = SOURCE_ROOT; };
+		77687D256FBD476EB45971B3 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui.cpp; path = include/imgui/imgui.cpp; sourceTree = SOURCE_ROOT; };
+		7FA4EF8BD32844648686A5B9 /* /Users/monter/Documents/primitive/src/Shader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Shader.cpp; path = src/Shader.cpp; sourceTree = SOURCE_ROOT; };
+		81C045B05E2B4ADC9F3B97EB /* /Users/monter/Documents/primitive/src/Mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh.cpp; path = src/Mesh.cpp; sourceTree = SOURCE_ROOT; };
+		84B754CBCA7A494B85F17042 /* /Users/monter/Documents/primitive/src/Input.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Input.cpp; path = src/Input.cpp; sourceTree = SOURCE_ROOT; };
+		8645F7BAC6344C0FA3E89A72 /* /Users/monter/Documents/primitive/src/Model.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Model.cpp; path = src/Model.cpp; sourceTree = SOURCE_ROOT; };
+		AA36E2BF1EEB452F84FF4AB4 /* /Users/monter/Documents/primitive/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		B3666472A53E47A7A6872A52 /* /Users/monter/Documents/primitive/src/Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Texture.cpp; path = src/Texture.cpp; sourceTree = SOURCE_ROOT; };
+		BB3F45E344DE4E248435BF64 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_impl_glfw.cpp; path = include/imgui/examples/imgui_impl_glfw.cpp; sourceTree = SOURCE_ROOT; };
+		CC63568F166945E0AA2BE02D /* /Users/monter/Documents/primitive/src/Window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Window.cpp; path = src/Window.cpp; sourceTree = SOURCE_ROOT; };
+		E2BB2C6701254B749D33F60D /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E93583A016F94B7DA1BCE849 /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = imgui_draw.cpp; path = include/imgui/imgui_draw.cpp; sourceTree = SOURCE_ROOT; };
+		F23D373D19964C6786D5E7F8 /* /Users/monter/Documents/primitive/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E39586CD4534006A5D6F8D7 /* Frameworks */ = {
+		8811F11927234CD89C4CFFEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,135 +147,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1DE1A81523CE4D4EBE4974ED /* Source Files */ = {
+		0F913ADE60D34338926F5278 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				883E99961C6F4E9F841DC0E9 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */,
-				31680033B828446E929DA778 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */,
-				BF8AC2E163104B83A015B353 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */,
-				0210027926794D33BBF6863A /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */,
-				07031FA743044784A0C7D4DD /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */,
-				B3FF77C79B204C97944D2D65 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */,
-				90E1B355506548C3AF517093 /* /Users/monter/Documents/primitive/src/Camera.cpp */,
-				9EF129F9264A44D1BF708689 /* /Users/monter/Documents/primitive/src/Collider.cpp */,
-				A82A578AE0C549E28C681E2D /* /Users/monter/Documents/primitive/src/Core.cpp */,
-				9705B03D70B04FC3AB826BF1 /* /Users/monter/Documents/primitive/src/Game.cpp */,
-				0BA207DF750F4D77A5621B02 /* /Users/monter/Documents/primitive/src/Input.cpp */,
-				9E9DF0DCB19D4261A9F17931 /* /Users/monter/Documents/primitive/src/Mesh.cpp */,
-				94B2FD9DF288498BA2CCB451 /* /Users/monter/Documents/primitive/src/Model.cpp */,
-				94A23EDE6C0C489E8A494C36 /* /Users/monter/Documents/primitive/src/Shader.cpp */,
-				9B31B2BB12ED479EBB2979EC /* /Users/monter/Documents/primitive/src/Sound.cpp */,
-				B08CC9849C144EA88566799F /* /Users/monter/Documents/primitive/src/Texture.cpp */,
-				2C363D5770A84A8D9E592C7B /* /Users/monter/Documents/primitive/src/Window.cpp */,
-				BA780E142DE747B2B0E1A55F /* /Users/monter/Documents/primitive/src/externalModel.cpp */,
-				B5B49848685E475AAC2361F6 /* /Users/monter/Documents/primitive/src/main.cpp */,
+				BB3F45E344DE4E248435BF64 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */,
+				69B12F718B41441088370543 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */,
+				77687D256FBD476EB45971B3 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */,
+				46CE6160068A4C47AD7DF469 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */,
+				E93583A016F94B7DA1BCE849 /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */,
+				45CCDFA6EF7A4719AA7DC888 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */,
+				65A55AC6C9DA4C20B9BF6D26 /* /Users/monter/Documents/primitive/src/Camera.cpp */,
+				4CF568D90AB2453AB5D4C7DE /* /Users/monter/Documents/primitive/src/Collider.cpp */,
+				020242FAEA0B4EA4A2CDAB4A /* /Users/monter/Documents/primitive/src/Core.cpp */,
+				32AB6FAE66E04FBABB45CC00 /* /Users/monter/Documents/primitive/src/Game.cpp */,
+				84B754CBCA7A494B85F17042 /* /Users/monter/Documents/primitive/src/Input.cpp */,
+				81C045B05E2B4ADC9F3B97EB /* /Users/monter/Documents/primitive/src/Mesh.cpp */,
+				8645F7BAC6344C0FA3E89A72 /* /Users/monter/Documents/primitive/src/Model.cpp */,
+				7FA4EF8BD32844648686A5B9 /* /Users/monter/Documents/primitive/src/Shader.cpp */,
+				4B9C0653C06043CFABC56E61 /* /Users/monter/Documents/primitive/src/Sound.cpp */,
+				B3666472A53E47A7A6872A52 /* /Users/monter/Documents/primitive/src/Texture.cpp */,
+				CC63568F166945E0AA2BE02D /* /Users/monter/Documents/primitive/src/Window.cpp */,
+				2B68679E09164F4BA37FB3C5 /* /Users/monter/Documents/primitive/src/externalModel.cpp */,
+				AA36E2BF1EEB452F84FF4AB4 /* /Users/monter/Documents/primitive/src/main.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		2E78AD9508804D2694801778 /* primitive */ = {
+		1C58E1D1810944C6BA7E74AA = {
 			isa = PBXGroup;
 			children = (
-				1DE1A81523CE4D4EBE4974ED /* Source Files */,
-				4131A2C90BC14FB6A3A22B33 /* /Users/monter/Documents/primitive/CMakeLists.txt */,
+				351C53AFFF2C42A0B2718F2E /* primitive */,
+				AB3FF123584A4D4C8EFEAE95 /* ALL_BUILD */,
+				253ECEBFADFE40DAB33CF19A /* Products */,
+				31A0BD543B274E4AB87511F2 /* Frameworks */,
 			);
-			name = primitive;
 			sourceTree = "<group>";
 		};
-		6DEEE3815DC1437F9C1DCCD0 /* ALL_BUILD */ = {
+		253ECEBFADFE40DAB33CF19A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7AF028D11254054B8B1A30D /* CMake Rules */,
-				88AFAFB6E3244EFABE8C3F53 /* /Users/monter/Documents/primitive/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		A7570EEDD89244EAB41F90A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F2389ABBFB4A4A9688B0A78A /* primitive */,
+				22376D43D0164CE8BCBC76ED /* primitive */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2DAF971D3554A1C8295113A /* Frameworks */ = {
+		31A0BD543B274E4AB87511F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7AF028D11254054B8B1A30D /* CMake Rules */ = {
+		351C53AFFF2C42A0B2718F2E /* primitive */ = {
+			isa = PBXGroup;
+			children = (
+				0F913ADE60D34338926F5278 /* Source Files */,
+				E2BB2C6701254B749D33F60D /* /Users/monter/Documents/primitive/CMakeLists.txt */,
+			);
+			name = primitive;
+			sourceTree = "<group>";
+		};
+		A72C7951E27B4E74850A404B /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		F962F44C483640E6A18559EA = {
+		AB3FF123584A4D4C8EFEAE95 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				2E78AD9508804D2694801778 /* primitive */,
-				6DEEE3815DC1437F9C1DCCD0 /* ALL_BUILD */,
-				A7570EEDD89244EAB41F90A8 /* Products */,
-				D2DAF971D3554A1C8295113A /* Frameworks */,
+				A72C7951E27B4E74850A404B /* CMake Rules */,
+				F23D373D19964C6786D5E7F8 /* /Users/monter/Documents/primitive/CMakeLists.txt */,
 			);
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		44EE22F662DE4D1A92560C71 /* primitive */ = {
+		E7287A49441247B5B46B335E /* primitive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBC53B1191184772953F3851 /* Build configuration list for PBXNativeTarget "primitive" */;
+			buildConfigurationList = 056907D42BFC4E54965C0E22 /* Build configuration list for PBXNativeTarget "primitive" */;
 			buildPhases = (
-				3903B2FAF252402AA2E88CED /* Sources */,
-				5E39586CD4534006A5D6F8D7 /* Frameworks */,
+				D79630722FCC477789F480F2 /* Sources */,
+				8811F11927234CD89C4CFFEB /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B970AF6318B84C2D9898DE03 /* PBXTargetDependency */,
+				6A2F3CB1668D47D48C7BECC2 /* PBXTargetDependency */,
 			);
 			name = primitive;
 			productName = primitive;
-			productReference = F2389ABBFB4A4A9688B0A78A /* primitive */;
+			productReference = 22376D43D0164CE8BCBC76ED /* primitive */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EA5C70A522024E3995F0C40B /* Project object */ = {
+		3396D8B4A13C449188789D3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1250;
 			};
-			buildConfigurationList = D93C2EA4A5AE41769C4094BB /* Build configuration list for PBXProject "primitive" */;
+			buildConfigurationList = 3C9CBDF278D940449F699284 /* Build configuration list for PBXProject "primitive" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				DA3FC621069C4898BF3CB2B5 /* Debug */,
-				5A4AA7A69A7C4E0492E84BC2 /* Release */,
-				DB0DFDCC6AF04C10B674CB54 /* MinSizeRel */,
-				CB364360BF6A41C6B94F54D4 /* RelWithDebInfo */,
+				1CE12AA07A8C4B57B31B0797 /* Debug */,
+				656833BF9C7D48958948F8C6 /* Release */,
+				C5345B09D9694CF18872DB38 /* MinSizeRel */,
+				FD3287BE5A3246969536E439 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = F962F44C483640E6A18559EA;
+			mainGroup = 1C58E1D1810944C6BA7E74AA;
 			projectDirPath = .;
 			projectRoot = "";
 			targets = (
-				9E17132D630047D58874B7E3 /* ALL_BUILD */,
-				795DB38258B34BB6BAD8D443 /* ZERO_CHECK */,
-				44EE22F662DE4D1A92560C71 /* primitive */,
+				3513297849DD4777A25A2320 /* ALL_BUILD */,
+				33EE8819B6A84C5B92BCD673 /* ZERO_CHECK */,
+				E7287A49441247B5B46B335E /* primitive */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C448707B7C84AFA9B2D431E = {
+		3C0110FC8322DE7E50886E21 = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,7 +290,7 @@
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		0D96585E9006481DB05E80A6 /* Generate CMakeFiles/ZERO_CHECK */ = {
+		6FEAF7764D2C5378F092A300 /* Generate CMakeFiles/ZERO_CHECK */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -323,7 +323,7 @@ fi
 ";
 			showEnvVarsInLog = 0;
 		};
-		1A3D9E45392B4F6F8EDAED5E = {
+		9B50530E35CC49C82C2FACCF = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,7 +338,7 @@ fi
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		22AA2273BF2B4742BA345035 /* Generate CMakeFiles/ALL_BUILD */ = {
+		C2E124CD627F5C6D2212A12F /* Generate CMakeFiles/ALL_BUILD */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -374,282 +374,81 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3903B2FAF252402AA2E88CED /* Sources */ = {
+		D79630722FCC477789F480F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26BF5644D934C4A96EFC3E5 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */,
-				B9FCC1AE6ABA4C58BB764898 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */,
-				4AF66A7D85E74F338BC824B3 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */,
-				3AFCA2CC567F4F4FA96CADF9 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */,
-				D5B884E54815463BBC05B475 /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */,
-				6929292A5CBC47B5AED5FB17 /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */,
-				E5210EC4A8AB462ABBA7DA69 /* /Users/monter/Documents/primitive/src/Camera.cpp */,
-				93274B70B1DF4B0DA792CAB8 /* /Users/monter/Documents/primitive/src/Collider.cpp */,
-				1F620642D1FD48708F850F1D /* /Users/monter/Documents/primitive/src/Core.cpp */,
-				5FEB5521705B4A96B239AFB0 /* /Users/monter/Documents/primitive/src/Game.cpp */,
-				7E81F499B0B24F07B50C63CB /* /Users/monter/Documents/primitive/src/Input.cpp */,
-				8CD650DB81F640E9B6B1B4C4 /* /Users/monter/Documents/primitive/src/Mesh.cpp */,
-				037C54B5CE3545F289972F74 /* /Users/monter/Documents/primitive/src/Model.cpp */,
-				D5C0255A2EFC4D94AA4865E5 /* /Users/monter/Documents/primitive/src/Shader.cpp */,
-				583777EC06DE4FF1B57579BA /* /Users/monter/Documents/primitive/src/Sound.cpp */,
-				5F5CBFB7884142DB859F9B4B /* /Users/monter/Documents/primitive/src/Texture.cpp */,
-				E45158CBF04142DDBF676929 /* /Users/monter/Documents/primitive/src/Window.cpp */,
-				866C5ADB2C854ABF9989AB9A /* /Users/monter/Documents/primitive/src/externalModel.cpp */,
-				27CE497CD8314598B5C5E1A8 /* /Users/monter/Documents/primitive/src/main.cpp */,
+				07ADA7785756443B8BBA94A1 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_glfw.cpp */,
+				DC9E154D7A5A4006AD906B96 /* /Users/monter/Documents/primitive/include/imgui/examples/imgui_impl_opengl3.cpp */,
+				01967E344F8D43DF8D562212 /* /Users/monter/Documents/primitive/include/imgui/imgui.cpp */,
+				557F2B32C4A247BE8DB45E77 /* /Users/monter/Documents/primitive/include/imgui/imgui_demo.cpp */,
+				A4F06F3F2ED644E783580F1C /* /Users/monter/Documents/primitive/include/imgui/imgui_draw.cpp */,
+				BC9519B18FAD42C3AD39535F /* /Users/monter/Documents/primitive/include/imgui/imgui_widgets.cpp */,
+				902AC7A876584BA5B0C1C75C /* /Users/monter/Documents/primitive/src/Camera.cpp */,
+				9AACE27D7F2D4C9EA1C03B11 /* /Users/monter/Documents/primitive/src/Collider.cpp */,
+				A4A95882DE5B4E9FA36F0F02 /* /Users/monter/Documents/primitive/src/Core.cpp */,
+				A9A32AFE2AA143BBBFF6DDCA /* /Users/monter/Documents/primitive/src/Game.cpp */,
+				C3573DD7DB8E455BAC32CDDE /* /Users/monter/Documents/primitive/src/Input.cpp */,
+				5EE349F883F944BA94778F0D /* /Users/monter/Documents/primitive/src/Mesh.cpp */,
+				E846EA46EC5241F992147BAC /* /Users/monter/Documents/primitive/src/Model.cpp */,
+				3B21DFE2BBDA46048756EFCE /* /Users/monter/Documents/primitive/src/Shader.cpp */,
+				B4D0C6AA4DF3490E8B5F0FD9 /* /Users/monter/Documents/primitive/src/Sound.cpp */,
+				A82E79CA6C9746A99907DBCD /* /Users/monter/Documents/primitive/src/Texture.cpp */,
+				62C96008E5A04D979DE52A32 /* /Users/monter/Documents/primitive/src/Window.cpp */,
+				DA5367CDB3CB4FD39338FFBD /* /Users/monter/Documents/primitive/src/externalModel.cpp */,
+				B15666ECB4AB44C7865F82FE /* /Users/monter/Documents/primitive/src/main.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E951501794B4A7FB86CA2DA /* PBXTargetDependency */ = {
+		33785D52CD844EABA4B8BA1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 44EE22F662DE4D1A92560C71 /* primitive */;
-			targetProxy = 1C0D4109B1574C0D8940632C /* PBXContainerItemProxy */;
+			target = E7287A49441247B5B46B335E /* primitive */;
+			targetProxy = 01AA6BD08DE24262A7DDD148 /* PBXContainerItemProxy */;
 		};
-		B7AD40725E814F6B9BB5193D /* PBXTargetDependency */ = {
+		6A2F3CB1668D47D48C7BECC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 795DB38258B34BB6BAD8D443 /* ZERO_CHECK */;
-			targetProxy = EE7B30D195944601BBC2BEDA /* PBXContainerItemProxy */;
+			target = 33EE8819B6A84C5B92BCD673 /* ZERO_CHECK */;
+			targetProxy = 5467C2DC339C4F129BD59998 /* PBXContainerItemProxy */;
 		};
-		B970AF6318B84C2D9898DE03 /* PBXTargetDependency */ = {
+		F3E6F56589124A3E87726464 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 795DB38258B34BB6BAD8D443 /* ZERO_CHECK */;
-			targetProxy = 410C84B58BC44FB69CC4CF0D /* PBXContainerItemProxy */;
+			target = 33EE8819B6A84C5B92BCD673 /* ZERO_CHECK */;
+			targetProxy = 9B173F562B0D46109D99B3A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		09A487DF7F6D49F78E17EC25 /* RelWithDebInfo */ = {
+		0AB749006B064F87998B0007 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = /Users/monter/Documents/primitive/build;
 			};
 			name = RelWithDebInfo;
 		};
-		18F7F67F52F049479C0AF698 /* Debug */ = {
+		2A09617293A9444A81C26A9E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		256A44986F374D158AA5D42F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/monter/Documents/primitive/build;
-			};
-			name = Release;
-		};
-		328C0FD4C0E44AF681083AA2 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/monter/Documents/primitive/build;
-			};
-			name = MinSizeRel;
-		};
-		3A69A8CA6CA84398AC8C3238 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		3B6ED472565F49D6BA8378EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/monter/Documents/primitive/build;
-			};
-			name = Debug;
-		};
-		4DA220B5251F46EC8D3DBF4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				ARCHS = arm64;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui);
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = /Users/monter/Documents/primitive/lib/APPLE;
-				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
-				OTHER_CPLUSPLUSFLAGS = "        '-std=gnu++17' ";
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL","-framework AppKit","-lnfd","-lassimp.5.0.1","-lglfw","-lGLEW.2.2.0","-lfmod");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = primitive;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		4E5833BD45874D24B5ACADB4 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		519456FDF38A4415B6C0C1ED /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui);
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = /Users/monter/Documents/primitive/lib/APPLE;
-				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
-				OTHER_CPLUSPLUSFLAGS = "         -DNDEBUG '-std=gnu++17' ";
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL","-framework AppKit","-lnfd","-lassimp.5.0.1","-lglfw","-lGLEW.2.2.0","-lfmod");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = primitive;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		56DF626FF0BF476782426C00 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui);
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = /Users/monter/Documents/primitive/lib/APPLE;
-				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
-				OTHER_CPLUSPLUSFLAGS = "            -DNDEBUG '-std=gnu++17' ";
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL","-framework AppKit","-lnfd","-lassimp.5.0.1","-lglfw","-lGLEW.2.2.0","-lfmod");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = primitive;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		6334CED3C62944DB8CCF8A3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/monter/Documents/primitive;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		8F7E8D5FDA2E4FC8940A7969 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui);
+				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui,"$(inherited)");
 				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = /Users/monter/Documents/primitive/lib/APPLE;
+				LD_RUNPATH_SEARCH_PATHS = (/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
 				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "         -DNDEBUG '-std=gnu++17' ";
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL","-framework AppKit","-lnfd","-lassimp.5.0.1","-lglfw","-lGLEW.2.2.0","-lfmod");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL -framework AppKit -framework IOKit","-lnfd","-lassimp.5.0.1","-lglfw3","-lGLEW");
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = primitive;
 				SECTORDER_FLAGS = "";
@@ -659,29 +458,47 @@ fi
 			};
 			name = Release;
 		};
-		CCF7938A0B264C64906710E5 /* MinSizeRel */ = {
+		2F341624768F4C5BAB6B809E /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui,"$(inherited)");
 				INSTALL_PATH = "";
-				OTHER_LDFLAGS = ("");
+				LD_RUNPATH_SEARCH_PATHS = (/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "            -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL -framework AppKit -framework IOKit","-lnfd","-lassimp.5.0.1","-lglfw3","-lGLEW");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
+				PRODUCT_NAME = primitive;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/monter/Documents/primitive;
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = MinSizeRel;
+			name = RelWithDebInfo;
 		};
-		D2E10CA8389C4BE2B7E34C04 /* Release */ = {
+		43CCCF05C05F42B39E17DB77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = /Users/monter/Documents/primitive/build;
+			};
+			name = Release;
+		};
+		65BB02DE9D6844EEA40A1E8B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -689,6 +506,7 @@ fi
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
@@ -697,11 +515,21 @@ fi
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = RelWithDebInfo;
 		};
-		F676F0527B214D1CB4FB87A9 /* Debug */ = {
+		6A689A55DBAB4F9FA0245611 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = /Users/monter/Documents/primitive/build;
+			};
+			name = MinSizeRel;
+		};
+		6C086A9E733C4A2883CB9E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -709,6 +537,60 @@ fi
 				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		77EBCDE42B8F4512950B9F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = /Users/monter/Documents/primitive/build;
+			};
+			name = Debug;
+		};
+		83782671560145EFBB511499 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8963602090754D67A0DA6CC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = ("");
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
@@ -719,64 +601,198 @@ fi
 			};
 			name = Debug;
 		};
-		FF8A6C70685A406ABD39A5DC /* RelWithDebInfo */ = {
+		90DE9B0E14A34C3FB0925BCD /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
-				SYMROOT = /Users/monter/Documents/primitive/build;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "         -DNDEBUG '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL -framework AppKit -framework IOKit","-lnfd","-lassimp.5.0.1","-lglfw3","-lGLEW");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = primitive;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = RelWithDebInfo;
+			name = MinSizeRel;
+		};
+		956D7E14B16B43A19D91F44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/monter/Documents/primitive/include/APPLE,/Users/monter/Documents/primitive/include/APPLE/GL,/Users/monter/Documents/primitive/include/APPLE/GLFW,/Users/monter/Documents/primitive/include,/Users/monter/Documents/primitive/include/glm,/Users/monter/Documents/primitive/include/imgui,"$(inherited)");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				LIBRARY_SEARCH_PATHS = ("/Users/monter/Documents/primitive/lib/APPLE/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",/Users/monter/Documents/primitive/lib/APPLE,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "        '-std=gnu++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenGL -framework AppKit -framework IOKit","-lnfd","-lassimp.5.0.1","-lglfw3","-lGLEW");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = primitive;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A71B39308D1F4156BA85764E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B51A2C52420845358664998F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		D474B29F55394D7B92243E86 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E352CDC12A424774B098607D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/monter/Documents/primitive;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8AC5534175A24493BB49CB26 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		056907D42BFC4E54965C0E22 /* Build configuration list for PBXNativeTarget "primitive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F676F0527B214D1CB4FB87A9 /* Debug */,
-				D2E10CA8389C4BE2B7E34C04 /* Release */,
-				3A69A8CA6CA84398AC8C3238 /* MinSizeRel */,
-				4E5833BD45874D24B5ACADB4 /* RelWithDebInfo */,
+				956D7E14B16B43A19D91F44F /* Debug */,
+				2A09617293A9444A81C26A9E /* Release */,
+				90DE9B0E14A34C3FB0925BCD /* MinSizeRel */,
+				2F341624768F4C5BAB6B809E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		A70904373E6A49EFB4942AE2 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		37C1FF17793E4B4AA55569E8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18F7F67F52F049479C0AF698 /* Debug */,
-				6334CED3C62944DB8CCF8A3A /* Release */,
-				CCF7938A0B264C64906710E5 /* MinSizeRel */,
-				09A487DF7F6D49F78E17EC25 /* RelWithDebInfo */,
+				E352CDC12A424774B098607D /* Debug */,
+				6C086A9E733C4A2883CB9E0E /* Release */,
+				D474B29F55394D7B92243E86 /* MinSizeRel */,
+				83782671560145EFBB511499 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D93C2EA4A5AE41769C4094BB /* Build configuration list for PBXProject "primitive" */ = {
+		3C9CBDF278D940449F699284 /* Build configuration list for PBXProject "primitive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B6ED472565F49D6BA8378EC /* Debug */,
-				256A44986F374D158AA5D42F /* Release */,
-				328C0FD4C0E44AF681083AA2 /* MinSizeRel */,
-				FF8A6C70685A406ABD39A5DC /* RelWithDebInfo */,
+				77EBCDE42B8F4512950B9F30 /* Debug */,
+				43CCCF05C05F42B39E17DB77 /* Release */,
+				6A689A55DBAB4F9FA0245611 /* MinSizeRel */,
+				0AB749006B064F87998B0007 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FBC53B1191184772953F3851 /* Build configuration list for PBXNativeTarget "primitive" */ = {
+		CCC42D094201444E9DEDB182 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DA220B5251F46EC8D3DBF4D /* Debug */,
-				8F7E8D5FDA2E4FC8940A7969 /* Release */,
-				519456FDF38A4415B6C0C1ED /* MinSizeRel */,
-				56DF626FF0BF476782426C00 /* RelWithDebInfo */,
+				8963602090754D67A0DA6CC4 /* Debug */,
+				B51A2C52420845358664998F /* Release */,
+				A71B39308D1F4156BA85764E /* MinSizeRel */,
+				65BB02DE9D6844EEA40A1E8B /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EA5C70A522024E3995F0C40B /* Project object */;
+	rootObject = 3396D8B4A13C449188789D3B /* Project object */;
 }
