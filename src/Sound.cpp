@@ -1,5 +1,5 @@
 
-/*
+#ifndef APPLE
  #include<Sound.hpp>
 #include<cassert>
 
@@ -137,5 +137,4 @@ bool SoundSystem::checkFlag(bool flag)
 	else
 		return false;
 }
-
-*/
+#endif APPLE

@@ -245,8 +245,9 @@ void Core::Init()
 	else
 		editorEnable = true;
 	//init the sound system
-	//SoundSystem::init();
-
+#ifndef APPLE
+	SoundSystem::init();
+#endif
 	//create the window and set the camera width and height to have the correct camera matrix without resizing.
 	if(editorEnable)
 		window.createWindow(false);
@@ -1062,8 +1063,10 @@ void Core::renderLoop()
 				}
 			}
 		}
-      //  SoundSystem::SSystem->update();
-       // SoundSystem::set3DAttribs(mainCamera.position, mainCamera.camFront, mainCamera.camUp);
+#ifndef APPLE
+        SoundSystem::SSystem->update();
+        SoundSystem::set3DAttribs(mainCamera.position, mainCamera.camFront, mainCamera.camUp);
+#endif
 	}
 	//delete all of the heap allocated models and clear all of the opengl objects associated with them.
 	for (Model m : models)
@@ -1074,5 +1077,7 @@ void Core::renderLoop()
 	//terminate GLFW
 	glfwTerminate();
 	//destroy the FMOD sound system.
-	//soundSystem.destroySS();
+#ifndef APPLE
+	soundSystem.destroySS();
+#endif
 }
