@@ -14,7 +14,29 @@ FMOD::System* SoundSystem::SSystem = nullptr;
 FMOD::ChannelGroup* SoundSystem::chGroup = nullptr;
 //define for static vector in header
 std::vector<Sound> SoundSystem::Sounds;
-
+void SoundSystem::deleteAllSounds()
+{
+    for(Sound s : SoundSystem::Sounds)
+    {
+            s.sound->stop();
+            s.actualSound->release();
+    }
+    SoundSystem::Sounds.clear();
+}
+bool SoundSystem::deleteSound(const std::string& referenceName)
+{
+    for(std::vector<Sound>::iterator s = SoundSystem::Sounds.begin(); s != SoundSystem::Sounds.end(); s++)
+    {
+        if (s->refName == referenceName)
+        {
+            s->sound->stop();
+            s->actualSound->release();
+            SoundSystem::Sounds.erase(s);
+            return true;
+        }
+    }
+    return false;
+}
 bool SoundSystem::stopSound(const std::string& referenceName)
 {
 	for (Sound s : SoundSystem::Sounds)
@@ -54,6 +76,7 @@ bool SoundSystem::F_PlaySound(const std::string& filePath, float volume, const s
 	Sound tempSound;
 	tempSound.refName = referenceName;
 	tempSound.sound = ch;
+	tempSound.actualSound = s;
 	Sounds.push_back(tempSound);
 
 	return checkFlag(flag);

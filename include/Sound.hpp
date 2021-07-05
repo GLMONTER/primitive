@@ -12,6 +12,7 @@ class Sound
 public:
 	FMOD::Channel* sound;
 	std::string refName;
+	FMOD::Sound* actualSound;
 };
 
 class SoundSystem
@@ -19,6 +20,8 @@ class SoundSystem
 public:
     static FMOD::System* SSystem;
     static bool stopSound(const std::string& referenceName);
+    static bool deleteSound(const std::string& referenceName);
+    static void deleteAllSounds();
 	static std::vector<Sound> Sounds;
     static bool F_PlaySound(const std::string& filePath, float volume, const std::string& referenceName, glm::vec3& playPosition);
 	static bool init();

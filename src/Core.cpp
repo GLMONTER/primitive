@@ -45,6 +45,8 @@ extern void update(std::vector<Model>& modelArray);
 extern void start(GLFWwindow* window);
 
 extern bool inputFlag;
+//if the game has started
+extern bool startedFlag;
 
 extern bool editorEnable;
 bool cameraGameEnable = false;
@@ -998,7 +1000,6 @@ void Core::renderLoop()
 					{
                         m.spawnPosition = m.position;
                     }
-					extern bool startedFlag;
 					startedFlag = false;
 				}
 				else
@@ -1042,6 +1043,12 @@ void Core::renderLoop()
 		if (editorEnable)
 		{
 			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+			if(startedFlag)
+            {
+                SoundSystem::deleteAllSounds();
+                std::cout<<"delete";
+                startedFlag = false;
+            }
 		}
 
 		glfwSwapBuffers(window.window);

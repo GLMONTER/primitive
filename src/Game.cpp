@@ -16,8 +16,10 @@ void start(GLFWwindow* window)
 	}
 
 	input.init(window);
+	
     if(!hasStartedGame)
         core.loadScene("test.txt");
+
     hasStartedGame = true;
 	
 	startedFlag = true;
@@ -33,7 +35,7 @@ void update(std::vector<Model>& modelArray)
 		start(core.window.window);
 	if (editorEnable)
 		return;
-	
+
 	core.mainCamera.position.z = core.findObject("Cube")->position.z + 15;
 	core.mainCamera.position.y = core.findObject("Cube")->position.y + 5;
 	core.mainCamera.position.x = core.findObject("Cube")->position.x;
@@ -57,4 +59,5 @@ void update(std::vector<Model>& modelArray)
 	}
 	core.mainCamera.calc(&core.findObject("Cube")->position);
 	core.findObject("Cube")->position.z -= deltaTime * 15;
+
 }
