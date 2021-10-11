@@ -54,6 +54,8 @@ bool cameraGameEnable = false;
 static bool buttonPressed = false;
 static bool buttonToggle = false;
 
+static bool redrawFlag = true;
+
 static char curModelName[1024];
 
 char workingDir[256];
@@ -836,6 +838,7 @@ void Core::renderLoop()
 	//render loop :)
 	while(!glfwWindowShouldClose(window.window))
 	{
+
 		if (width > 0)
 		{
 			window.width = width;

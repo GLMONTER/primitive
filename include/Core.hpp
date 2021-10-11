@@ -29,6 +29,7 @@ public:
     void Init();
     void glWrap();
     void renderLoop();
+    bool checkIfUserActive();
     void updateCamera(unsigned int wid, unsigned int hei);
     void drawMenu();
     void loadScene(std::string scenePath);
