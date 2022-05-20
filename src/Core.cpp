@@ -312,6 +312,13 @@ void Core::Init()
 	//do some research on this...
 	glEnable(GL_DEPTH_TEST);
 
+    //for mouse seletion
+    glEnable(GL_STENCIL_TEST);
+    //do more research on all of these 3
+    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+    glStencilMask(0xFFFF); // Write to stencil buffer
+    glStencilFunc(GL_ALWAYS,0,0xFFFF);  // Set any stencil to 0
+
 	//enable msaa
 	glEnable(GL_MULTISAMPLE);
 
@@ -408,7 +415,6 @@ void Core::loadOrUnloadModel(float (&selectedPos)[3], float (&selectedRot)[3], f
 static bool modelError = false;
 void Core::loadScene(std::string scenePath)
 {
-
 	std::ifstream ifs(scenePath);
 
 	std::string line;
@@ -884,6 +890,7 @@ void Core::renderLoop()
 			//Master dock window
 			ImGui::Begin("Master", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoMove | ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse);
 			{
+                ImGui::SetWindowFontScale(2.0f);
 				//draw the image on the screen
 				static ImGuiID dockspaceID = 0;
 				// Declare Central dockspace
@@ -896,12 +903,15 @@ void Core::renderLoop()
 			//draw the viewport as an imgui image
 			ImGui::Begin("Viewport", &temp, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize);
 			{
+
                 ImGui::Image(reinterpret_cast<void*>(FBTexture), ImGui::GetWindowSize(), ImVec2(0, 1), ImVec2(1, 0));
 			}
 			ImGui::End();
 
 			ImGui::Begin("Control Panel");
-			drawMenu();
+            ImGui::SetWindowFontScale(2.0f);
+
+            drawMenu();
 
 			//setup checkboxes for the render flags
 			ImGui::Checkbox("Wireframe Mode", &wireFrame);
@@ -960,32 +970,39 @@ void Core::renderLoop()
 		mainCamera.camFront = glm::normalize(camFront);
 		if (editorEnable)
 		{
+            float tempCamSpeed;
+
+            if(input.isKeyPressed(GLFW_KEY_LEFT_SHIFT))
+                tempCamSpeed = camSpeed * 2;
+            else
+                tempCamSpeed = camSpeed;
+
 			if (input.isKeyPressed(GLFW_KEY_W))
 			{
-				mainCamera.position += (camSpeed * deltaTime) * mainCamera.camFront;
+				mainCamera.position += (tempCamSpeed * deltaTime) * mainCamera.camFront;
 			}
 			if (input.isKeyPressed(GLFW_KEY_S))
 			{
-				mainCamera.position -= (camSpeed * deltaTime) * mainCamera.camFront;
+				mainCamera.position -= (tempCamSpeed * deltaTime) * mainCamera.camFront;
 			}
 			//DO SOME RESEARCH ON HOW THIS WORKS
 			if (input.isKeyPressed(GLFW_KEY_A))
 			{
-				mainCamera.position -= glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
+				mainCamera.position -= glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (tempCamSpeed * deltaTime);
 			}
 			if (input.isKeyPressed(GLFW_KEY_D))
 			{
-				mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (camSpeed * deltaTime);
+				mainCamera.position += glm::normalize(glm::cross(mainCamera.camFront, mainCamera.camUp)) * (tempCamSpeed * deltaTime);
 			}
 			if (input.isKeyPressed(GLFW_KEY_E))
 			{
 				glm::vec3 cameraRight = glm::cross(mainCamera.camUp, direction);
-				mainCamera.position += glm::cross(direction, cameraRight) * (camSpeed * deltaTime);
+				mainCamera.position += glm::cross(direction, cameraRight) * (tempCamSpeed * deltaTime);
 			}
 			if (input.isKeyPressed(GLFW_KEY_Q))
 			{
 				glm::vec3 cameraRight = glm::cross(mainCamera.camUp, direction);
-				mainCamera.position -= glm::cross(direction, cameraRight) * (camSpeed * deltaTime);
+				mainCamera.position -= glm::cross(direction, cameraRight) * (tempCamSpeed * deltaTime);
 			}
 		}
 		//button toggle system to toggle the editor on and off
@@ -1007,7 +1024,6 @@ void Core::renderLoop()
 				}
 				else
 				{
-
                     for (Model& m : models)
 					{
                          m.position = m.spawnPosition;

@@ -7,6 +7,8 @@
 
 - sound error handling
 
++ selecting objects with mouse
+
 
 
 
