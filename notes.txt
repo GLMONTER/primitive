@@ -14,3 +14,12 @@
 
 ubuntu pre : sudo apt install libgtk-3-dev libglew-dev libglfw3-dev libassimp-dev
 fedora pre : sudo dnf install gtk3-devel glew-devel 
+
+
+
+BUILDING ASSIMP (on a mac) :
+git clone https://github.com/assimp/assimp
+cd assimp
+#you can use arm64 to build for arm
+cmake -DASSIMP_NO_EXPORT=1 -DASSIMP_BUILD_TESTS=0 -DCMAKE_OSX_ARCHITECTURES=x86_64 .
+cmake --build .
